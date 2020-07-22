@@ -1,0 +1,1262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
+   <children>
+      <ImageView fitHeight="723.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@imagenes/fondotab.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c1" fitHeight="40.0" fitWidth="40.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillalava.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c2" fitHeight="40.0" fitWidth="40.0" layoutX="45.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillanetherrack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c3" fitHeight="40.0" fitWidth="40.0" layoutX="85.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillanetherrack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c4" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillasandsoul.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c5" fitHeight="40.0" fitWidth="40.0" layoutX="165.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillasandsoul.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c6" fitHeight="40.0" fitWidth="40.0" layoutX="205.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillanetherrack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c7" fitHeight="150.0" fitWidth="40.0" layoutX="205.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillanetherrack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c8" fitHeight="40.0" fitWidth="40.0" layoutX="205.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillasandsoul.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c9" fitHeight="40.0" fitWidth="40.0" layoutX="205.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillanetherrack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c10" fitHeight="40.0" fitWidth="40.0" layoutX="205.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillasandsoul.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c11" fitHeight="40.0" fitWidth="40.0" layoutX="45.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillasandsoul.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c12" fitHeight="40.0" fitWidth="40.0" layoutX="45.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillalava.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c13" fitHeight="40.0" fitWidth="40.0" layoutX="45.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillasandsoul.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c14" fitHeight="40.0" fitWidth="40.0" layoutX="45.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillanetherrack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c15" fitHeight="40.0" fitWidth="40.0" layoutX="85.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillanetherrack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c16" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillanetherrack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c17" fitHeight="40.0" fitWidth="40.0" layoutX="165.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillalava.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c18" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillanetherrack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c19" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillanetherrack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c20" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaobsidiana.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c21" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaportal.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c22" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaobsidiana.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c23" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c24" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c25" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c26" fitHeight="40.0" fitWidth="40.0" layoutX="45.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c27" fitHeight="40.0" fitWidth="40.0" layoutX="165.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c28" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c29" fitHeight="40.0" fitWidth="40.0" layoutX="205.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c30" fitHeight="40.0" fitWidth="40.0" layoutX="245.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c31" fitHeight="40.0" fitWidth="40.0" layoutX="85.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c32" fitHeight="40.0" fitWidth="40.0" layoutX="85.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c33" fitHeight="40.0" fitWidth="40.0" layoutX="85.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c34" fitHeight="40.0" fitWidth="40.0" layoutX="85.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c35" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c36" fitHeight="40.0" fitWidth="40.0" layoutX="165.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillalava.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c37" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c38" fitHeight="40.0" fitWidth="40.0" layoutX="205.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c39" fitHeight="40.0" fitWidth="40.0" layoutX="245.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c40" fitHeight="40.0" fitWidth="40.0" layoutX="245.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c41" fitHeight="40.0" fitWidth="40.0" layoutX="245.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c42" fitHeight="40.0" fitWidth="40.0" layoutX="245.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c43" fitHeight="40.0" fitWidth="40.0" layoutX="245.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c44" fitHeight="40.0" fitWidth="40.0" layoutX="285.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c45" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c46" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c47" fitHeight="40.0" fitWidth="40.0" layoutX="245.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c48" fitHeight="40.0" fitWidth="40.0" layoutX="285.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c49" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c50" fitHeight="40.0" fitWidth="40.0" layoutX="365.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c51" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c52" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c53" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c54" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c55" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c56" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c57" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c58" fitHeight="40.0" fitWidth="40.0" layoutX="85.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c59" fitHeight="40.0" fitWidth="40.0" layoutX="365.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c60" fitHeight="40.0" fitWidth="40.0" layoutX="405.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c61" fitHeight="40.0" fitWidth="40.0" layoutX="445.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c62" fitHeight="40.0" fitWidth="40.0" layoutX="445.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c63" fitHeight="40.0" fitWidth="40.0" layoutX="445.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c64" fitHeight="40.0" fitWidth="40.0" layoutX="445.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="c65" fitHeight="40.0" fitWidth="40.0" layoutX="445.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="485.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillalava.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="485.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="525.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="565.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="605.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="645.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="605.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="605.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="565.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="605.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="605.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="565.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="525.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="645.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="685.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="765.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="805.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="845.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillalava.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1045.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1045.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1045.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="925.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1045.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1045.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1085.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="925.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="925.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1045.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1085.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1045.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1045.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1045.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillalava.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1045.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="925.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="925.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="845.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="405.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="405.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="405.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="405.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="405.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="365.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="445.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="485.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="525.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="565.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="445.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="485.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="525.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="565.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="565.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillalava.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="565.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="565.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="485.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="605.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="685.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="645.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="365.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillalava.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="405.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="445.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="485.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="525.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="565.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="605.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="645.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="765.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="685.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="765.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="765.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillalava.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="765.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="765.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="765.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="725.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillamadera.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="485.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="485.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillamadera.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="445.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillamadera.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="405.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillamadera.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="605.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillamadera.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="565.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillamadera.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="525.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillamadera.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenarriba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenarriba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenarriba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenarriba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenarriba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenarriba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="646.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenarriba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="646.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenarriba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="646.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenarriba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="646.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenarriba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrencurva.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="645.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="606.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="567.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="528.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="489.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="450.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="411.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="372.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="362.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="926.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="887.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="848.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="809.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="770.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="731.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="720.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillatrenlado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="110.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillanetherrack.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="495.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="165.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="470.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="935.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="950.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapiedra.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada1" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaespada.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada2" fitHeight="40.0" fitWidth="40.0" layoutX="245.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaespada.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada21" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaespada.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada211" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaespada.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada2111" fitHeight="40.0" fitWidth="40.0" layoutX="805.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaespada.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada21111" fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaespada.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada21112" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaespada.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="960.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaespadadiamante.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="945.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillacascodiamante.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="509.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillapantalondiamante.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="480.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillazapatosdiamante.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="175.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaarmaduradiamante.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada11" fitHeight="30.0" fitWidth="30.0" layoutX="90.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillacuboagua.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada111" fitHeight="30.0" fitWidth="30.0" layoutX="330.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillacuboagua.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada1111" fitHeight="30.0" fitWidth="30.0" layoutX="450.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillacuboagua.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada11111" fitHeight="30.0" fitWidth="30.0" layoutX="890.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillacuboagua.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada111111" fitHeight="30.0" fitWidth="30.0" layoutX="890.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillacuboagua.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada1111111" fitHeight="30.0" fitWidth="30.0" layoutX="649.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillacuboagua.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada11121" fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillavagoneta.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada111211" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillavagoneta.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada111212" fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillavagoneta.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada111213" fitHeight="40.0" fitWidth="40.0" layoutX="645.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillavagoneta.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada1112131" fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillavagoneta.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="83.0" layoutX="744.0" layoutY="612.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillacama.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="758.0" layoutY="577.0" text="Salida" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="19.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="espada22" fitHeight="40.0" fitWidth="40.0" layoutX="89.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaesmeralda.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada221" fitHeight="40.0" fitWidth="40.0" layoutX="409.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaesmeralda.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada2211" fitHeight="40.0" fitWidth="40.0" layoutX="929.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaesmeralda.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada22111" fitHeight="40.0" fitWidth="40.0" layoutX="890.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaesmeralda.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada221111" fitHeight="40.0" fitWidth="40.0" layoutX="1049.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaesmeralda.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada2211111" fitHeight="40.0" fitWidth="40.0" layoutX="449.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaesmeralda.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada22111111" fitHeight="40.0" fitWidth="40.0" layoutX="329.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaesmeralda.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="espada221112" fitHeight="40.0" fitWidth="40.0" layoutX="449.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/casillaesmeralda.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="11.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/ghast.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="651.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/creeper.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1088.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/zombie.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1085.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/spider.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/bruja.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="365.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/skeleton.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="488.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/aldeano.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="110.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/dragon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

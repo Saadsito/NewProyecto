@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="421.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.SalaEsperaController">
+   <children>
+      <ImageView fitHeight="430.0" fitWidth="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/fondosalaespera.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="258.0" fitWidth="411.0" layoutX="73.0" layoutY="-48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logominecraft.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="288.0" fitWidth="240.0" layoutX="23.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/fondovidrio.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombre1" alignment="CENTER" layoutX="23.0" layoutY="120.0" prefHeight="48.0" prefWidth="240.0">
+         <font>
+            <Font name="Cambria Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombre2" alignment="CENTER" layoutX="23.0" layoutY="168.0" prefHeight="48.0" prefWidth="240.0">
+         <font>
+            <Font name="Cambria Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombre3" alignment="CENTER" layoutX="23.0" layoutY="216.0" prefHeight="48.0" prefWidth="240.0">
+         <font>
+            <Font name="Cambria Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombre4" alignment="CENTER" layoutX="23.0" layoutY="264.0" prefHeight="48.0" prefWidth="240.0">
+         <font>
+            <Font name="Cambria Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombre5" alignment="CENTER" layoutX="23.0" layoutY="312.0" prefHeight="48.0" prefWidth="240.0">
+         <font>
+            <Font name="Cambria Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombre6" alignment="CENTER" layoutX="23.0" layoutY="360.0" prefHeight="48.0" prefWidth="240.0">
+         <font>
+            <Font name="Cambria Bold" size="29.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="vegetta1" fitHeight="60.0" fitWidth="60.0" layoutX="300.0" layoutY="160.0" onMouseEntered="#vegetta1arriba" onMouseExited="#vegetta1abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/vegetta777.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="vegetta2" fitHeight="70.0" fitWidth="70.0" layoutX="295.0" layoutY="155.0" onMouseClicked="#vegetta2click" onMouseEntered="#vegetta2arriba" onMouseExited="#vegetta2abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/vegetta777.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="lolito1" fitHeight="60.0" fitWidth="60.0" layoutX="380.0" layoutY="160.0" onMouseEntered="#lolito1arriba" onMouseExited="#lolito1abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/lolito.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="lolito2" fitHeight="70.0" fitWidth="70.0" layoutX="375.0" layoutY="155.0" onMouseClicked="#lolito2click" onMouseEntered="#lolito2arriba" onMouseExited="#lolito2abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/lolito.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="rubius1" fitHeight="60.0" fitWidth="60.0" layoutX="460.0" layoutY="160.0" onMouseEntered="#rubius1arriba" onMouseExited="#rubius1abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/rubius.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="rubius2" fitHeight="70.0" fitWidth="70.0" layoutX="455.0" layoutY="155.0" onMouseClicked="#rubius2click" onMouseEntered="#rubius2arriba" onMouseExited="#rubius2abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/rubius.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="auron1" fitHeight="60.0" fitWidth="60.0" layoutX="300.0" layoutY="260.0" onMouseEntered="#auron1arriba" onMouseExited="#auron1abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/auronplay.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="auron2" fitHeight="70.0" fitWidth="70.0" layoutX="295.0" layoutY="255.0" onMouseClicked="#auron2click" onMouseEntered="#auron2arriba" onMouseExited="#auron2abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/auronplay.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="willyrex1" fitHeight="60.0" fitWidth="60.0" layoutX="380.0" layoutY="260.0" onMouseEntered="#willyrex1arriba" onMouseExited="#willyrex1abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/willyrex.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="willyrex2" fitHeight="70.0" fitWidth="70.0" layoutX="375.0" layoutY="255.0" onMouseClicked="#willyrex2click" onMouseEntered="#willyrex2arriba" onMouseExited="#willyrex2abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/willyrex.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="luzu1" fitHeight="60.0" fitWidth="60.0" layoutX="460.0" layoutY="260.0" onMouseEntered="#luzu1arriba" onMouseExited="#luzu1abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/luzu.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="luzu2" fitHeight="70.0" fitWidth="70.0" layoutX="455.0" layoutY="255.0" onMouseClicked="#luzu2click" onMouseEntered="#luzu2arriba" onMouseExited="#luzu2abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/luzu.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="equis1" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/equis.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chulito1" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/chulito.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="equis2" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/equis.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="equis3" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/equis.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="equis6" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/equis.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="equis5" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/equis.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="equis4" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/equis.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chulito2" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/chulito.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chulito3" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/chulito.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chulito4" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/chulito.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chulito5" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/chulito.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chulito6" fitHeight="25.0" fitWidth="26.0" layoutX="235.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/chulito.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="botlisto1" fitHeight="68.0" fitWidth="260.0" layoutX="274.0" layoutY="371.0" onMouseEntered="#botlisto1arriba" onMouseExited="#botlisto1abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/botonlisto.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="botlisto2" fitHeight="68.0" fitWidth="260.0" layoutX="274.0" layoutY="371.0" onMouseClicked="#botlistoclick" onMouseEntered="#botlisto2arriba" onMouseExited="#botlisto2abajo" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/botonlisto2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label fx:id="labvegetta" alignment="CENTER" layoutX="288.0" layoutY="131.0" prefHeight="27.0" prefWidth="57.0">
+         <font>
+            <Font name="Cambria Bold" size="11.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

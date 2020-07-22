@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.FXMLDocumentController">
+   <children>
+      <ImageView fitHeight="430.0" fitWidth="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/fondologin.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="258.0" fitWidth="411.0" layoutX="73.0" layoutY="-48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logominecraft.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="85.0" fitWidth="303.0" layoutX="127.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/botonminecraft.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="nombre" alignment="CENTER" focusColor="#ffffff00" layoutX="131.0" layoutY="183.0" prefHeight="25.0" prefWidth="295.0" promptText="Nombre" unFocusColor="#ffffff00">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fx:id="jugar1" fitHeight="68.0" fitWidth="303.0" layoutX="127.0" layoutY="231.0" onMouseEntered="#jugar1arriba" onMouseExited="#jugar1abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/botonjugar.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="jugar2" fitHeight="75.0" fitWidth="303.0" layoutX="127.0" layoutY="231.0" onMouseClicked="#jugarClick" onMouseEntered="#jugar2arriba" onMouseExited="#jugar2abajo" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/botonjugar2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="salir1" fitHeight="68.0" fitWidth="303.0" layoutX="127.0" layoutY="282.0" onMouseEntered="#salir1arriba" onMouseExited="#salir1abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/botonsalir.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="salir2" fitHeight="73.0" fitWidth="303.0" layoutX="127.0" layoutY="282.0" onMouseClicked="#salirClick" onMouseEntered="#salir2arriba" onMouseExited="#salir2abajo" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/botonsalir2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>
