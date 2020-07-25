@@ -1,16 +1,9 @@
 package proyect;
 
 import java.applet.AudioClip;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.DataInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -46,35 +39,4 @@ public class Cliente extends Application {
     
 }
 
-class NuevoJugador implements Runnable{
-    private String nombre;
-    
-    public NuevoJugador(String nombre){
-        this.nombre = nombre;
-        Thread hilo = new Thread(this);
-        hilo.start();
-    }
-    
-    @Override
-    public void run() {
-        try {
-            ///Se manda el nombre del nuevo usuario
-            Socket socket = new Socket("192.168.0.181", 7777);
-            Player jugador = new Player();
-            jugador.setNombre(nombre);
-            
-            ObjectOutputStream paquete = new ObjectOutputStream(socket.getOutputStream());
-            paquete.writeObject(jugador);
-            paquete.close();
-            socket.close();
-            
-        } catch (IOException ex) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setTitle("Error de Conexión");
-            alert.setContentText("No se ha podido conectar con el servidor");
-            alert.showAndWait();
-        }
-    }
-    
-}
+

@@ -3,14 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Desktop/ejercicios%20java/ProyectoTablero/tablero/src/proyect/FXMLDocument.fxml</file>
-            <file>file:/D:/Desktop/ejercicios%20java/ProyectoTablero/tablero/src/proyect/Servidor.java</file>
-            <file>file:/D:/Desktop/ejercicios%20java/ProyectoTablero/tablero/src/proyect/SalaEspera.fxml</file>
-            <file>file:/D:/Desktop/ejercicios%20java/ProyectoTablero/tablero/src/proyect/TableroController.java</file>
-            <file>file:/D:/Desktop/ejercicios%20java/ProyectoTablero/tablero/src/proyect/Cliente.java</file>
-            <file>file:/D:/Desktop/ejercicios%20java/ProyectoTablero/tablero/src/proyect/SalaEsperaController.java</file>
-            <file>file:/D:/Desktop/ejercicios%20java/ProyectoTablero/tablero/src/proyect/Player.java</file>
-            <file>file:/D:/Desktop/ejercicios%20java/ProyectoTablero/tablero/src/proyect/FXMLDocumentController.java</file>
+            <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/ServerInicio.java</file>
+            <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/JugadorConexion.java</file>
+            <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/Servidor.java</file>
+            <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/Conexion.java</file>
+            <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/NuevoJugador.java</file>
+            <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/Cliente.java</file>
+            <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/FXMLDocumentController.java</file>
+            <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/SalaEsperaController.java</file>
         </group>
     </open-files>
 </project-private>

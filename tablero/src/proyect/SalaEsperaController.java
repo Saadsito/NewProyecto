@@ -3,31 +3,16 @@ package proyect;
 
 import java.applet.AudioClip;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 
 public class SalaEsperaController implements Initializable{
 
-    @FXML
-     Label nombre1;
-    @FXML
-    private Label nombre2;
-    @FXML
-    private Label nombre3;
-    @FXML
-    private Label nombre4;
-    @FXML
-    private Label nombre5;
-    @FXML
-    private Label nombre6;
     @FXML
     private ImageView vegetta1;
     @FXML
@@ -83,8 +68,15 @@ public class SalaEsperaController implements Initializable{
     @FXML
     private Label labvegetta;
     
+    private JugadorConexion conexionJugadores = new JugadorConexion(7000);
+    private String nombre;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb){
+        System.out.println(nombre);
+        Thread hiloLista = new Thread(conexionJugadores);
+        hiloLista.start();
+       
         
         vegetta2.setVisible(false);
         lolito2.setVisible(false);
@@ -124,7 +116,6 @@ public class SalaEsperaController implements Initializable{
     boolean clickvegetta,clicklolito,clickrubius,clickauron,clickwillyrex,clickluzu,fijado=false;
     int numjugador;
     AudioClip SonidoPersonaje;
-    ArrayList<Player> jugadores = new Server().getJugadores();
     
     @FXML
     private void vegetta1abajo(MouseEvent event) {
@@ -178,12 +169,15 @@ public class SalaEsperaController implements Initializable{
         luzu1.setVisible(true);
         vegetta1.setVisible(false);
         vegetta2.setVisible(true);
-        labvegetta.setText(jugadores.get(0).getNombre());
         SonidoPersonaje = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/vegetta777.wav"));
         SonidoPersonaje.play();
                 
     }
 
+    public void recibeNombre(String nombre){
+        this.nombre = nombre;
+    }
+    
     @FXML
     private void lolito1abajo(MouseEvent event) {
         if((!fijado) && (!clicklolito)){

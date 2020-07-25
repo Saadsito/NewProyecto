@@ -110,12 +110,12 @@ public class FXMLDocumentController implements Initializable {
             alert.showAndWait();
         }
         else{
-            NuevoJugador player = new NuevoJugador(nombre.getText());
-            
             
             Parent SaladeEspera = FXMLLoader.load(getClass().getResource("SalaEspera.fxml"));
             Scene PantSalaEspera = new Scene(SaladeEspera);
+            
             Stage ventana = (Stage)((Node)event.getSource()).getScene().getWindow();
+            
             ventana.setScene(PantSalaEspera);
             ventana.show();
             
