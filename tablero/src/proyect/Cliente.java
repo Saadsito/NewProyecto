@@ -1,20 +1,26 @@
 package proyect;
 
 import java.applet.AudioClip;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.net.Socket;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class Cliente extends Application {
    
+    private static String nombre;
+
+    public static String getNombre() {
+        return nombre;
+    }
+
+    public static void setNombre(String nombre) {
+        Cliente.nombre = nombre;
+    }
+    
     @Override
     public void start(Stage stage) throws Exception {
         

@@ -68,15 +68,20 @@ public class SalaEsperaController implements Initializable{
     @FXML
     private Label labvegetta;
     
-    private JugadorConexion conexionJugadores = new JugadorConexion(7000);
-    private String nombre;
+    
+    private String nombre = Cliente.getNombre();
+    private JugadorConexion conexionJugadores = new JugadorConexion(nombre, 7000);
     
     @Override
     public void initialize(URL url, ResourceBundle rb){
         System.out.println(nombre);
-        Thread hiloLista = new Thread(conexionJugadores);
-        hiloLista.start();
-       
+        
+        Thread actualizarLista = new Thread(conexionJugadores);     //Pone al cliente a la escucha de la actualizacion de las listas e jugadores
+        actualizarLista.setName("Hilo SalaEspera");
+        actualizarLista.start();    //comienza el hilo que aactualiza la lista
+        conexionJugadores.enviarJugador();
+        
+        
         
         vegetta2.setVisible(false);
         lolito2.setVisible(false);
@@ -486,6 +491,7 @@ public class SalaEsperaController implements Initializable{
             AudioClip SonidoBot = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/sonidolisto.wav"));
             SonidoBot.play();
             fijado=true;  
+            System.out.println(conexionJugadores.getJugadores().get(0).getNombre());
         }
     }
     

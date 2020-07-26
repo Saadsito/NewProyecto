@@ -8,16 +8,13 @@ package proyect;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import java.applet.AudioClip;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.Socket;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -110,7 +107,7 @@ public class FXMLDocumentController implements Initializable {
             alert.showAndWait();
         }
         else{
-            
+            Cliente.setNombre(nombre.getText());
             Parent SaladeEspera = FXMLLoader.load(getClass().getResource("SalaEspera.fxml"));
             Scene PantSalaEspera = new Scene(SaladeEspera);
             
@@ -126,7 +123,7 @@ public class FXMLDocumentController implements Initializable {
     private void salirClick(MouseEvent event) throws IOException {
         SonidoBot = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/sonidoboton.wav"));
         SonidoBot.play();
-        //cerrarhilos
+        
         Platform.exit();
         System.exit(0);
     }
