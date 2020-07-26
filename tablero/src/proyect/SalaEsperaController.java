@@ -3,7 +3,9 @@ package proyect;
 
 import java.applet.AudioClip;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -71,24 +73,45 @@ public class SalaEsperaController implements Initializable{
     
     private String nombre = Cliente.getNombre();
     private JugadorConexion conexionJugadores = new JugadorConexion(nombre, 7000);
+    @FXML
+    private Label nombre1;
+    @FXML
+    private Label nombre2;
+    @FXML
+    private Label nombre3;
+    @FXML
+    private Label nombre4;
+    @FXML
+    private Label nombre5;
+    @FXML
+    private Label nombre6;
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        System.out.println(nombre);
         
         Thread actualizarLista = new Thread(conexionJugadores);     //Pone al cliente a la escucha de la actualizacion de las listas e jugadores
         actualizarLista.setName("Hilo SalaEspera");
         actualizarLista.start();    //comienza el hilo que aactualiza la lista
         conexionJugadores.enviarJugador();
-        
-        
-        
+                        
         vegetta2.setVisible(false);
         lolito2.setVisible(false);
         rubius2.setVisible(false);
         auron2.setVisible(false);
         willyrex2.setVisible(false);
         luzu2.setVisible(false);
+        
+        Thread hiloLabel = new Thread(){
+            @Override
+            public void run(){
+                actualizarLabel();
+            }
+        };
+        
+        hiloLabel.setName("HiloLabel");
+        hiloLabel.start();
+        
     /*    
         if("".equals(nombre1.getText())){
           nombre1.setText(Cliente.getNombre());
@@ -495,5 +518,80 @@ public class SalaEsperaController implements Initializable{
         }
     }
     
+    private void actualizarLabel(){
+        int size = 0;
+        while(true){
+            if(!Objects.equals(null, conexionJugadores.getJugadores())){
+                if(size != conexionJugadores.getJugadores().size()){
+                    size = conexionJugadores.getJugadores().size();
+                    switch(size){
+                        case 1:
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                }   
+                            });
+                            break;
+                        case 2: 
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                    nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                }   
+                            });
+                            break;
+                        case 3: 
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                    nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                    nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                }   
+                            });
+                            break;
+                        case 4: 
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                    nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                    nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                    nombre4.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                }   
+                            });
+                            break;
+                        case 5: 
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                    nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                    nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                    nombre4.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                    nombre5.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                }   
+                            });
+                            break;
+                        case 6: 
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                    nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                    nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                    nombre4.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                    nombre5.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                    nombre6.setText(conexionJugadores.getJugadores().get(5).getNombre());
+                                }   
+                            });
+                            break;
+                    }
+                }
+            }
+        }
+    }
     
 }
