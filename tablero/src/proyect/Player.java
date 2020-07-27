@@ -6,15 +6,15 @@ import javafx.scene.image.Image;
 
 public class Player implements Serializable{
     
-    private String nombre, ip;
-    private Image skin;
+    private String nombre, ip, skin;
     private Inventario inventario;
     private boolean listo; //true significa que esta listo, false que no 
 
     public Player() {
         nombre = "";
+        listo = false;
         ip = "";
-        skin = null;
+        skin = "";
         inventario = new Inventario();
     }
 
@@ -42,11 +42,11 @@ public class Player implements Serializable{
         this.ip = ip;
     }
 
-    public Image getSkin() {
+    public String getSkin() {
         return skin;
     }
 
-    public void setSkin(Image skin) {
+    public void setSkin(String skin) {
         this.skin = skin;
     }
 
@@ -58,7 +58,7 @@ public class Player implements Serializable{
         this.inventario = inventario;
     }
 
-    public Player(String nombre, Image skin, String ip, Inventario inventario) {
+    public Player(String nombre, String skin, String ip, Inventario inventario) {
         this.nombre = nombre;
         this.skin = skin;
         this.ip = ip;

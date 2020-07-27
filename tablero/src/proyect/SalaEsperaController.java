@@ -3,12 +3,15 @@ package proyect;
 
 import java.applet.AudioClip;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
@@ -86,13 +89,13 @@ public class SalaEsperaController implements Initializable{
     @FXML
     private Label nombre6;
     
+    private int numjugador = -1;    //guarda la posicion en la lista del jugador
     
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        
         Thread actualizarLista = new Thread(conexionJugadores);     //Pone al cliente a la escucha de la actualizacion de las listas e jugadores
         actualizarLista.setName("Hilo SalaEspera");
-        actualizarLista.start();    //comienza el hilo que aactualiza la lista
+        actualizarLista.start();                                //comienza el hilo que actualiza la lista
         conexionJugadores.enviarJugador();
                         
         vegetta2.setVisible(false);
@@ -101,6 +104,7 @@ public class SalaEsperaController implements Initializable{
         auron2.setVisible(false);
         willyrex2.setVisible(false);
         luzu2.setVisible(false);
+        
         
         Thread hiloLabel = new Thread(){
             @Override
@@ -112,37 +116,14 @@ public class SalaEsperaController implements Initializable{
         hiloLabel.setName("HiloLabel");
         hiloLabel.start();
         
-    /*    
-        if("".equals(nombre1.getText())){
-          nombre1.setText(Cliente.getNombre());
-          numjugador=1;
-          equis1.setVisible(true);
-        }else if("".equals(nombre2.getText())){
-          nombre2.setText(Cliente.getNombre());
-          numjugador=2;
-          equis2.setVisible(true);
-        }else if("".equals(nombre3.getText())){
-          nombre3.setText(Cliente.getNombre());
-          numjugador=3;
-          equis3.setVisible(true);
-        }else if("".equals(nombre4.getText())){
-          nombre4.setText(Cliente.getNombre());
-          numjugador=4;
-          equis4.setVisible(true);
-        }else if("".equals(nombre5.getText())){
-          nombre5.setText(Cliente.getNombre());
-          numjugador=5;
-          equis5.setVisible(true);
-        }else if("".equals(nombre6.getText())){
-          nombre6.setText(Cliente.getNombre());
-          numjugador=6;
-          equis6.setVisible(true);
-        }
-    */
+        while(numjugador == -1)
+            if(!Objects.equals(null, conexionJugadores.getJugadores()))
+                numjugador = buscarJugador(nombre, conexionJugadores.getJugadores());
+        
+        
     }    
  
-    boolean clickvegetta,clicklolito,clickrubius,clickauron,clickwillyrex,clickluzu,fijado=false;
-    int numjugador;
+    private boolean clickvegetta,clicklolito,clickrubius,clickauron,clickwillyrex,clickluzu,fijado=false;
     AudioClip SonidoPersonaje;
     
     @FXML
@@ -179,6 +160,7 @@ public class SalaEsperaController implements Initializable{
 
     @FXML
     private void vegetta2click(MouseEvent event) {
+        conexionJugadores.getJugadores().get(numjugador).setSkin("Proyect/imagenes/vegetta777.png");
         clickvegetta=true;
         clicklolito=false;
         clickrubius=false;
@@ -240,6 +222,7 @@ public class SalaEsperaController implements Initializable{
 
     @FXML
     private void lolito2click(MouseEvent event) {
+        conexionJugadores.getJugadores().get(numjugador).setSkin("Proyect/imagenes/lolito.png");
         clickvegetta=false;
         clicklolito=true;
         clickrubius=false;
@@ -296,6 +279,7 @@ public class SalaEsperaController implements Initializable{
 
     @FXML
     private void rubius2click(MouseEvent event) {
+        conexionJugadores.getJugadores().get(numjugador).setSkin("Proyect/imagenes/rubius.png");
         clickvegetta=false;
         clicklolito=false;
         clickrubius=true;
@@ -352,6 +336,7 @@ public class SalaEsperaController implements Initializable{
 
     @FXML
     private void auron2click(MouseEvent event) {
+        conexionJugadores.getJugadores().get(numjugador).setSkin("Proyect/imagenes/auron.png");
         clickvegetta=false;
         clicklolito=false;
         clickrubius=false;
@@ -398,13 +383,14 @@ public class SalaEsperaController implements Initializable{
 
     @FXML
     private void willyrex2click(MouseEvent event) {
+        conexionJugadores.getJugadores().get(numjugador).setSkin("Proyect/imagenes/willyrex.png");
         clickvegetta=false;
         clicklolito=false;
         clickrubius=false;
         clickauron=false;
         clickwillyrex=true;
         clickluzu=false;
-            lolito2.setVisible(false);
+        lolito2.setVisible(false);
             rubius2.setVisible(false);
             auron2.setVisible(false);
             vegetta2.setVisible(false);
@@ -444,24 +430,25 @@ public class SalaEsperaController implements Initializable{
 
     @FXML
     private void luzu2click(MouseEvent event) {
+        conexionJugadores.getJugadores().get(numjugador).setSkin("Proyect/imagenes/luzu.png");
         clickvegetta=false;
         clicklolito=false;
         clickrubius=false;
         clickauron=false;
         clickwillyrex=false;
         clickluzu=true;
-            lolito2.setVisible(false);
-            rubius2.setVisible(false);
-            auron2.setVisible(false);
-            willyrex2.setVisible(false);
-            vegetta2.setVisible(false);
-            lolito1.setVisible(true);
-            rubius1.setVisible(true);
-            auron1.setVisible(true);
-            willyrex1.setVisible(true);
-            vegetta1.setVisible(true);
-            SonidoPersonaje = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/luzu.wav"));
-            SonidoPersonaje.play();   
+        lolito2.setVisible(false);
+        rubius2.setVisible(false);
+        auron2.setVisible(false);
+        willyrex2.setVisible(false);
+        vegetta2.setVisible(false);
+        lolito1.setVisible(true);
+        rubius1.setVisible(true);
+        auron1.setVisible(true);
+        willyrex1.setVisible(true);
+        vegetta1.setVisible(true);
+        SonidoPersonaje = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/luzu.wav"));
+        SonidoPersonaje.play();   
     }
 
     @FXML
@@ -510,13 +497,53 @@ public class SalaEsperaController implements Initializable{
 
     @FXML
     private void botlistoclick(MouseEvent event) {
-        if(!fijado){
-            AudioClip SonidoBot = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/sonidolisto.wav"));
-            SonidoBot.play();
-            fijado=true;  
-            System.out.println(conexionJugadores.getJugadores().get(0).getNombre());
+        if(!Objects.equals(null, conexionJugadores.getJugadores().get(numjugador).getSkin())){     
+            if(!fijado){
+                AudioClip SonidoBot = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/sonidolisto.wav"));
+                SonidoBot.play();
+                fijado=true;  
+                conexionJugadores.getJugadores().get(numjugador).setListo(true); //El jugador esta listo
+                
+                //ACTUALIZAR INFORMACION EN EL SERVIDOR
+                Conexion paquete = new Conexion(8777);
+                paquete.setJugadores(conexionJugadores.getJugadores());
+                conexionJugadores.enviarActualizacion(paquete);
+                
+                if(conexionJugadores.getJugadores().size() == 1){
+                    equis1.setVisible(false);
+                    chulito1.setVisible(true);
+                }
+ 
+                if(conexionJugadores.getJugadores().size() > 1 && todosListos(conexionJugadores.getJugadores())){
+                    
+                    //AQUI IRA EL CODIGO DE PASAR AL TABLERO 
+                }
+            }
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Se ha producido un error");
+            alert.setContentText("No puede jugar sin haber escogido un personaje");
+            alert.showAndWait();
         }
+        
+        
     }
+    
+    private boolean todosListos(ArrayList<Player> lista){
+        for(Player x: lista)
+            if(!x.isListo())
+                return false;
+        return true;
+    }   //retorna true si estan todos listos
+    
+    private int buscarJugador(String nombre, ArrayList<Player> jugadores){
+        if(!Objects.equals(null, conexionJugadores.getJugadores()))
+            for(int i = 0; i < jugadores.size(); i++)
+                if(nombre.equals(jugadores.get(i).getNombre()))
+                    return i;
+        return -1;
+    }   //retorna la posicion del juguador
     
     private void actualizarLabel(){
         int size = 0;
@@ -530,6 +557,7 @@ public class SalaEsperaController implements Initializable{
                                 @Override
                                 public void run() {
                                     nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                    equis1.setVisible(true);
                                 }   
                             });
                             break;
@@ -539,6 +567,10 @@ public class SalaEsperaController implements Initializable{
                                 public void run() {
                                     nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
                                     nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                    if(conexionJugadores.getJugadores().get(0).isListo()) chulito1.setVisible(true);
+                                    else equis1.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(1).isListo()) chulito2.setVisible(true);
+                                    else equis2.setVisible(true);
                                 }   
                             });
                             break;
@@ -549,6 +581,12 @@ public class SalaEsperaController implements Initializable{
                                     nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
                                     nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
                                     nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                    if(conexionJugadores.getJugadores().get(0).isListo()) chulito1.setVisible(true);
+                                    else equis1.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(1).isListo()) chulito2.setVisible(true);
+                                    else equis2.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(2).isListo()) chulito3.setVisible(true);
+                                    else equis3.setVisible(true);
                                 }   
                             });
                             break;
@@ -560,6 +598,14 @@ public class SalaEsperaController implements Initializable{
                                     nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
                                     nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
                                     nombre4.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                    if(conexionJugadores.getJugadores().get(0).isListo()) chulito1.setVisible(true);
+                                    else equis1.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(1).isListo()) chulito2.setVisible(true);
+                                    else equis2.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(2).isListo()) chulito3.setVisible(true);
+                                    else equis3.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(3).isListo()) chulito4.setVisible(true);
+                                    else equis4.setVisible(true);
                                 }   
                             });
                             break;
@@ -572,6 +618,16 @@ public class SalaEsperaController implements Initializable{
                                     nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
                                     nombre4.setText(conexionJugadores.getJugadores().get(3).getNombre());
                                     nombre5.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                    if(conexionJugadores.getJugadores().get(0).isListo()) chulito1.setVisible(true);
+                                    else equis1.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(1).isListo()) chulito2.setVisible(true);
+                                    else equis2.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(2).isListo()) chulito3.setVisible(true);
+                                    else equis3.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(3).isListo()) chulito4.setVisible(true);
+                                    else equis4.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(4).isListo()) chulito5.setVisible(true);
+                                    else equis5.setVisible(true);
                                 }   
                             });
                             break;
@@ -585,6 +641,23 @@ public class SalaEsperaController implements Initializable{
                                     nombre4.setText(conexionJugadores.getJugadores().get(3).getNombre());
                                     nombre5.setText(conexionJugadores.getJugadores().get(4).getNombre());
                                     nombre6.setText(conexionJugadores.getJugadores().get(5).getNombre());
+                                    nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                    nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                    nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                    nombre4.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                    nombre5.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                    if(conexionJugadores.getJugadores().get(0).isListo()) chulito1.setVisible(true);
+                                    else equis1.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(1).isListo()) chulito2.setVisible(true);
+                                    else equis2.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(2).isListo()) chulito3.setVisible(true);
+                                    else equis3.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(3).isListo()) chulito4.setVisible(true);
+                                    else equis4.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(4).isListo()) chulito5.setVisible(true);
+                                    else equis5.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(5).isListo()) chulito6.setVisible(true);
+                                    else equis6.setVisible(true);
                                 }   
                             });
                             break;

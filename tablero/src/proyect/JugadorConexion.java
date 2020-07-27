@@ -6,6 +6,8 @@ import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 
 /**
@@ -48,9 +50,23 @@ public class JugadorConexion extends Conexion implements Runnable{
         }
     }
     
+    public void enviarActualizacion(Conexion jugadores){
+        try {
+            Socket socket = new Socket(jugadores.getIpServer(), 8777);
+            ObjectOutputStream flujo = new ObjectOutputStream(socket.getOutputStream());
+            flujo.writeObject(jugadores);
+            
+            flujo.close();
+            socket.close();
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }
+    
     @Override
     public void run(){  //Recibir actualizado lista de jugadores 
-        try(ServerSocket servidor = new ServerSocket(getPuerto())){
+        try{
+            ServerSocket servidor = new ServerSocket(getPuerto());
             while(true){
                 System.out.println("Jugador en espera de lista actualizada");
                 Socket socket = servidor.accept();

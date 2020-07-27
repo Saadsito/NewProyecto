@@ -1,6 +1,7 @@
 package proyect;
 
 import java.applet.AudioClip;
+import java.util.ArrayList;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +13,16 @@ import javafx.stage.StageStyle;
 public class Cliente extends Application {
    
     private static String nombre;
+    private ArrayList<Player> jugadores;
 
+    public ArrayList<Player> getJugadores() {
+        return jugadores;
+    }
+
+    public void setJugadores(ArrayList<Player> jugadores) {
+        this.jugadores = jugadores;
+    }
+    
     public static String getNombre() {
         return nombre;
     }
