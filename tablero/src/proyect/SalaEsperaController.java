@@ -6,6 +6,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -73,7 +75,7 @@ public class SalaEsperaController implements Initializable{
     @FXML
     private Label labvegetta;
     
-    
+    private int actualListos = 0;
     private String nombre = Cliente.getNombre();
     private JugadorConexion conexionJugadores = new JugadorConexion(nombre, 7000);
     @FXML
@@ -90,7 +92,7 @@ public class SalaEsperaController implements Initializable{
     private Label nombre6;
     
     private int numjugador = -1;    //guarda la posicion en la lista del jugador
-    
+    //Thread hiloLabel; //hilo para actualizar los label
     @Override
     public void initialize(URL url, ResourceBundle rb){
         Thread actualizarLista = new Thread(conexionJugadores);     //Pone al cliente a la escucha de la actualizacion de las listas e jugadores
@@ -503,17 +505,15 @@ public class SalaEsperaController implements Initializable{
                 SonidoBot.play();
                 fijado=true;  
                 conexionJugadores.getJugadores().get(numjugador).setListo(true); //El jugador esta listo
+                System.out.println("numjugador = " + numjugador);
+                
+                
                 
                 //ACTUALIZAR INFORMACION EN EL SERVIDOR
                 Conexion paquete = new Conexion(8777);
                 paquete.setJugadores(conexionJugadores.getJugadores());
                 conexionJugadores.enviarActualizacion(paquete);
                 
-                if(conexionJugadores.getJugadores().size() == 1){
-                    equis1.setVisible(false);
-                    chulito1.setVisible(true);
-                }
- 
                 if(conexionJugadores.getJugadores().size() > 1 && todosListos(conexionJugadores.getJugadores())){
                     
                     //AQUI IRA EL CODIGO DE PASAR AL TABLERO 
@@ -546,18 +546,36 @@ public class SalaEsperaController implements Initializable{
     }   //retorna la posicion del juguador
     
     private void actualizarLabel(){
-        int size = 0;
+        int listos = 0, size = 0;
+        Thread comprobarListos = new Thread(){
+          @Override
+          public void run(){
+             actualizarListos(); 
+          }  
+        };
+        comprobarListos.start();
         while(true){
             if(!Objects.equals(null, conexionJugadores.getJugadores())){
-                if(size != conexionJugadores.getJugadores().size()){
+                try {
+                    Thread.sleep(77);
+                } catch (InterruptedException ex) {
+                    System.out.println(ex);
+                }
+                if((size != conexionJugadores.getJugadores().size()) || (listos != actualListos)){
+                    listos = actualListos;
                     size = conexionJugadores.getJugadores().size();
+                    System.out.println("Listos: " + listos);
+                    System.out.println("Size: " + size);
                     switch(size){
                         case 1:
                             Platform.runLater(new Runnable(){
                                 @Override
                                 public void run() {
                                     nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
-                                    equis1.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(0).isListo()) {
+                                        equis1.setVisible(false);
+                                        chulito1.setVisible(true);
+                                    }else equis1.setVisible(true);
                                 }   
                             });
                             break;
@@ -567,10 +585,15 @@ public class SalaEsperaController implements Initializable{
                                 public void run() {
                                     nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
                                     nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
-                                    if(conexionJugadores.getJugadores().get(0).isListo()) chulito1.setVisible(true);
-                                    else equis1.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(1).isListo()) chulito2.setVisible(true);
-                                    else equis2.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(0).isListo()) {
+                                        equis1.setVisible(false);
+                                        chulito1.setVisible(true);
+                                    }else equis1.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(1).isListo()){
+                                        equis2.setVisible(false);
+                                        chulito2.setVisible(true);
+                                    }else equis2.setVisible(true);
                                 }   
                             });
                             break;
@@ -581,12 +604,20 @@ public class SalaEsperaController implements Initializable{
                                     nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
                                     nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
                                     nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
-                                    if(conexionJugadores.getJugadores().get(0).isListo()) chulito1.setVisible(true);
-                                    else equis1.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(1).isListo()) chulito2.setVisible(true);
-                                    else equis2.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(2).isListo()) chulito3.setVisible(true);
-                                    else equis3.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(0).isListo()) {
+                                        equis1.setVisible(false);
+                                        chulito1.setVisible(true);
+                                    }else equis1.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(1).isListo()){
+                                        equis2.setVisible(false);
+                                        chulito2.setVisible(true);
+                                    }else equis2.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(2).isListo()) {
+                                        equis3.setVisible(false);
+                                        chulito3.setVisible(true);
+                                    }else equis3.setVisible(true);
                                 }   
                             });
                             break;
@@ -598,14 +629,25 @@ public class SalaEsperaController implements Initializable{
                                     nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
                                     nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
                                     nombre4.setText(conexionJugadores.getJugadores().get(3).getNombre());
-                                    if(conexionJugadores.getJugadores().get(0).isListo()) chulito1.setVisible(true);
-                                    else equis1.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(1).isListo()) chulito2.setVisible(true);
-                                    else equis2.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(2).isListo()) chulito3.setVisible(true);
-                                    else equis3.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(3).isListo()) chulito4.setVisible(true);
-                                    else equis4.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(0).isListo()) {
+                                        equis1.setVisible(false);
+                                        chulito1.setVisible(true);
+                                    }else equis1.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(1).isListo()){
+                                        equis2.setVisible(false);
+                                        chulito2.setVisible(true);
+                                    }else equis2.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(2).isListo()) {
+                                        equis3.setVisible(false);
+                                        chulito3.setVisible(true);
+                                    }else equis3.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(3).isListo()) {
+                                        equis4.setVisible(false);
+                                        chulito4.setVisible(true);
+                                    }else equis4.setVisible(true);
                                 }   
                             });
                             break;
@@ -618,16 +660,30 @@ public class SalaEsperaController implements Initializable{
                                     nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
                                     nombre4.setText(conexionJugadores.getJugadores().get(3).getNombre());
                                     nombre5.setText(conexionJugadores.getJugadores().get(4).getNombre());
-                                    if(conexionJugadores.getJugadores().get(0).isListo()) chulito1.setVisible(true);
-                                    else equis1.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(1).isListo()) chulito2.setVisible(true);
-                                    else equis2.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(2).isListo()) chulito3.setVisible(true);
-                                    else equis3.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(3).isListo()) chulito4.setVisible(true);
-                                    else equis4.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(4).isListo()) chulito5.setVisible(true);
-                                    else equis5.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(0).isListo()) {
+                                        equis1.setVisible(false);
+                                        chulito1.setVisible(true);
+                                    }else equis1.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(1).isListo()){
+                                        equis2.setVisible(false);
+                                        chulito2.setVisible(true);
+                                    }else equis2.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(2).isListo()) {
+                                        equis3.setVisible(false);
+                                        chulito3.setVisible(true);
+                                    }else equis3.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(3).isListo()) {
+                                        equis4.setVisible(false);
+                                        chulito4.setVisible(true);
+                                    }else equis4.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(4).isListo()) {
+                                        equis5.setVisible(false);
+                                        chulito5.setVisible(true);
+                                    }else equis5.setVisible(true);
                                 }   
                             });
                             break;
@@ -641,23 +697,35 @@ public class SalaEsperaController implements Initializable{
                                     nombre4.setText(conexionJugadores.getJugadores().get(3).getNombre());
                                     nombre5.setText(conexionJugadores.getJugadores().get(4).getNombre());
                                     nombre6.setText(conexionJugadores.getJugadores().get(5).getNombre());
-                                    nombre1.setText(conexionJugadores.getJugadores().get(0).getNombre());
-                                    nombre2.setText(conexionJugadores.getJugadores().get(1).getNombre());
-                                    nombre3.setText(conexionJugadores.getJugadores().get(2).getNombre());
-                                    nombre4.setText(conexionJugadores.getJugadores().get(3).getNombre());
-                                    nombre5.setText(conexionJugadores.getJugadores().get(4).getNombre());
-                                    if(conexionJugadores.getJugadores().get(0).isListo()) chulito1.setVisible(true);
-                                    else equis1.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(1).isListo()) chulito2.setVisible(true);
-                                    else equis2.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(2).isListo()) chulito3.setVisible(true);
-                                    else equis3.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(3).isListo()) chulito4.setVisible(true);
-                                    else equis4.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(4).isListo()) chulito5.setVisible(true);
-                                    else equis5.setVisible(true);
-                                    if(conexionJugadores.getJugadores().get(5).isListo()) chulito6.setVisible(true);
-                                    else equis6.setVisible(true);
+                                    if(conexionJugadores.getJugadores().get(0).isListo()) {
+                                        equis1.setVisible(false);
+                                        chulito1.setVisible(true);
+                                    }else equis1.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(1).isListo()){
+                                        equis2.setVisible(false);
+                                        chulito2.setVisible(true);
+                                    }else equis2.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(2).isListo()) {
+                                        equis3.setVisible(false);
+                                        chulito3.setVisible(true);
+                                    }else equis3.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(3).isListo()) {
+                                        equis4.setVisible(false);
+                                        chulito4.setVisible(true);
+                                    }else equis4.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(4).isListo()) {
+                                        equis5.setVisible(false);
+                                        chulito5.setVisible(true);
+                                    }else equis5.setVisible(true);
+                                    
+                                    if(conexionJugadores.getJugadores().get(5).isListo()) {
+                                        equis6.setVisible(false);
+                                        chulito6.setVisible(true);
+                                    }else equis6.setVisible(true);
                                 }   
                             });
                             break;
@@ -665,6 +733,23 @@ public class SalaEsperaController implements Initializable{
                 }
             }
         }
+    }
+    
+    public void actualizarListos(){
+        while(true){
+            actualListos = 0; 
+            if(!Objects.equals(null, conexionJugadores.getJugadores())){
+                for(Player x: conexionJugadores.getJugadores())
+                    if(x.isListo()) actualListos++;
+                if(todosListos(conexionJugadores.getJugadores())) return;
+            }
+            try {
+                Thread.sleep(77);
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            }
+        }
+        
     }
     
 }

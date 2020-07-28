@@ -19,11 +19,9 @@ public class ServerInicio extends Conexion implements Runnable{
             System.out.println("Iniciando Servidor");
             ServerSocket server = new ServerSocket(getPuerto());
             while(true){
-                for(Player x: jugadores)
-                    if(!x.isListo()){
-                        server.close();
-                        return;
-                    }
+                //Cerrar servidor
+                
+                ////////////
                 Socket socket = server.accept();
                 ObjectInputStream recibido = new ObjectInputStream(socket.getInputStream());
                 
@@ -68,11 +66,7 @@ public class ServerInicio extends Conexion implements Runnable{
                 for(Player x: jugadores)
                     new Conexion(7000).actualizarListaEnviar(x.getIp(),jugadores);
                 
-                for(Player x: jugadores)
-                    if(!x.isListo()){
-                        servidor.close();
-                        return;
-                    }
+                //Cerrar servidor
                         
             }
         } catch (IOException | ClassNotFoundException ex) {
