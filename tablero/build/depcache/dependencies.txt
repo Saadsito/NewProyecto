@@ -53,6 +53,10 @@ proyect.SalaEsperaController$5
 javafx.scene.image.ImageView
 java.lang.Object
 java.lang.String
+||:proyect.SalaEsperaController$4
+proyect.SalaEsperaController$4
+proyect.SalaEsperaController
+java.lang.Thread
 ||:proyect.SalaEsperaController$3$1
 java.lang.Runnable
 javafx.scene.Node
@@ -68,10 +72,6 @@ java.lang.Object
 proyect.SalaEsperaController$3
 java.io.IOException
 javafx.scene.Parent
-||:proyect.SalaEsperaController$4
-proyect.SalaEsperaController$4
-proyect.SalaEsperaController
-java.lang.Thread
 ||:proyect.SalaEsperaController$3
 java.lang.Thread
 proyect.SalaEsperaController

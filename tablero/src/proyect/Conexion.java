@@ -1,10 +1,8 @@
 package proyect;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
@@ -49,27 +47,4 @@ public class Conexion implements Serializable{
         
         
     }
-   /*    
-   public ArrayList<Player> actualizarListaRecibir() {
-        try {
-            ServerSocket servidor = new ServerSocket(puerto);
-            Socket socket = servidor.accept();
-            
-            ObjectInputStream flujo = new ObjectInputStream(socket.getInputStream());
-            ListadoJugadores paquete = (ListadoJugadores) flujo.readObject();
-            
-            flujo.close();
-            socket.close();
-            servidor.close();
-            
-            return paquete.getLista();
-            
-        } catch (IOException | ClassNotFoundException ex) {
-            System.out.println(ex);
-            return null;
-        }     
-        
-   }
-    
-     */   
 }

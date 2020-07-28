@@ -67,6 +67,25 @@ public class JugadorConexion extends Conexion implements Runnable{
     public void run(){  //Recibir actualizado lista de jugadores 
         try{
             ServerSocket servidor = new ServerSocket(getPuerto());
+            Thread cerrarServidor = new Thread(){
+                public void run(){
+                    while(true){
+                        boolean cerrar = true;
+                        for(Player x: jugadores)
+                            if(!x.isListo()) cerrar = false;
+                        if(cerrar){
+                            try {
+                                servidor.close();
+                                return;
+                            } catch (IOException ex) {
+                                System.out.println(ex);
+                            }
+                        }
+                    }
+                }
+            };
+            cerrarServidor.setName("Cerrar servidor jugador");
+            cerrarServidor.start();
             while(true){
                 System.out.println("Jugador en espera de lista actualizada");
                 Socket socket = servidor.accept();
@@ -76,7 +95,9 @@ public class JugadorConexion extends Conexion implements Runnable{
                 jugadores = jugadorConexion.getJugadores();
                 flujo.close();
                 socket.close();
-            
+                
+                
+                
             }
         } catch (IOException | ClassNotFoundException ex) {
             System.out.println("NO se puede castear");

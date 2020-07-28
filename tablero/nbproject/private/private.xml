@@ -5,7 +5,7 @@
             <url>src/proyect/ServerInicio.java</url>
             <bookmark id="2">
                 <name/>
-                <line>20</line>
+                <line>44</line>
                 <key/>
             </bookmark>
         </file>
@@ -13,7 +13,7 @@
             <url>src/proyect/Conexion.java</url>
             <bookmark id="1">
                 <name/>
-                <line>36</line>
+                <line>34</line>
                 <key/>
             </bookmark>
         </file>
@@ -23,11 +23,10 @@
             <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/FXMLDocument.fxml</file>
             <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/Inventario.java</file>
             <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/ServerInicio.java</file>
-            <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/JugadorConexion.java</file>
             <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/SalaEspera.fxml</file>
+            <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/JugadorConexion.java</file>
             <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/Servidor.java</file>
             <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/Conexion.java</file>
-            <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/NuevoJugador.java</file>
             <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/Cliente.java</file>
             <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/SalaEsperaController.java</file>
             <file>file:/C:/Users/migue/Desktop/NewProyecto/tablero/src/proyect/Player.java</file>

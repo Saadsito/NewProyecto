@@ -18,6 +18,30 @@ public class ServerInicio extends Conexion implements Runnable{
         try {
             System.out.println("Iniciando Servidor");
             ServerSocket server = new ServerSocket(getPuerto());
+            
+            //Hilo que cierra el servidor cuando todos los jugadores estan listos
+            Thread cerrarServer = new Thread(){
+                @Override
+                public void run(){
+                    while(true){
+                        boolean cerrar = true;     
+                        for(Player x: jugadores)
+                            if(!x.isListo()) cerrar = false;
+                        if(cerrar){
+                            try {
+                                server.close();
+                                return;
+                            } catch (IOException ex) {
+                                System.out.println(ex);
+                            }     
+                        }
+                    }
+                }
+            };
+            
+            cerrarServer.setName("Hilo cerrar servidor");
+            cerrarServer.start();
+            
             while(true){
                 //Cerrar servidor
                 
@@ -63,11 +87,16 @@ public class ServerInicio extends Conexion implements Runnable{
                 //YA RECIBIO EL PAQUETE DEL JUGADOR AHORA PROCEDERA A ENVIARLO A TODOS
                 
                 jugadores = paquete.getJugadores();
-                for(Player x: jugadores)
+                boolean cerrar = true;
+                for(Player x: jugadores){
                     new Conexion(7000).actualizarListaEnviar(x.getIp(),jugadores);
-                
+                    if(!x.isListo()) cerrar = false;
+                }
                 //Cerrar servidor
-                        
+                if(cerrar){
+                    servidor.close();
+                    return;
+                }
             }
         } catch (IOException | ClassNotFoundException ex) {
             System.out.println(ex);
