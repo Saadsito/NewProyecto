@@ -92,6 +92,16 @@ public class SalaEsperaController implements Initializable{
     private Label nombre6;
     
     private int numjugador = -1;    //guarda la posicion en la lista del jugador
+    @FXML
+    private Label lablolito;
+    @FXML
+    private Label labrubius;
+    @FXML
+    private Label labauron;
+    @FXML
+    private Label labwilly;
+    @FXML
+    private Label labluzu;
     //Thread hiloLabel; //hilo para actualizar los label
     @Override
     public void initialize(URL url, ResourceBundle rb){
