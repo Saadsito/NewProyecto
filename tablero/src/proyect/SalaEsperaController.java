@@ -2,6 +2,7 @@
 package proyect;
 
 import java.applet.AudioClip;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -10,12 +11,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 
 public class SalaEsperaController implements Initializable{
@@ -117,7 +123,15 @@ public class SalaEsperaController implements Initializable{
         willyrex2.setVisible(false);
         luzu2.setVisible(false);
         
-        
+        Thread cerrarSala = new Thread(){
+            @Override
+            public void run(){
+                while(true){
+                    
+                }
+            }
+        };
+                
         Thread hiloLabel = new Thread(){
             @Override
             public void run(){
@@ -171,7 +185,7 @@ public class SalaEsperaController implements Initializable{
     }
 
     @FXML
-    private void vegetta2click(MouseEvent event) {
+    private void vegetta2click(MouseEvent event){
         conexionJugadores.getJugadores().get(numjugador).setSkin("Proyect/imagenes/vegetta777.png");
         clickvegetta=true;
         clicklolito=false;
@@ -241,20 +255,20 @@ public class SalaEsperaController implements Initializable{
         clickauron=false;
         clickwillyrex=false;
         clickluzu=false;
-            vegetta2.setVisible(false);
-            rubius2.setVisible(false);
-            auron2.setVisible(false);
-            willyrex2.setVisible(false);
-            luzu2.setVisible(false);
-            vegetta1.setVisible(true);
-            rubius1.setVisible(true);
-            auron1.setVisible(true);
-            willyrex1.setVisible(true);
-            luzu1.setVisible(true);
-            lolito1.setVisible(false);
-            lolito2.setVisible(true);
-            SonidoPersonaje = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lolito.wav"));
-            SonidoPersonaje.play();
+        vegetta2.setVisible(false);
+        rubius2.setVisible(false);
+        auron2.setVisible(false);
+        willyrex2.setVisible(false);
+        luzu2.setVisible(false);
+        vegetta1.setVisible(true);
+        rubius1.setVisible(true);
+        auron1.setVisible(true);
+        willyrex1.setVisible(true);
+        luzu1.setVisible(true);
+        lolito1.setVisible(false);
+        lolito2.setVisible(true);
+        SonidoPersonaje = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lolito.wav"));
+        SonidoPersonaje.play();
     }
 
     @FXML
@@ -298,20 +312,20 @@ public class SalaEsperaController implements Initializable{
         clickauron=false;
         clickwillyrex=false;
         clickluzu=false;
-            lolito2.setVisible(false);
-            vegetta2.setVisible(false);
-            auron2.setVisible(false);
-            willyrex2.setVisible(false);
-            luzu2.setVisible(false);
-            lolito1.setVisible(true);
-            vegetta1.setVisible(true);
-            auron1.setVisible(true);
-            willyrex1.setVisible(true);
-            luzu1.setVisible(true);
-            rubius1.setVisible(false);
-            rubius2.setVisible(true);
-            SonidoPersonaje = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/rubius.wav"));
-            SonidoPersonaje.play();  
+        lolito2.setVisible(false);
+        vegetta2.setVisible(false);
+        auron2.setVisible(false);
+        willyrex2.setVisible(false);
+        luzu2.setVisible(false);
+        lolito1.setVisible(true);
+        vegetta1.setVisible(true);
+        auron1.setVisible(true);
+        willyrex1.setVisible(true);
+        luzu1.setVisible(true);
+        rubius1.setVisible(false);
+        rubius2.setVisible(true);
+        SonidoPersonaje = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/rubius.wav"));
+        SonidoPersonaje.play();  
     }
 
     @FXML
@@ -348,25 +362,25 @@ public class SalaEsperaController implements Initializable{
 
     @FXML
     private void auron2click(MouseEvent event) {
-        conexionJugadores.getJugadores().get(numjugador).setSkin("Proyect/imagenes/auron.png");
+        conexionJugadores.getJugadores().get(numjugador).setSkin("Proyect/imagenes/auronplay.png");
         clickvegetta=false;
         clicklolito=false;
         clickrubius=false;
         clickauron=true;
         clickwillyrex=false;
         clickluzu=false;
-            lolito2.setVisible(false);
-            rubius2.setVisible(false);
-            vegetta2.setVisible(false);
-            willyrex2.setVisible(false);
-            luzu2.setVisible(false);
-            lolito1.setVisible(true);
-            rubius1.setVisible(true);
-            vegetta1.setVisible(true);
-            willyrex1.setVisible(true);
-            luzu1.setVisible(true);
-            SonidoPersonaje = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/auronplay.wav"));
-            SonidoPersonaje.play();  
+        lolito2.setVisible(false);
+        rubius2.setVisible(false);
+        vegetta2.setVisible(false);
+        willyrex2.setVisible(false);
+        luzu2.setVisible(false);
+        lolito1.setVisible(true);
+        rubius1.setVisible(true);
+        vegetta1.setVisible(true);
+        willyrex1.setVisible(true);
+        luzu1.setVisible(true);
+        SonidoPersonaje = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/auronplay.wav"));
+        SonidoPersonaje.play();  
     }
 
     @FXML
@@ -403,17 +417,17 @@ public class SalaEsperaController implements Initializable{
         clickwillyrex=true;
         clickluzu=false;
         lolito2.setVisible(false);
-            rubius2.setVisible(false);
-            auron2.setVisible(false);
-            vegetta2.setVisible(false);
-            luzu2.setVisible(false);
-            lolito1.setVisible(true);
-            rubius1.setVisible(true);
-            auron1.setVisible(true);
-            vegetta1.setVisible(true);
-            luzu1.setVisible(true);
-            SonidoPersonaje = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/willyrex.wav"));
-            SonidoPersonaje.play();   
+        rubius2.setVisible(false);
+        auron2.setVisible(false);
+        vegetta2.setVisible(false);
+        luzu2.setVisible(false);
+        lolito1.setVisible(true);
+        rubius1.setVisible(true);
+        auron1.setVisible(true);
+        vegetta1.setVisible(true);
+        luzu1.setVisible(true);
+        SonidoPersonaje = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/willyrex.wav"));
+        SonidoPersonaje.play();   
     }
 
     @FXML
@@ -507,16 +521,45 @@ public class SalaEsperaController implements Initializable{
         }
     }
 
+    private int botlistoclick(){
+        return 1;
+    }
+    
     @FXML
     private void botlistoclick(MouseEvent event) {
         if(!Objects.equals(null, conexionJugadores.getJugadores().get(numjugador).getSkin())){     
             if(!fijado){
+                          
                 AudioClip SonidoBot = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/sonidolisto.wav"));
                 SonidoBot.play();
+                boolean alerta = false;
+                if((clickvegetta && !(labvegetta.getText().equals(""))) || (clicklolito && !(lablolito.getText().equals(""))) || (clickwillyrex && !(labwilly.getText().equals(""))) || (clickauron && !(labauron.getText().equals(""))) || (clickrubius && !(labrubius.getText().equals(""))) || (clickluzu && !(labluzu.getText().equals(""))))
+                    alerta = true;
+                
+                if(alerta){
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Error escogiendo personaje");
+                    alert.setContentText("Este personaje ya se encuentra escogido");
+                    alert.showAndWait();
+                    return;
+                }
+                
                 fijado=true;  
                 conexionJugadores.getJugadores().get(numjugador).setListo(true); //El jugador esta listo
-                System.out.println("numjugador = " + numjugador);
                 
+                if(clickvegetta)
+                    labvegetta.setText(nombre);
+                else if(clickwillyrex)
+                    labwilly.setText(nombre);
+                else if(clicklolito)
+                    lablolito.setText(nombre);
+                else if(clickauron)
+                    labauron.setText(nombre);
+                else if(clickrubius)
+                    labrubius.setText(nombre);
+                else
+                    labluzu.setText(nombre);
                 
                 
                 //ACTUALIZAR INFORMACION EN EL SERVIDOR
@@ -524,13 +567,48 @@ public class SalaEsperaController implements Initializable{
                 paquete.setJugadores(conexionJugadores.getJugadores());
                 conexionJugadores.enviarActualizacion(paquete);
                 
-                if(conexionJugadores.getJugadores().size() > 1 && todosListos(conexionJugadores.getJugadores())){
-                    
-                    //AQUI IRA EL CODIGO DE PASAR AL TABLERO 
-                }
+                Thread cerrarSala = new Thread(){
+                    @Override
+                    public void run(){
+                        while(true){
+                            if(conexionJugadores.getJugadores().size() > 1 && todosListos(conexionJugadores.getJugadores())){
+                                //AQUI IRA EL CODIGO DE PASAR AL TABLERO 
+                                Parent tablero;
+                                try {
+                                    Thread.sleep(200);
+                                    Platform.runLater(new Runnable(){
+                                        @Override
+                                        public void run(){
+                                            Parent tablero;
+                                            try {
+                                                tablero = FXMLLoader.load(getClass().getResource("Tablero.fxml"));
+                                                Scene PanTablero = new Scene(tablero);
+                                                Stage ventana = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+                                                ventana.setScene(PanTablero);
+                                                ventana.show();
+                                                return;
+                                            } catch (IOException ex) {
+                                                System.out.println(ex);
+                                            }
+                                            
+                                        }
+                                    });
+                                } catch (InterruptedException ex) {
+                                    System.out.println(ex);
+                                }
+
+                            }
+                        }
+                    }
+                };
+                
+                cerrarSala.setName("Hilo cerrar sala");
+                cerrarSala.start();
+                
             }
         }else{
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setHeaderText(null);
             alert.setTitle("Se ha producido un error");
             alert.setContentText("No puede jugar sin haber escogido un personaje");
@@ -585,6 +663,18 @@ public class SalaEsperaController implements Initializable{
                                     if(conexionJugadores.getJugadores().get(0).isListo()) {
                                         equis1.setVisible(false);
                                         chulito1.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(0).getNombre());
                                     }else equis1.setVisible(true);
                                 }   
                             });
@@ -598,11 +688,35 @@ public class SalaEsperaController implements Initializable{
                                     if(conexionJugadores.getJugadores().get(0).isListo()) {
                                         equis1.setVisible(false);
                                         chulito1.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(0).getNombre());
                                     }else equis1.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(1).isListo()){
                                         equis2.setVisible(false);
                                         chulito2.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(1).getNombre());
                                     }else equis2.setVisible(true);
                                 }   
                             });
@@ -617,16 +731,52 @@ public class SalaEsperaController implements Initializable{
                                     if(conexionJugadores.getJugadores().get(0).isListo()) {
                                         equis1.setVisible(false);
                                         chulito1.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(0).getNombre());
                                     }else equis1.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(1).isListo()){
                                         equis2.setVisible(false);
                                         chulito2.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(1).getNombre());
                                     }else equis2.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(2).isListo()) {
                                         equis3.setVisible(false);
                                         chulito3.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(2).getNombre());
                                     }else equis3.setVisible(true);
                                 }   
                             });
@@ -642,21 +792,69 @@ public class SalaEsperaController implements Initializable{
                                     if(conexionJugadores.getJugadores().get(0).isListo()) {
                                         equis1.setVisible(false);
                                         chulito1.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(0).getNombre());
                                     }else equis1.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(1).isListo()){
                                         equis2.setVisible(false);
                                         chulito2.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(1).getNombre());
                                     }else equis2.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(2).isListo()) {
                                         equis3.setVisible(false);
                                         chulito3.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(2).getNombre());
                                     }else equis3.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(3).isListo()) {
                                         equis4.setVisible(false);
                                         chulito4.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(3).getNombre());
                                     }else equis4.setVisible(true);
                                 }   
                             });
@@ -673,26 +871,86 @@ public class SalaEsperaController implements Initializable{
                                     if(conexionJugadores.getJugadores().get(0).isListo()) {
                                         equis1.setVisible(false);
                                         chulito1.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(0).getNombre());
                                     }else equis1.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(1).isListo()){
                                         equis2.setVisible(false);
                                         chulito2.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(1).getNombre());
                                     }else equis2.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(2).isListo()) {
                                         equis3.setVisible(false);
                                         chulito3.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(2).getNombre());
                                     }else equis3.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(3).isListo()) {
                                         equis4.setVisible(false);
                                         chulito4.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(3).getNombre());
                                     }else equis4.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(4).isListo()) {
                                         equis5.setVisible(false);
                                         chulito5.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(4).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(4).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(4).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(4).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(4).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(4).getNombre());
                                     }else equis5.setVisible(true);
                                 }   
                             });
@@ -710,31 +968,103 @@ public class SalaEsperaController implements Initializable{
                                     if(conexionJugadores.getJugadores().get(0).isListo()) {
                                         equis1.setVisible(false);
                                         chulito1.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(0).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(0).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(0).getNombre());
                                     }else equis1.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(1).isListo()){
                                         equis2.setVisible(false);
                                         chulito2.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(1).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(1).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(1).getNombre());
                                     }else equis2.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(2).isListo()) {
                                         equis3.setVisible(false);
                                         chulito3.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(2).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(2).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(2).getNombre());
                                     }else equis3.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(3).isListo()) {
                                         equis4.setVisible(false);
                                         chulito4.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(3).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(3).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(3).getNombre());
                                     }else equis4.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(4).isListo()) {
                                         equis5.setVisible(false);
                                         chulito5.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(4).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(4).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(4).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(4).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(4).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(4).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(4).getNombre());
                                     }else equis5.setVisible(true);
                                     
                                     if(conexionJugadores.getJugadores().get(5).isListo()) {
                                         equis6.setVisible(false);
                                         chulito6.setVisible(true);
+                                        if(conexionJugadores.getJugadores().get(5).getSkin().equals("Proyect/imagenes/vegetta777.png"))
+                                            labvegetta.setText(conexionJugadores.getJugadores().get(5).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(5).getSkin().equals("Proyect/imagenes/willyrex.png"))
+                                            labwilly.setText(conexionJugadores.getJugadores().get(5).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(5).getSkin().equals("Proyect/imagenes/lolito.png"))
+                                            lablolito.setText(conexionJugadores.getJugadores().get(5).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(5).getSkin().equals("Proyect/imagenes/auronplay.png"))
+                                            labauron.setText(conexionJugadores.getJugadores().get(5).getNombre());
+                                        else if(conexionJugadores.getJugadores().get(5).getSkin().equals("Proyect/imagenes/rubius.png"))
+                                            labrubius.setText(conexionJugadores.getJugadores().get(5).getNombre());
+                                        else 
+                                            labluzu.setText(conexionJugadores.getJugadores().get(5).getNombre());
                                     }else equis6.setVisible(true);
                                 }   
                             });

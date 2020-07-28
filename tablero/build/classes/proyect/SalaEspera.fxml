@@ -231,5 +231,30 @@
             <Font name="Cambria Bold" size="11.0" />
          </font>
       </Label>
+      <Label fx:id="lablolito" alignment="CENTER" layoutX="372.0" layoutY="131.0" prefHeight="27.0" prefWidth="57.0">
+         <font>
+            <Font name="Cambria Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="labrubius" alignment="CENTER" layoutX="451.0" layoutY="131.0" prefHeight="27.0" prefWidth="57.0">
+         <font>
+            <Font name="Cambria Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="labauron" alignment="CENTER" layoutX="291.0" layoutY="230.0" prefHeight="27.0" prefWidth="57.0">
+         <font>
+            <Font name="Cambria Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="labwilly" alignment="CENTER" layoutX="372.0" layoutY="230.0" prefHeight="27.0" prefWidth="57.0">
+         <font>
+            <Font name="Cambria Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="labluzu" alignment="CENTER" layoutX="451.0" layoutY="230.0" prefHeight="27.0" prefWidth="57.0">
+         <font>
+            <Font name="Cambria Bold" size="11.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
