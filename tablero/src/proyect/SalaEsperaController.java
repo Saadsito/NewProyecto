@@ -122,15 +122,6 @@ public class SalaEsperaController implements Initializable{
         auron2.setVisible(false);
         willyrex2.setVisible(false);
         luzu2.setVisible(false);
-        
-        Thread cerrarSala = new Thread(){
-            @Override
-            public void run(){
-                while(true){
-                    
-                }
-            }
-        };
                 
         Thread hiloLabel = new Thread(){
             @Override
@@ -571,11 +562,11 @@ public class SalaEsperaController implements Initializable{
                     @Override
                     public void run(){
                         while(true){
-                            if(conexionJugadores.getJugadores().size() > 1 && todosListos(conexionJugadores.getJugadores())){
+                            if(todosListos(conexionJugadores.getJugadores())){
                                 //AQUI IRA EL CODIGO DE PASAR AL TABLERO 
                                 Parent tablero;
                                 try {
-                                    Thread.sleep(100);
+                                    Thread.sleep(200);
                                     Platform.runLater(new Runnable(){
                                         @Override
                                         public void run(){
@@ -621,6 +612,7 @@ public class SalaEsperaController implements Initializable{
     }
     
     private boolean todosListos(ArrayList<Player> lista){
+        if(lista.size() < 2) return false;
         for(Player x: lista)
             if(!x.isListo())
                 return false;

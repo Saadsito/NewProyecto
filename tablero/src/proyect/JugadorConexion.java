@@ -81,16 +81,18 @@ public class JugadorConexion extends Conexion implements Runnable{
                 boolean cerrar = true;
                 for(Player x: jugadores)
                     if(!x.isListo()) cerrar = false;
-                if(cerrar && jugadores.size() > 1){
-                    System.out.println("Cerrando jugador en espera de lista actualizada");
+                
+                if(cerrar){
                     try {
-                        Thread.sleep(2000);
+                        Thread.sleep(200);
                     } catch (InterruptedException ex) {
                         System.out.println(ex);
                     }
                     servidor.close();
+                    System.out.println("Cerrando servidor de JugadorConexion de actualizar lista");
                     return;
                 }
+                
             }
         } catch (IOException | ClassNotFoundException ex) {
             System.out.println("NO se puede castear");

@@ -19,7 +19,30 @@ public class ServerInicio extends Conexion implements Runnable{
             System.out.println("Iniciando Servidor");
             ServerSocket server = new ServerSocket(getPuerto());
             
+            Thread cerrarServer = new Thread(){
+                @Override
+                public void run(){
+                    while(true){
+                        if(!jugadores.isEmpty() && jugadores.size() > 1){
+                            boolean cerrar = true;
+                            for(Player x: jugadores)
+                                if(!x.isListo()) cerrar = false;
+                            if(cerrar){
+                                try {
+                                    Thread.sleep(200);
+                                    server.close();
+                                    return;
+                                } catch (InterruptedException | IOException ex) {
+                                    System.out.println(ex);
+                                }
+                            }
+                        }
+                    }
+                }
+            };
             
+            cerrarServer.setName("Servidor de nuevos jugadores");
+            cerrarServer.start();
             while(true){
                 //Cerrar servidor
                 
@@ -46,8 +69,11 @@ public class ServerInicio extends Conexion implements Runnable{
                 
             }
             
-        } catch (IOException | ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex) {
             System.out.println(ex);
+        }catch(IOException ex){
+            System.out.println("Cerrando servidor de nuevos jugadores");
+            return;
         }
    }
     
@@ -69,17 +95,17 @@ public class ServerInicio extends Conexion implements Runnable{
                 boolean cerrar = true;
                 for(Player x: jugadores){
                     new Conexion(7000).actualizarListaEnviar(x.getIp(),jugadores);
-                    if(!x.isListo() ) cerrar = false;
+                    if(!x.isListo()) cerrar = false;
                 }
-                //Cerrar servidor
-                if(cerrar && jugadores.size() > 1){
-                    System.out.println("Cerrando servidor de recibir actualizacion de cliente");
+                
+                if(cerrar){
                     try {
-                        Thread.sleep(2000);
+                        Thread.sleep(200);
                     } catch (InterruptedException ex) {
                         System.out.println(ex);
                     }
                     servidor.close();
+                    System.out.println("Cerrando servidor de ServerInicio de actualizar lista");
                     return;
                 }
             }
