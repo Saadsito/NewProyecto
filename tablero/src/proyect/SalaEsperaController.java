@@ -575,7 +575,7 @@ public class SalaEsperaController implements Initializable{
                                 //AQUI IRA EL CODIGO DE PASAR AL TABLERO 
                                 Parent tablero;
                                 try {
-                                    Thread.sleep(200);
+                                    Thread.sleep(100);
                                     Platform.runLater(new Runnable(){
                                         @Override
                                         public void run(){
@@ -584,8 +584,9 @@ public class SalaEsperaController implements Initializable{
                                                 tablero = FXMLLoader.load(getClass().getResource("Tablero.fxml"));
                                                 Scene PanTablero = new Scene(tablero);
                                                 Stage ventana = (Stage)((Node)event.getSource()).getScene().getWindow();
-
                                                 ventana.setScene(PanTablero);
+                                                ventana.setMaximized(true);
+                                                ventana.setFullScreen(true);
                                                 ventana.show();
                                                 return;
                                             } catch (IOException ex) {
@@ -593,11 +594,12 @@ public class SalaEsperaController implements Initializable{
                                             }
                                             
                                         }
+                                        
                                     });
                                 } catch (InterruptedException ex) {
                                     System.out.println(ex);
                                 }
-
+                                return;
                             }
                         }
                     }

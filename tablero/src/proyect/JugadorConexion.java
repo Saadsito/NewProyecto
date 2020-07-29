@@ -67,25 +67,7 @@ public class JugadorConexion extends Conexion implements Runnable{
     public void run(){  //Recibir actualizado lista de jugadores 
         try{
             ServerSocket servidor = new ServerSocket(getPuerto());
-            Thread cerrarServidor = new Thread(){
-                public void run(){
-                    while(true){
-                        boolean cerrar = true;
-                        for(Player x: jugadores)
-                            if(!x.isListo()) cerrar = false;
-                        if(cerrar){
-                            try {
-                                servidor.close();
-                                return;
-                            } catch (IOException ex) {
-                                System.out.println(ex);
-                            }
-                        }
-                    }
-                }
-            };
-            cerrarServidor.setName("Cerrar servidor jugador");
-            cerrarServidor.start();
+            
             while(true){
                 System.out.println("Jugador en espera de lista actualizada");
                 Socket socket = servidor.accept();
@@ -96,8 +78,19 @@ public class JugadorConexion extends Conexion implements Runnable{
                 flujo.close();
                 socket.close();
                 
-                
-                
+                boolean cerrar = true;
+                for(Player x: jugadores)
+                    if(!x.isListo()) cerrar = false;
+                if(cerrar && jugadores.size() > 1){
+                    System.out.println("Cerrando jugador en espera de lista actualizada");
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException ex) {
+                        System.out.println(ex);
+                    }
+                    servidor.close();
+                    return;
+                }
             }
         } catch (IOException | ClassNotFoundException ex) {
             System.out.println("NO se puede castear");
