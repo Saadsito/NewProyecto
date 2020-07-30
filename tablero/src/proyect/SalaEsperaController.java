@@ -111,6 +111,7 @@ public class SalaEsperaController implements Initializable{
     //Thread hiloLabel; //hilo para actualizar los label
     @Override
     public void initialize(URL url, ResourceBundle rb){
+        
         Thread actualizarLista = new Thread(conexionJugadores);     //Pone al cliente a la escucha de la actualizacion de las listas e jugadores
         actualizarLista.setName("Hilo SalaEspera");
         actualizarLista.start();                                //comienza el hilo que actualiza la lista

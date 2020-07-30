@@ -75,7 +75,7 @@ public class JugadorConexion extends Conexion implements Runnable{
                 ObjectInputStream flujo = new ObjectInputStream(socket.getInputStream());
                 Conexion jugadorConexion = (Conexion) flujo.readObject();
                 jugadores = jugadorConexion.getJugadores();
-                flujo.close();
+                flujo.close();  
                 socket.close();
                 
                 boolean cerrar = true;
