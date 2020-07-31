@@ -519,6 +519,14 @@ public class SalaEsperaController implements Initializable{
     
     @FXML
     private void botlistoclick(MouseEvent event) {
+      if(nombre2.getText().equals("")){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Se ha producido un error");
+                    alert.setContentText("El juego debe empezar con mínimo 2 jugadores.");
+                    alert.showAndWait();
+                    return;  
+      }  
         if(!Objects.equals(null, conexionJugadores.getJugadores().get(numjugador).getSkin())){     
             if(!fijado){
                           

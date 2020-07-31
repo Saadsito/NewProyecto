@@ -254,7 +254,9 @@ javafx.scene.image.ImageView
 ||:proyect.TableroController
 java.lang.Object
 javafx.fxml.Initializable
+java.lang.Math
 proyect.TableroController
+javafx.scene.image.ImageView
 ||:proyect.JugadorConexion
 java.lang.System
 java.lang.Thread

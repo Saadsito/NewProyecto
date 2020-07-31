@@ -14,7 +14,7 @@
             <Image url="@imagenes/fondotab.png" />
          </image>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ImageView>
       <ImageView fx:id="c1" fitHeight="40.0" fitWidth="40.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
@@ -877,9 +877,9 @@
             <Image url="@imagenes/casillamadera.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="605.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="870.0" fitWidth="451.0" layoutX="1140.0" opacity="0.6" pickOnBounds="true">
          <image>
-            <Image url="@imagenes/casillamadera.png" />
+            <Image url="@../../../../../Pictures/negro.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="565.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
@@ -1262,100 +1262,106 @@
             <Image url="@imagenes/dragon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="160.0" fitWidth="200.0" layoutX="1050.0" layoutY="530.0" pickOnBounds="true">
+      <ImageView fitHeight="160.0" fitWidth="200.0" layoutX="1160.0" layoutY="530.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/fondoinventario.png" />
+            <Image url="@imagenes/fondoinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1050.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1160.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1050.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1160.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1050.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1160.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1050.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1160.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1090.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1200.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1210.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1320.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1210.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1320.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1210.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1320.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1210.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1320.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1170.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1280.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1170.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1280.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1170.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1280.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1170.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1280.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="fichainv" fitHeight="60.0" fitWidth="60.0" layoutX="1100.0" layoutY="620.0" pickOnBounds="true" />
-      <ImageView fx:id="cascoinv" fitHeight="30.0" fitWidth="30.0" layoutX="1055.0" layoutY="535.0" pickOnBounds="true" />
-      <ImageView fx:id="petoinv" fitHeight="30.0" fitWidth="30.0" layoutX="1055.0" layoutY="574.0" pickOnBounds="true" />
-      <ImageView fx:id="espadainv" fitHeight="30.0" fitWidth="30.0" layoutX="1095.0" layoutY="574.0" pickOnBounds="true" />
-      <ImageView fx:id="pantaloninv" fitHeight="30.0" fitWidth="30.0" layoutX="1055.0" layoutY="614.0" pickOnBounds="true" />
-      <ImageView fx:id="botasinv" fitHeight="30.0" fitWidth="30.0" layoutX="1055.0" layoutY="654.0" pickOnBounds="true" />
-      <ImageView fx:id="inv1" fitHeight="30.0" fitWidth="30.0" layoutX="1175.0" layoutY="535.0" pickOnBounds="true" />
-      <ImageView fx:id="inv2" fitHeight="30.0" fitWidth="30.0" layoutX="1175.0" layoutY="574.0" pickOnBounds="true" />
-      <ImageView fx:id="inv3" fitHeight="30.0" fitWidth="30.0" layoutX="1175.0" layoutY="614.0" pickOnBounds="true" />
-      <ImageView fx:id="inv4" fitHeight="30.0" fitWidth="30.0" layoutX="1175.0" layoutY="654.0" pickOnBounds="true" />
-      <ImageView fx:id="inv5" fitHeight="30.0" fitWidth="30.0" layoutX="1215.0" layoutY="535.0" pickOnBounds="true" />
-      <ImageView fx:id="inv6" fitHeight="30.0" fitWidth="30.0" layoutX="1215.0" layoutY="574.0" pickOnBounds="true" />
-      <ImageView fx:id="inv7" fitHeight="30.0" fitWidth="30.0" layoutX="1215.0" layoutY="614.0" pickOnBounds="true" />
-      <ImageView fx:id="inv8" fitHeight="30.0" fitWidth="30.0" layoutX="1215.0" layoutY="654.0" pickOnBounds="true" />
-      <ImageView fx:id="dado" fitHeight="80.0" fitWidth="80.0" layoutX="1015.0" layoutY="225.0" onMouseClicked="#dadoclick" pickOnBounds="true">
+      <ImageView fx:id="fichainv" fitHeight="60.0" fitWidth="60.0" layoutX="1210.0" layoutY="620.0" pickOnBounds="true" />
+      <ImageView fx:id="cascoinv" fitHeight="30.0" fitWidth="30.0" layoutX="1165.0" layoutY="535.0" pickOnBounds="true" />
+      <ImageView fx:id="petoinv" fitHeight="30.0" fitWidth="30.0" layoutX="1165.0" layoutY="574.0" pickOnBounds="true" />
+      <ImageView fx:id="espadainv" fitHeight="30.0" fitWidth="30.0" layoutX="1205.0" layoutY="574.0" pickOnBounds="true" />
+      <ImageView fx:id="pantaloninv" fitHeight="30.0" fitWidth="30.0" layoutX="1165.0" layoutY="614.0" pickOnBounds="true" />
+      <ImageView fx:id="botasinv" fitHeight="30.0" fitWidth="30.0" layoutX="1165.0" layoutY="654.0" pickOnBounds="true" />
+      <ImageView fx:id="inv1" fitHeight="30.0" fitWidth="30.0" layoutX="1285.0" layoutY="535.0" pickOnBounds="true" />
+      <ImageView fx:id="inv2" fitHeight="30.0" fitWidth="30.0" layoutX="1285.0" layoutY="574.0" pickOnBounds="true" />
+      <ImageView fx:id="inv3" fitHeight="30.0" fitWidth="30.0" layoutX="1285.0" layoutY="614.0" pickOnBounds="true" />
+      <ImageView fx:id="inv4" fitHeight="30.0" fitWidth="30.0" layoutX="1285.0" layoutY="654.0" pickOnBounds="true" />
+      <ImageView fx:id="inv5" fitHeight="30.0" fitWidth="30.0" layoutX="1325.0" layoutY="535.0" pickOnBounds="true" />
+      <ImageView fx:id="inv6" fitHeight="30.0" fitWidth="30.0" layoutX="1325.0" layoutY="574.0" pickOnBounds="true" />
+      <ImageView fx:id="inv7" fitHeight="30.0" fitWidth="30.0" layoutX="1325.0" layoutY="614.0" pickOnBounds="true" />
+      <ImageView fx:id="inv8" fitHeight="30.0" fitWidth="30.0" layoutX="1325.0" layoutY="654.0" pickOnBounds="true" />
+      <ImageView fx:id="dado" fitHeight="80.0" fitWidth="80.0" layoutX="1220.0" layoutY="95.0" onMouseClicked="#dadoclick" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/dadocomienza.png" />
+            <Image url="@imagenes/dadocomienza.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="bestia" fitHeight="80.0" fitWidth="80.0" layoutX="1100.0" layoutY="225.0" pickOnBounds="true" />
-      <ImageView fx:id="direccion" fitHeight="80.0" fitWidth="80.0" layoutX="1185.0" layoutY="225.0" pickOnBounds="true" />
+      <ImageView fx:id="bestia" fitHeight="80.0" fitWidth="80.0" layoutX="1160.0" layoutY="200.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../Pictures/tablero2/cabbruja.png" />
+         </image></ImageView>
+      <ImageView fx:id="direccion" fitHeight="80.0" fitWidth="80.0" layoutX="1280.0" layoutY="200.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../Pictures/tablero2/direcantihorario.png" />
+         </image></ImageView>
       <ImageView fx:id="ficha1" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="565.0" onMouseEntered="#ficha1arriba" onMouseExited="#ficha1abajo" pickOnBounds="true" visible="false" />
       <ImageView fx:id="ficha2" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="605.0" onMouseEntered="#ficha2arriba" onMouseExited="#ficha2abajo" pickOnBounds="true" visible="false" />
       <ImageView fx:id="ficha3" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="645.0" onMouseEntered="#ficha3arriba" onMouseExited="#ficha3abajo" pickOnBounds="true" visible="false" />
@@ -1364,7 +1370,7 @@
       <ImageView fx:id="ficha6" fitHeight="40.0" fitWidth="40.0" layoutX="805.0" layoutY="645.0" onMouseEntered="#ficha6arriba" onMouseExited="#ficha6abajo" pickOnBounds="true" visible="false" />
       <ImageView fx:id="posib1" fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="649.0" onMouseClicked="#clickposib1" opacity="0.4" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/casillazul.png" />
+            <Image url="@imagenes/casillazul.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -1372,7 +1378,7 @@
       </ImageView>
       <ImageView fx:id="posib3" fitHeight="40.0" fitWidth="40.0" layoutX="925.0" layoutY="649.0" onMouseClicked="#clickposib3" opacity="0.4" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/casillazul.png" />
+            <Image url="@imagenes/casillazul.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -1380,7 +1386,7 @@
       </ImageView>
       <ImageView fx:id="posib2" fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="649.0" onMouseClicked="#clickposib2" opacity="0.4" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/casillazul.png" />
+            <Image url="@imagenes/casillazul.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -1388,7 +1394,7 @@
       </ImageView>
       <ImageView fx:id="posib4" fitHeight="40.0" fitWidth="40.0" layoutX="885.0" layoutY="649.0" onMouseClicked="#clickposib4" opacity="0.4" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/casillazul.png" />
+            <Image url="@imagenes/casillazul.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -1396,136 +1402,146 @@
       </ImageView>
       <ImageView fx:id="posib5" fitHeight="40.0" fitWidth="40.0" layoutX="845.0" layoutY="649.0" onMouseClicked="#clickposib5" opacity="0.4" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/casillazul.png" />
+            <Image url="@imagenes/casillazul.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1115.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1225.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/cuadroinventario.png" />
+            <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="lapiznegro" fitHeight="25.0" fitWidth="25.0" layoutX="1118.0" layoutY="538.0" onMouseClicked="#clicklapiznegro" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="lapiznegro" fitHeight="25.0" fitWidth="25.0" layoutX="1228.0" layoutY="538.0" onMouseClicked="#clicklapiznegro" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/tablero2/lapiznegro.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fx:id="lapizamarillo" fitHeight="25.0" fitWidth="25.0" layoutX="1118.0" layoutY="538.0" onMouseClicked="#clicklapizamarillo" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../../../../../Pictures/tablero2/lapizamarillo.png" />
+            <Image url="@imagenes/lapiznegro.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equiscasco" fitHeight="15.0" fitWidth="15.0" layoutX="1074.0" layoutY="531.0" onMouseClicked="#equiscascoclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="lapizamarillo" fitHeight="25.0" fitWidth="25.0" layoutX="1228.0" layoutY="538.0" onMouseClicked="#clicklapizamarillo" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/lapizamarillo.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equispeto" fitHeight="15.0" fitWidth="15.0" layoutX="1074.0" layoutY="571.0" onMouseClicked="#equispetoclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equiscasco" fitHeight="15.0" fitWidth="15.0" layoutX="1184.0" layoutY="531.0" onMouseClicked="#equiscascoclick" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equisespada" fitHeight="15.0" fitWidth="15.0" layoutX="1114.0" layoutY="571.0" onMouseClicked="#equisespadaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equispeto" fitHeight="15.0" fitWidth="15.0" layoutX="1184.0" layoutY="571.0" onMouseClicked="#equispetoclick" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equispantalon" fitHeight="15.0" fitWidth="15.0" layoutX="1074.0" layoutY="611.0" onMouseClicked="#equispantalonclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equisespada" fitHeight="15.0" fitWidth="15.0" layoutX="1224.0" layoutY="571.0" onMouseClicked="#equisespadaclick" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equisbotas" fitHeight="15.0" fitWidth="15.0" layoutX="1074.0" layoutY="651.0" onMouseClicked="#equisbotasclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equispantalon" fitHeight="15.0" fitWidth="15.0" layoutX="1184.0" layoutY="611.0" onMouseClicked="#equispantalonclick" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equisinv1" fitHeight="15.0" fitWidth="15.0" layoutX="1194.0" layoutY="531.0" onMouseClicked="#equisinv1click" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equisbotas" fitHeight="15.0" fitWidth="15.0" layoutX="1184.0" layoutY="651.0" onMouseClicked="#equisbotasclick" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equisinv2" fitHeight="15.0" fitWidth="15.0" layoutX="1194.0" layoutY="571.0" onMouseClicked="#equisinv2click" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equisinv1" fitHeight="15.0" fitWidth="15.0" layoutX="1304.0" layoutY="531.0" onMouseClicked="#equisinv1click" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equisinv3" fitHeight="15.0" fitWidth="15.0" layoutX="1194.0" layoutY="611.0" onMouseClicked="#equisinv3click" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equisinv2" fitHeight="15.0" fitWidth="15.0" layoutX="1304.0" layoutY="571.0" onMouseClicked="#equisinv2click" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equisinv4" fitHeight="15.0" fitWidth="15.0" layoutX="1194.0" layoutY="651.0" onMouseClicked="#equisinv4click" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equisinv3" fitHeight="15.0" fitWidth="15.0" layoutX="1304.0" layoutY="611.0" onMouseClicked="#equisinv3click" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equisinv5" fitHeight="15.0" fitWidth="15.0" layoutX="1234.0" layoutY="531.0" onMouseClicked="#equisinv5click" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equisinv4" fitHeight="15.0" fitWidth="15.0" layoutX="1304.0" layoutY="651.0" onMouseClicked="#equisinv4click" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equisinv6" fitHeight="15.0" fitWidth="15.0" layoutX="1234.0" layoutY="571.0" onMouseClicked="#equisinv6click" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equisinv5" fitHeight="15.0" fitWidth="15.0" layoutX="1344.0" layoutY="531.0" onMouseClicked="#equisinv5click" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equisinv7" fitHeight="15.0" fitWidth="15.0" layoutX="1234.0" layoutY="611.0" onMouseClicked="#equisinv7click" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equisinv6" fitHeight="15.0" fitWidth="15.0" layoutX="1344.0" layoutY="571.0" onMouseClicked="#equisinv6click" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="equisinv8" fitHeight="15.0" fitWidth="15.0" layoutX="1234.0" layoutY="651.0" onMouseClicked="#equisinv8click" pickOnBounds="true" visible="false">
+      <ImageView fx:id="equisinv7" fitHeight="15.0" fitWidth="15.0" layoutX="1344.0" layoutY="611.0" onMouseClicked="#equisinv7click" pickOnBounds="true" visible="false">
          <image>
-            <Image url="@../../../../../Pictures/equis.png" />
+            <Image url="@imagenes/equis.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <ImageView fx:id="equisinv8" fitHeight="15.0" fitWidth="15.0" layoutX="1344.0" layoutY="651.0" onMouseClicked="#equisinv8click" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/equis.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="160.0" fitWidth="200.0" layoutX="1160.0" layoutY="331.0" pickOnBounds="true">
+         <image>
+            <Image url="@imagenes/fondoinventario.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombreturno" alignment="CENTER" layoutX="1160.0" layoutY="20.0" prefHeight="50.0" prefWidth="200.0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="40.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
