@@ -290,7 +290,74 @@ public class TableroController implements Initializable {
     private ImageView equisinv8;
     @FXML
     private Label nombreturno;
+    @FXML
+    private ImageView suelta1;
+    @FXML
+    private ImageView suelta2;
+    @FXML
+    private ImageView suelta3;
+    @FXML
+    private ImageView suelta4;
+    @FXML
+    private ImageView suelta5;
+    @FXML
+    private ImageView suelta6;
+    @FXML
+    private ImageView suelta7;
+    @FXML
+    private ImageView suelta8;
+    @FXML
+    private ImageView suelta9;
+    @FXML
+    private ImageView suelta10;
+    @FXML
+    private ImageView suelta11;
+    @FXML
+    private ImageView suelta12;
+    @FXML
+    private ImageView suelta13;
+    @FXML
+    private ImageView flechainv;
+    @FXML
+    private ImageView flechatiendaIZQ;
+    @FXML
+    private ImageView flechatiendaIZQ1;
+    @FXML
+    private ImageView tienda1;
+    @FXML
+    private ImageView tienda2;
+    @FXML
+    private ImageView tienda3;
+    @FXML
+    private ImageView estante1;
+    @FXML
+    private ImageView estante3;
+    @FXML
+    private ImageView estante4;
+    @FXML
+    private ImageView estante5;
+    @FXML
+    private ImageView estante2;
+    @FXML
+    private ImageView estante10;
+    @FXML
+    private ImageView estante11;
+    @FXML
+    private ImageView estante12;
+    @FXML
+    private ImageView estante13;
+    @FXML
+    private ImageView estante6;
+    @FXML
+    private ImageView estante7;
+    @FXML
+    private ImageView estante8;
+    @FXML
+    private ImageView estante9;
+    @FXML
+    private ImageView estante14;
 
+    int tienda=1;
     /**
      * Initializes the controller class.
      */
@@ -460,6 +527,102 @@ public class TableroController implements Initializable {
 
     @FXML
     private void ficha6arriba(MouseEvent event) {
+    }
+
+    @FXML
+    private void sueltaclick(MouseEvent event) {
+    }
+
+    @FXML
+    private void clickflechainv(MouseEvent event) {
+        if(flechainv.getRotate()==90){
+            flechainv.setRotate(270);
+            estante1.setVisible(false);
+            estante2.setVisible(false);
+            estante3.setVisible(false);
+            estante4.setVisible(false);
+            estante5.setVisible(false);
+            estante6.setVisible(false);
+            estante7.setVisible(false);
+            estante8.setVisible(false);
+            estante9.setVisible(false);
+            estante10.setVisible(false);
+            estante11.setVisible(false);
+            estante12.setVisible(false);
+            estante13.setVisible(false);
+            estante14.setVisible(false);
+            cascoinv.setVisible(false);
+            petoinv.setVisible(false);
+            pantaloninv.setVisible(false);
+            espadainv.setVisible(false);
+            botasinv.setVisible(false);
+            inv1.setVisible(false);
+            inv2.setVisible(false);
+            inv3.setVisible(false);
+            inv4.setVisible(false);
+            inv5.setVisible(false);
+            inv6.setVisible(false);
+            inv7.setVisible(false);
+            inv8.setVisible(false);
+            equiscasco.setVisible(false);
+            equispeto.setVisible(false);
+            equisespada.setVisible(false);
+            equisbotas.setVisible(false);
+            equispantalon.setVisible(false);
+            equisinv1.setVisible(false);
+            equisinv2.setVisible(false);
+            equisinv3.setVisible(false);
+            equisinv4.setVisible(false);
+            equisinv5.setVisible(false);
+            equisinv6.setVisible(false);
+            equisinv7.setVisible(false);
+            equisinv8.setVisible(false);  
+            lapiznegro.setVisible(false);
+            lapizamarillo.setVisible(false);
+        }
+        else if(flechainv.getRotate()==270){
+            flechainv.setRotate(90);
+            estante1.setVisible(true);
+            estante2.setVisible(true);
+            estante3.setVisible(true);
+            estante4.setVisible(true);
+            estante5.setVisible(true);
+            estante6.setVisible(true);
+            estante7.setVisible(true);
+            estante8.setVisible(true);
+            estante9.setVisible(true);
+            estante10.setVisible(true);
+            estante11.setVisible(true);
+            estante12.setVisible(true);
+            estante13.setVisible(true);
+            estante14.setVisible(true);
+            cascoinv.setVisible(true);
+            petoinv.setVisible(true);
+            pantaloninv.setVisible(true);
+            espadainv.setVisible(true);
+            botasinv.setVisible(true);
+            inv1.setVisible(true);
+            inv2.setVisible(true);
+            inv3.setVisible(true);
+            inv4.setVisible(true);
+            inv5.setVisible(true);
+            inv6.setVisible(true);
+            inv7.setVisible(true);
+            inv8.setVisible(true);
+            lapiznegro.setVisible(true);
+
+        }
+        
+    }
+
+    @FXML
+    private void clickflechatienda(MouseEvent event) {
+        
+    }
+
+    @FXML
+    private void objtiendaclick(MouseEvent event) {
+        
     }
     
 }
