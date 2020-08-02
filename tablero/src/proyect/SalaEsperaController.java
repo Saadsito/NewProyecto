@@ -7,8 +7,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +16,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -519,6 +516,7 @@ public class SalaEsperaController implements Initializable{
     
     @FXML
     private void botlistoclick(MouseEvent event) {
+        /*
       if(nombre2.getText().equals("")){
         Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setHeaderText(null);
@@ -581,6 +579,7 @@ public class SalaEsperaController implements Initializable{
                                         public void run(){
                                             Parent tablero;
                                             try {
+                                                Cliente.setJugadores(conexionJugadores.getJugadores());
                                                 tablero = FXMLLoader.load(getClass().getResource("Tablero.fxml"));
                                                 Scene PanTablero = new Scene(tablero);
                                                 Stage ventana = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -588,9 +587,10 @@ public class SalaEsperaController implements Initializable{
                                                 ventana.setMaximized(true);
                                                 ventana.setFullScreen(true);
                                                 ventana.show();
+                                                
                                                 return;
                                             } catch (IOException ex) {
-                                                System.out.println(ex);
+                                                System.out.println("AQUI EL ERROR Ah");
                                             }
                                             
                                         }
@@ -608,6 +608,7 @@ public class SalaEsperaController implements Initializable{
                 cerrarSala.setName("Hilo cerrar sala");
                 cerrarSala.start();
                 
+        
             }
         }else{
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -616,7 +617,22 @@ public class SalaEsperaController implements Initializable{
             alert.setContentText("No puede jugar sin haber escogido un personaje");
             alert.showAndWait();
         }
-        
+        */
+        Parent tablero;
+                                            try {
+                                                Cliente.setJugadores(conexionJugadores.getJugadores());
+                                                tablero = FXMLLoader.load(getClass().getResource("Tablero.fxml"));
+                                                Scene PanTablero = new Scene(tablero);
+                                                Stage ventana = (Stage)((Node)event.getSource()).getScene().getWindow();
+                                                ventana.setScene(PanTablero);
+                                                ventana.setMaximized(true);
+                                                ventana.setFullScreen(true);
+                                                ventana.show();
+                                                
+                                                return;
+                                            } catch (IOException ex) {
+                                                System.out.println("AQUI EL ERROR Ah");
+                                            }
         
     }
     

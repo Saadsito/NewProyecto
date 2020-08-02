@@ -8,7 +8,7 @@ public class Player implements Serializable{
     
     private String nombre, ip, skin;
     private Inventario inventario;
-    private boolean listo; //true significa que esta listo, false que no 
+    private boolean listo, turno; //true significa que esta listo, false que no 
 
     public Player() {
         nombre = "";
@@ -16,6 +16,15 @@ public class Player implements Serializable{
         ip = "";
         skin = "";
         inventario = new Inventario();
+        turno = false;
+    }
+
+    public boolean isTurno() {
+        return turno;
+    }
+
+    public void setTurno(boolean turno) {
+        this.turno = turno;
     }
 
     public boolean isListo() {

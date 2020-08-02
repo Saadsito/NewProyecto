@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="870.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
+<AnchorPane id="AnchorPane" prefHeight="870.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
    <children>
       <ImageView fitHeight="870.0" fitWidth="1591.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -864,12 +864,12 @@
       </ImageView>
       <ImageView fitHeight="505.0" fitWidth="39.5" layoutX="1085.0" layoutY="365.0" opacity="0.6" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../Pictures/negro.jpg" />
+            <Image url="@imagenes/negro.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="345.0" fitWidth="40.0" layoutX="1045.0" layoutY="525.0" opacity="0.6" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../Pictures/negro.jpg" />
+            <Image url="@imagenes/negro.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="405.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
@@ -879,17 +879,17 @@
       </ImageView>
       <ImageView fitHeight="870.0" fitWidth="467.0" layoutX="1124.0" opacity="0.6" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../Pictures/negro.jpg" />
+            <Image url="@imagenes/negro.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="166.0" fitWidth="39.5" layoutX="1085.0" layoutY="-1.0" opacity="0.6" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../Pictures/negro.jpg" />
+            <Image url="@imagenes/negro.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="120.0" fitWidth="119.5" layoutX="1005.0" layoutY="205.0" opacity="0.6" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../Pictures/negro.jpg" />
+            <Image url="@imagenes/negro.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
@@ -1262,7 +1262,7 @@
             <Image url="@imagenes/dragon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="160.0" fitWidth="200.0" layoutX="1049.0" layoutY="528.0" pickOnBounds="true">
+      <ImageView fx:id="fondoInv" fitHeight="160.0" fitWidth="200.0" layoutX="1049.0" layoutY="528.0" pickOnBounds="true">
          <image>
             <Image url="@imagenes/fondoinventario.png" />
          </image>
@@ -1354,14 +1354,8 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="bestia" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="79.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../../../../Pictures/tablero2/cabbruja.png" />
-         </image></ImageView>
-      <ImageView fx:id="direccion" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="145.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../../../../Pictures/tablero2/direcantihorario.png" />
-         </image></ImageView>
+      <ImageView fx:id="bestia" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="79.0" pickOnBounds="true" />
+      <ImageView fx:id="direccion" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="145.0" pickOnBounds="true" />
       <ImageView fx:id="ficha1" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="565.0" onMouseEntered="#ficha1arriba" onMouseExited="#ficha1abajo" pickOnBounds="true" visible="false" />
       <ImageView fx:id="ficha2" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="605.0" onMouseEntered="#ficha2arriba" onMouseExited="#ficha2abajo" pickOnBounds="true" visible="false" />
       <ImageView fx:id="ficha3" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="645.0" onMouseEntered="#ficha3arriba" onMouseExited="#ficha3abajo" pickOnBounds="true" visible="false" />
@@ -1638,7 +1632,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <image>
-            <Image url="@../../../../../Pictures/flechaderecha.png" />
+            <Image url="@imagenes/flechaderecha.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1020.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
@@ -1671,7 +1665,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <image>
-            <Image url="@../../../../../Pictures/flechaderecha.png" />
+            <Image url="@imagenes/flechaderecha.png" />
          </image>
       </ImageView>
       <ImageView fx:id="flechatiendaIZQ1" fitHeight="25.0" fitWidth="24.0" layoutX="1188.0" layoutY="253.0" onMouseClicked="#clickflechatienda" pickOnBounds="true">
@@ -1679,11 +1673,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <image>
-            <Image url="@../../../../../Pictures/flechaderecha.png" />
+            <Image url="@imagenes/flechaderecha.png" />
          </image>
       </ImageView>
       <ImageView fx:id="tienda1" fitHeight="30.0" fitWidth="30.0" layoutX="1065.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true" />
       <ImageView fx:id="tienda2" fitHeight="30.0" fitWidth="30.0" layoutX="1105.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true" />
       <ImageView fx:id="tienda3" fitHeight="30.0" fitWidth="30.0" layoutX="1145.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true" />
+      <Label fx:id="timer" layoutX="746.0" layoutY="5.0" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="40.0" />
+         </font></Label>
    </children>
 </AnchorPane>

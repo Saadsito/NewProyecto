@@ -6,10 +6,15 @@
 package proyect;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
@@ -18,7 +23,7 @@ import javafx.scene.input.MouseEvent;
  *
  * @author PC
  */
-public class TableroController implements Initializable {
+public class TableroController implements Initializable, Runnable {
 
     @FXML
     private ImageView c1;
@@ -356,14 +361,106 @@ public class TableroController implements Initializable {
     private ImageView estante9;
     @FXML
     private ImageView estante14;
+    @FXML
+    private Label timer;
+    @FXML
+    private ImageView fondoInv;
 
-    int tienda=1;
-    /**
-     * Initializes the controller class.
-     */
+    public  Label getTimer() {
+        return timer;
+    }
+
+    int tienda = 1;
+    private ArrayList<Player> jugadores = Cliente.getJugadores();
+    Image skin1 = null, skin2 = null, skin3 = null, skin4 = null, skin5 = null, skin6 = null;
+    Juego juego = new Juego();
+    private int numdado;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        switch(jugadores.size()){
+            case 1:
+                skin1 = new Image(jugadores.get(0).getSkin());
+                ficha1.setImage(skin1);
+                ficha1.setVisible(true);
+                break;
+            case 2: 
+                skin1 = new Image(jugadores.get(0).getSkin());
+                ficha1.setImage(skin1);
+                ficha1.setVisible(true);
+                skin2 = new Image(getClass().getResourceAsStream(jugadores.get(1).getSkin()));
+                ficha2.setImage(skin2);
+                ficha2.setVisible(true);
+                break;
+                
+            case 3:
+                skin1 = new Image(getClass().getResourceAsStream(jugadores.get(0).getSkin()));
+                ficha1.setImage(skin1);
+                ficha1.setVisible(true);
+                skin2 = new Image(getClass().getResourceAsStream(jugadores.get(1).getSkin()));
+                ficha2.setImage(skin2);
+                ficha2.setVisible(true);
+                skin3 = new Image(getClass().getResourceAsStream(jugadores.get(2).getSkin()));
+                ficha3.setImage(skin3);
+                ficha3.setVisible(true);
+                break;
+                
+            case 4:
+                skin1 = new Image(getClass().getResourceAsStream(jugadores.get(0).getSkin()));
+                ficha1.setImage(skin1);
+                skin2 = new Image(getClass().getResourceAsStream(jugadores.get(1).getSkin()));
+                ficha2.setImage(skin2);
+                skin3 = new Image(getClass().getResourceAsStream(jugadores.get(2).getSkin()));
+                ficha3.setImage(skin3);
+                skin4 = new Image(getClass().getResourceAsStream(jugadores.get(3).getSkin()));
+                ficha4.setImage(skin4);
+                break;
+                
+            case 5:
+                skin1 = new Image(getClass().getResourceAsStream(jugadores.get(0).getSkin()));
+                ficha1.setImage(skin1);
+                ficha1.setVisible(true);
+                skin2 = new Image(getClass().getResourceAsStream(jugadores.get(1).getSkin()));
+                ficha2.setImage(skin2);
+                ficha2.setVisible(true);
+                skin3 = new Image(getClass().getResourceAsStream(jugadores.get(2).getSkin()));
+                ficha3.setImage(skin3);
+                ficha3.setVisible(true);
+                skin4 = new Image(getClass().getResourceAsStream(jugadores.get(3).getSkin()));
+                ficha4.setImage(skin4);
+                ficha4.setVisible(true);
+                skin5 = new Image(getClass().getResourceAsStream(jugadores.get(4).getSkin()));
+                ficha5.setImage(skin5);
+                ficha5.setVisible(true);               
+                break;
+                
+            default:
+                skin1 = new Image(getClass().getResourceAsStream(jugadores.get(0).getSkin()));
+                ficha1.setImage(skin1);
+                ficha1.setVisible(true);
+                skin2 = new Image(getClass().getResourceAsStream(jugadores.get(1).getSkin()));
+                ficha2.setImage(skin2);
+                ficha2.setVisible(true);
+                skin3 = new Image(getClass().getResourceAsStream(jugadores.get(2).getSkin()));
+                ficha3.setImage(skin3);
+                ficha3.setVisible(true);
+                skin4 = new Image(getClass().getResourceAsStream(jugadores.get(3).getSkin()));
+                ficha4.setImage(skin4);
+                ficha4.setVisible(true);
+                skin5 = new Image(getClass().getResourceAsStream(jugadores.get(4).getSkin()));
+                ficha5.setImage(skin5);
+                ficha5.setVisible(true);
+                skin6 = new Image(getClass().getResourceAsStream(jugadores.get(5).getSkin()));
+                ficha6.setImage(skin6);
+                ficha6.setVisible(true);
+                break;
+        }
+        
+        Thread hiloJuego = new Thread(juego);
+        hiloJuego.setName("Hilo Juego");
+        hiloJuego.start();
+            
     }    
 
     @FXML
@@ -478,7 +575,97 @@ public class TableroController implements Initializable {
 
     @FXML
     private void dadoclick(MouseEvent event) {
-        int numdado = (int) (Math.random() * 6) + 1;
+        
+        
+        Thread hiloSprite = new Thread(){
+            @Override
+            public void run(){
+                sprite();
+            }
+        };
+        
+        if(Cliente.getNombre().equals(nombreturno.getText())){
+             //oks muy buena de tu parte lo unico util que has hecho oks? es contigo turko
+            for(int i = 0; i < 6; i++){
+                hiloSprite.start();
+            }
+        }
+    }
+
+    @Override
+    public void run() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public void  sprite(){
+        synchronized(this){
+            Image dado1 = new Image("/proyect/imagenes/dado1.png");
+            Image dado2 = new Image("/proyect/imagenes/dado2.png");
+            Image dado3 = new Image("/proyect/imagenes/dado3.png");
+            Image dado4 = new Image("/proyect/imagenes/dado4.png");
+            Image dado5 = new Image("/proyect/imagenes/dado5.png");
+            Image dado6 = new Image("/proyect/imagenes/dado6.png");
+            Thread sprite = new Thread(){
+                public void run(){
+                    numdado = (int) Math.floor(Math.random()*6+1);
+                    switch(numdado){
+                        case 1:
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    dado.setImage(dado1);
+                                }
+                            });
+                            break;
+                        case 2:
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    dado.setImage(dado2);
+                                }
+                            });
+                            break;
+                        case 3:
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    dado.setImage(dado3);
+                                }
+                            });
+                            break;
+                        case 4:
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    dado.setImage(dado4);
+                                }
+                            });
+                            break;
+                        case 5:
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    dado.setImage(dado5);
+                                }
+                            });
+                            break;
+                        case 6:
+                            Platform.runLater(new Runnable(){
+                                @Override
+                                public void run() {
+                                    dado.setImage(dado6);
+                                }
+                            });
+                            break;
+                    }
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        System.out.println(ex);
+                    }
+                }
+            };
+        }
     }
 
     @FXML
@@ -579,6 +766,7 @@ public class TableroController implements Initializable {
             equisinv8.setVisible(false);  
             lapiznegro.setVisible(false);
             lapizamarillo.setVisible(false);
+            fondoInv.setFitHeight(20);
         }
         else if(flechainv.getRotate()==270){
             flechainv.setRotate(90);
@@ -610,7 +798,7 @@ public class TableroController implements Initializable {
             inv7.setVisible(true);
             inv8.setVisible(true);
             lapiznegro.setVisible(true);
-
+            fondoInv.setFitHeight(160);
         }
         
     }
@@ -623,6 +811,65 @@ public class TableroController implements Initializable {
     @FXML
     private void objtiendaclick(MouseEvent event) {
         
+    }
+    
+    //////////////////////Clase Juego//////////////////////////////
+    
+    class Juego implements Runnable{
+
+        private int s; //segundos del timer
+        private byte ganador;
+        private boolean pasar;
+    
+        public Juego(){ 
+            jugadores.get(0).setTurno(true);
+            ganador = -1;
+            pasar = false;
+        }
+    /*
+        public void iniciarCronometro(){
+            for(s = 90; s != -1; s--){
+                if(!pasar){ //Verifica que el jugador no haya pasado turno
+                    Platform.runLater(new Runnable(){
+                        @Override
+                        public void run() {
+                            timer.setText(Integer.toString(s));
+                        }
+                    });
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        System.out.println(ex);
+                    }
+                }
+            }
+        }
+    */
+        @Override
+        public void run() {
+            int numPlayer;
+            /*
+            Thread hiloCronometro = new Thread(){
+                @Override
+                public void run(){
+                    iniciarCronometro();
+                }
+            };
+            hiloCronometro.setName("Hilo Cronometro");
+            hiloCronometro.start( );
+            */
+            while(ganador == -1){
+                numdado = 0;
+                for(numPlayer = 0; numPlayer < jugadores.size(); numPlayer++)
+                    if(jugadores.get(numPlayer).isTurno()) break; 
+                 
+                nombreturno.setText(jugadores.get(numPlayer).getNombre());
+                
+                
+            }
+
+        }
+    
     }
     
 }
