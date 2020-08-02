@@ -2,12 +2,13 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="870.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
+<AnchorPane id="AnchorPane" prefHeight="870.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
    <children>
       <ImageView fitHeight="870.0" fitWidth="1591.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -1660,7 +1661,7 @@
             <Image url="@imagenes/cuadroinventario.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="flechatiendaIZQ" fitHeight="25.0" fitWidth="24.0" layoutX="1028.0" layoutY="253.0" onMouseClicked="#clickflechatienda" pickOnBounds="true" rotate="180.0">
+      <ImageView fx:id="flechatiendaIZQ" fitHeight="25.0" fitWidth="24.0" layoutX="1028.0" layoutY="253.0" onMouseClicked="#clickflechatiendaI" pickOnBounds="true" rotate="180.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -1668,7 +1669,7 @@
             <Image url="@imagenes/flechaderecha.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="flechatiendaIZQ1" fitHeight="25.0" fitWidth="24.0" layoutX="1188.0" layoutY="253.0" onMouseClicked="#clickflechatienda" pickOnBounds="true">
+      <ImageView fx:id="flechatiendaDER" fitHeight="25.0" fitWidth="24.0" layoutX="1188.0" layoutY="253.0" onMouseClicked="#clickflechatiendaD" pickOnBounds="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -1676,12 +1677,85 @@
             <Image url="@imagenes/flechaderecha.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="tienda1" fitHeight="30.0" fitWidth="30.0" layoutX="1065.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true" />
-      <ImageView fx:id="tienda2" fitHeight="30.0" fitWidth="30.0" layoutX="1105.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true" />
-      <ImageView fx:id="tienda3" fitHeight="30.0" fitWidth="30.0" layoutX="1145.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true" />
+      <ImageView fx:id="tienda1" fitHeight="30.0" fitWidth="30.0" layoutX="1065.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true">
+         <effect>
+            <ColorAdjust saturation="-1.0" />
+         </effect></ImageView>
+      <ImageView fx:id="tienda2" fitHeight="30.0" fitWidth="30.0" layoutX="1105.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true">
+         <effect>
+            <ColorAdjust saturation="-1.0" />
+         </effect></ImageView>
+      <ImageView fx:id="tienda3" fitHeight="30.0" fitWidth="30.0" layoutX="1145.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true">
+         <effect>
+            <ColorAdjust saturation="-1.0" />
+         </effect></ImageView>
       <Label fx:id="timer" layoutX="746.0" layoutY="5.0" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="40.0" />
          </font></Label>
+      <ImageView fx:id="dado1" fitHeight="60.0" fitWidth="60.0" layoutX="1102.0" layoutY="79.0" onMouseClicked="#dadoclick" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/dado1.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="dado2" fitHeight="60.0" fitWidth="60.0" layoutX="1102.0" layoutY="80.0" onMouseClicked="#dadoclick" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/dado2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="dado3" fitHeight="60.0" fitWidth="60.0" layoutX="1102.0" layoutY="80.0" onMouseClicked="#dadoclick" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/dado3.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="dado4" fitHeight="60.0" fitWidth="60.0" layoutX="1102.0" layoutY="79.0" onMouseClicked="#dadoclick" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/dado4.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="dado5" fitHeight="60.0" fitWidth="60.0" layoutX="1102.0" layoutY="79.0" onMouseClicked="#dadoclick" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/dado5.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="dado6" fitHeight="60.0" fitWidth="60.0" layoutX="1102.0" layoutY="80.0" onMouseClicked="#dadoclick" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/dado6.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="finalizarT1" fitHeight="60.0" fitWidth="126.0" layoutX="722.0" layoutY="10.0" onMouseEntered="#FTarriba" onMouseExited="#FTabajo" pickOnBounds="true">
+         <image>
+            <Image url="@imagenes/button1.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="finalizarT2" fitHeight="60.0" fitWidth="126.0" layoutX="722.0" layoutY="10.0" onMouseClicked="#finalizaTurnoclick" onMouseEntered="#FTarriba" onMouseExited="#FTabajo" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/button2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>

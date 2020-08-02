@@ -8,12 +8,14 @@ package proyect;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -326,8 +328,6 @@ public class TableroController implements Initializable, Runnable {
     @FXML
     private ImageView flechatiendaIZQ;
     @FXML
-    private ImageView flechatiendaIZQ1;
-    @FXML
     private ImageView tienda1;
     @FXML
     private ImageView tienda2;
@@ -365,19 +365,59 @@ public class TableroController implements Initializable, Runnable {
     private Label timer;
     @FXML
     private ImageView fondoInv;
+    @FXML
+    private ImageView dado1;
+    @FXML
+    private ImageView dado2;
+    @FXML
+    private ImageView dado3;
+    @FXML
+    private ImageView dado4;
+    @FXML
+    private ImageView dado5;
+    @FXML
+    private ImageView dado6;
+    @FXML
+    private ImageView flechatiendaDER;
+    @FXML
+    private ImageView finalizarT1;
+    @FXML
+    private ImageView finalizarT2;
 
     public  Label getTimer() {
         return timer;
     }
 
-    int tienda = 1;
     private ArrayList<Player> jugadores = Cliente.getJugadores();
     Image skin1 = null, skin2 = null, skin3 = null, skin4 = null, skin5 = null, skin6 = null;
     Juego juego = new Juego();
     private int numdado;
+    private int tienda = 1;
+    
+    Image esmeralda = new Image("Proyect/imagenes/casillaesmeralda.png");
+    Image cuboagua = new Image("Proyect/imagenes/casillacuboagua.png");
+    Image espada = new Image("Proyect/imagenes/casillaespada.png");
+    Image espadaD = new Image("Proyect/imagenes/casillaespadadiamante.png");
+    Image armaduraD = new Image("Proyect/imagenes/casillaarmaduradiamante.png");
+    Image cascoD = new Image("Proyect/imagenes/casillacascodiamante.png");
+    Image pantalonD = new Image("Proyect/imagenes/casillapantalondiamante.png");
+    Image botasD = new Image("Proyect/imagenes/casillazapatosdiamante.png");
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        ColorAdjust blancoynegro = new ColorAdjust();
+        blancoynegro.setSaturation(-1.0);
+        
+        ColorAdjust color = new ColorAdjust();
+        color.setSaturation(0);
+ 
+        tienda1.setImage(esmeralda);
+        tienda1.setEffect(blancoynegro);
+        tienda2.setImage(cuboagua);
+        tienda2.setEffect(blancoynegro);
+        tienda3.setImage(espada);
+        tienda3.setEffect(blancoynegro);
+        
         
         switch(jugadores.size()){
             case 1:
@@ -803,14 +843,86 @@ public class TableroController implements Initializable, Runnable {
         
     }
 
-    @FXML
-    private void clickflechatienda(MouseEvent event) {
-        
-    }
 
     @FXML
     private void objtiendaclick(MouseEvent event) {
         
+    }
+
+    @FXML
+    private void clickflechatiendaI(MouseEvent event) {
+        if (tienda==2){
+           tienda1.setImage(esmeralda);
+           tienda2.setImage(cuboagua);
+           tienda3.setImage(espada);
+           tienda=1;
+        }else if(tienda==3){
+           tienda1.setImage(cuboagua);
+           tienda2.setImage(espada);
+           tienda3.setImage(cascoD);
+           tienda=2;
+        }else if(tienda==4){
+           tienda1.setImage(espada);
+           tienda2.setImage(cascoD);
+           tienda3.setImage(armaduraD);
+           tienda=3; 
+        }else if(tienda==5){
+           tienda1.setImage(cascoD);
+           tienda2.setImage(armaduraD);
+           tienda3.setImage(espadaD);
+           tienda=4;  
+        }else if(tienda==6){
+           tienda1.setImage(armaduraD);
+           tienda2.setImage(espadaD);
+           tienda3.setImage(pantalonD);
+           tienda=5; 
+        }
+    }
+
+    @FXML
+    private void clickflechatiendaD(MouseEvent event) {
+        if (tienda==1){
+           tienda1.setImage(cuboagua);
+           tienda2.setImage(espada);
+           tienda3.setImage(cascoD);
+           tienda=2;
+        }else if(tienda==2){
+           tienda1.setImage(espada);
+           tienda2.setImage(cascoD);
+           tienda3.setImage(armaduraD); 
+           tienda=3;
+        }else if(tienda==3){
+           tienda1.setImage(cascoD);
+           tienda2.setImage(armaduraD);
+           tienda3.setImage(espadaD); 
+           tienda=4;
+        }else if(tienda==4){
+           tienda1.setImage(armaduraD);
+           tienda2.setImage(espadaD);
+           tienda3.setImage(pantalonD); 
+           tienda=5;
+        }else if(tienda==5){
+           tienda1.setImage(espadaD);
+           tienda2.setImage(pantalonD);
+           tienda3.setImage(botasD); 
+           tienda=6;
+        }
+    }
+
+    @FXML
+    private void FTabajo(MouseEvent event) {
+        finalizarT1.setVisible(true);
+        finalizarT2.setVisible(false);
+    }
+
+    @FXML
+    private void FTarriba(MouseEvent event) {
+        finalizarT1.setVisible(false);
+        finalizarT2.setVisible(true);
+    }
+
+    @FXML
+    private void finalizaTurnoclick(MouseEvent event) {
     }
     
     //////////////////////Clase Juego//////////////////////////////
