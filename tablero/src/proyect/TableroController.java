@@ -11,14 +11,20 @@ import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  * FXML Controller class
@@ -384,14 +390,10 @@ public class TableroController implements Initializable, Runnable {
     @FXML
     private ImageView finalizarT2;
 
-    public  Label getTimer() {
-        return timer;
-    }
-
     private ArrayList<Player> jugadores = Cliente.getJugadores();
     Image skin1 = null, skin2 = null, skin3 = null, skin4 = null, skin5 = null, skin6 = null;
     Juego juego = new Juego();
-    private int numdado;
+    private int numdado = 0;
     private int tienda = 1;
     
     Image esmeralda = new Image("Proyect/imagenes/casillaesmeralda.png");
@@ -405,6 +407,7 @@ public class TableroController implements Initializable, Runnable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         ColorAdjust blancoynegro = new ColorAdjust();
         blancoynegro.setSaturation(-1.0);
         
@@ -425,6 +428,7 @@ public class TableroController implements Initializable, Runnable {
                 ficha1.setImage(skin1);
                 ficha1.setVisible(true);
                 break;
+                
             case 2: 
                 skin1 = new Image(jugadores.get(0).getSkin());
                 ficha1.setImage(skin1);
@@ -620,92 +624,163 @@ public class TableroController implements Initializable, Runnable {
         Thread hiloSprite = new Thread(){
             @Override
             public void run(){
-                sprite();
+                    Timeline t = animacionDado();
+                    t.play();
             }
         };
-        
+        hiloSprite.setName("Hilo Sprite");
         if(Cliente.getNombre().equals(nombreturno.getText())){
              //oks muy buena de tu parte lo unico util que has hecho oks? es contigo turko
-            for(int i = 0; i < 6; i++){
-                hiloSprite.start();
-            }
+            Platform.runLater(new Runnable(){
+                @Override
+                public void run() {
+                    hiloSprite.start();
+                }
+            });
         }
     }
 
+    private Timeline animacionDado(){
+        Timeline t = new Timeline();
+        
+        
+        t.setCycleCount(5);
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(0),
+                (ActionEvent event) -> {
+                    dado1.setVisible(true);
+                    dado2.setVisible(false);
+                    dado3.setVisible(false);
+                    dado4.setVisible(false);
+                    dado5.setVisible(false);
+                    dado6.setVisible(false);
+                }
+        ));
+        
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(200),
+                (ActionEvent event) -> {
+                    dado1.setVisible(false);
+                    dado2.setVisible(true);
+                    dado3.setVisible(false);
+                    dado4.setVisible(false);
+                    dado5.setVisible(false);
+                    dado6.setVisible(false);
+                }
+        ));
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(400),
+                (ActionEvent event) -> {
+                    dado1.setVisible(false);
+                    dado2.setVisible(false);
+                    dado3.setVisible(true);
+                    dado4.setVisible(false);
+                    dado5.setVisible(false);
+                    dado6.setVisible(false);
+                }
+        ));
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(600),
+                (ActionEvent event) -> {
+                    dado1.setVisible(false);
+                    dado2.setVisible(false);
+                    dado3.setVisible(false);
+                    dado4.setVisible(true);
+                    dado5.setVisible(false);
+                    dado6.setVisible(false);
+                }
+        ));
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(800),
+                (ActionEvent event) -> {
+                    dado1.setVisible(false);
+                    dado2.setVisible(false);
+                    dado3.setVisible(false);
+                    dado4.setVisible(false);
+                    dado5.setVisible(true);
+                    dado6.setVisible(false);
+                }
+        ));
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(1000),
+                (ActionEvent event) -> {
+                    dado1.setVisible(false);
+                    dado2.setVisible(false);
+                    dado3.setVisible(false);
+                    dado4.setVisible(false);
+                    dado5.setVisible(false);
+                    dado6.setVisible(true);
+                }
+        )); 
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(1200),
+                (ActionEvent event) -> {
+                    numdado = (int) Math.floor(Math.random() * 6) + 1 ;
+                    switch(numdado){
+                        case 1:
+                            dado1.setVisible(true);
+                            dado2.setVisible(false);
+                            dado3.setVisible(false);
+                            dado4.setVisible(false);
+                            dado5.setVisible(false);
+                            dado6.setVisible(false);
+                            break;
+                            
+                        case 2:
+                            dado1.setVisible(false);
+                            dado2.setVisible(true);
+                            dado3.setVisible(false);
+                            dado4.setVisible(false);
+                            dado5.setVisible(false);
+                            dado6.setVisible(false);
+                            break;
+                            
+                        case 3:
+                            dado1.setVisible(false);
+                            dado2.setVisible(false);
+                            dado3.setVisible(true);
+                            dado4.setVisible(false);
+                            dado5.setVisible(false);
+                            dado6.setVisible(false);
+                            break;
+                          
+                        case 4:
+                            dado1.setVisible(false);
+                            dado2.setVisible(false);
+                            dado3.setVisible(false);
+                            dado4.setVisible(true);
+                            dado5.setVisible(false);
+                            dado6.setVisible(false);
+                            break;
+                          
+                        case 5:
+                            dado1.setVisible(false);
+                            dado2.setVisible(false);
+                            dado3.setVisible(false);
+                            dado4.setVisible(false);
+                            dado5.setVisible(true);
+                            dado6.setVisible(false);
+                            break;
+                          
+                        case 6:
+                            dado1.setVisible(false);
+                            dado2.setVisible(false);
+                            dado3.setVisible(false);
+                            dado4.setVisible(false);
+                            dado5.setVisible(false);
+                            dado6.setVisible(true);
+                            break;
+                    }
+                }
+        )); 
+        
+       
+        return t;
+    }
+    
     @Override
     public void run() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    public void  sprite(){
-        synchronized(this){
-            Image dado1 = new Image("/proyect/imagenes/dado1.png");
-            Image dado2 = new Image("/proyect/imagenes/dado2.png");
-            Image dado3 = new Image("/proyect/imagenes/dado3.png");
-            Image dado4 = new Image("/proyect/imagenes/dado4.png");
-            Image dado5 = new Image("/proyect/imagenes/dado5.png");
-            Image dado6 = new Image("/proyect/imagenes/dado6.png");
-            Thread sprite = new Thread(){
-                public void run(){
-                    numdado = (int) Math.floor(Math.random()*6+1);
-                    switch(numdado){
-                        case 1:
-                            Platform.runLater(new Runnable(){
-                                @Override
-                                public void run() {
-                                    dado.setImage(dado1);
-                                }
-                            });
-                            break;
-                        case 2:
-                            Platform.runLater(new Runnable(){
-                                @Override
-                                public void run() {
-                                    dado.setImage(dado2);
-                                }
-                            });
-                            break;
-                        case 3:
-                            Platform.runLater(new Runnable(){
-                                @Override
-                                public void run() {
-                                    dado.setImage(dado3);
-                                }
-                            });
-                            break;
-                        case 4:
-                            Platform.runLater(new Runnable(){
-                                @Override
-                                public void run() {
-                                    dado.setImage(dado4);
-                                }
-                            });
-                            break;
-                        case 5:
-                            Platform.runLater(new Runnable(){
-                                @Override
-                                public void run() {
-                                    dado.setImage(dado5);
-                                }
-                            });
-                            break;
-                        case 6:
-                            Platform.runLater(new Runnable(){
-                                @Override
-                                public void run() {
-                                    dado.setImage(dado6);
-                                }
-                            });
-                            break;
-                    }
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ex) {
-                        System.out.println(ex);
-                    }
-                }
-            };
-        }
     }
 
     @FXML
@@ -931,14 +1006,14 @@ public class TableroController implements Initializable, Runnable {
 
         private int s; //segundos del timer
         private byte ganador;
-        private boolean pasar;
+        private boolean pasar, tienda = false;
     
         public Juego(){ 
             jugadores.get(0).setTurno(true);
             ganador = -1;
             pasar = false;
         }
-    /*
+    
         public void iniciarCronometro(){
             for(s = 90; s != -1; s--){
                 if(!pasar){ //Verifica que el jugador no haya pasado turno
@@ -956,11 +1031,12 @@ public class TableroController implements Initializable, Runnable {
                 }
             }
         }
-    */
+    
         @Override
         public void run() {
-            int numPlayer;
-            /*
+            int numPlayer; //Va a tener el numero de indice del jugador que le toque jugar
+            
+            /*  Agregar al final
             Thread hiloCronometro = new Thread(){
                 @Override
                 public void run(){
@@ -970,12 +1046,18 @@ public class TableroController implements Initializable, Runnable {
             hiloCronometro.setName("Hilo Cronometro");
             hiloCronometro.start( );
             */
+            
             while(ganador == -1){
-                numdado = 0;
-                for(numPlayer = 0; numPlayer < jugadores.size(); numPlayer++)
-                    if(jugadores.get(numPlayer).isTurno()) break; 
+                
+                if(numdado != 0){
+                    for(numPlayer = 0; numPlayer < jugadores.size(); numPlayer++)
+                        if(jugadores.get(numPlayer).isTurno()) break; 
                  
-                nombreturno.setText(jugadores.get(numPlayer).getNombre());
+                    nombreturno.setText(jugadores.get(numPlayer).getNombre());
+                    //Movimiento de jugador
+                    //Comprobar si cae en casilla de bestia o jugador
+                    //Comprobar si cae en casilla especial (tienda, lava, vagoneta, espada, esmeralda, agua)
+                }
                 
                 
             }
