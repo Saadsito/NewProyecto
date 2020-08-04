@@ -390,6 +390,8 @@ public class TableroController implements Initializable, Runnable {
     @FXML
     private ImageView finalizarT2;
 
+    
+    
     private ArrayList<Player> jugadores = Cliente.getJugadores();
     Image skin1 = null, skin2 = null, skin3 = null, skin4 = null, skin5 = null, skin6 = null;
     Juego juego = new Juego();
@@ -620,29 +622,34 @@ public class TableroController implements Initializable, Runnable {
     @FXML
     private void dadoclick(MouseEvent event) {
         
-        
-        Thread hiloSprite = new Thread(){
-            @Override
-            public void run(){
-                    Timeline t = animacionDado();
-                    t.play();
-            }
-        };
-        hiloSprite.setName("Hilo Sprite");
-        if(Cliente.getNombre().equals(nombreturno.getText())){
-             //oks muy buena de tu parte lo unico util que has hecho oks? es contigo turko
-            Platform.runLater(new Runnable(){
+        if(!juego.tiro){
+            Thread hiloSprite = new Thread(){
                 @Override
-                public void run() {
-                    hiloSprite.start();
+                public void run(){
+                        Timeline t = animacionDado();
+                        t.play();
                 }
-            });
+            };
+            hiloSprite.setName("Hilo Sprite");
+            
+            if(Cliente.getNombre().equals(nombreturno.getText())){
+                 //oks muy buena de tu parte lo unico util que has hecho oks? es contigo turko
+                Platform.runLater(new Runnable(){
+                    @Override
+                    public void run() {
+                        numdado = (int) Math.floor(Math.random() * 6) + 1 ;
+                        hiloSprite.start();
+                    }
+                });
+            }
+            
+            juego.tiro = true;
         }
+        
     }
 
     private Timeline animacionDado(){
         Timeline t = new Timeline();
-        
         
         t.setCycleCount(5);
         t.getKeyFrames().add(new KeyFrame(
@@ -715,7 +722,7 @@ public class TableroController implements Initializable, Runnable {
         t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(1200),
                 (ActionEvent event) -> {
-                    numdado = (int) Math.floor(Math.random() * 6) + 1 ;
+                    
                     switch(numdado){
                         case 1:
                             dado1.setVisible(true);
@@ -770,11 +777,13 @@ public class TableroController implements Initializable, Runnable {
                             dado5.setVisible(false);
                             dado6.setVisible(true);
                             break;
+                            
                     }
                 }
         )); 
         
-       
+        
+        
         return t;
     }
     
@@ -998,22 +1007,48 @@ public class TableroController implements Initializable, Runnable {
 
     @FXML
     private void finalizaTurnoclick(MouseEvent event) {
+        jugadores.get(juego.numPlayer).setTurno(false);
+        if(juego.numPlayer + 1  == jugadores.size()) juego.numPlayer = 0;
+        else juego.numPlayer++;
+        jugadores.get(juego.numPlayer).setTurno(true);
+        juego.tiro = false;
+        numdado = 0;
+        dado1.setVisible(false);
+        dado2.setVisible(false);
+        dado3.setVisible(false);
+        dado4.setVisible(false);
+        dado5.setVisible(false);
+        dado6.setVisible(false);
+        dado.setVisible(true);
+        nombreturno.setText(jugadores.get(juego.numPlayer).getNombre());
     }
     
     //////////////////////Clase Juego//////////////////////////////
     
     class Juego implements Runnable{
 
-        private int s; //segundos del timer
+            
+        private int s, numPlayer; //segundos del timer
         private byte ganador;
-        private boolean pasar, tienda = false;
-    
+        private boolean tiro, tienda;
+        private boolean[] estadoEspeciales; //True en las que se muestran y false en las que no
+        
         public Juego(){ 
             jugadores.get(0).setTurno(true);
             ganador = -1;
-            pasar = false;
+            tiro = false;
+            tienda = false;
+            numPlayer = 0;
+            
+            Platform.runLater(new Runnable(){
+                @Override
+                public void run() {
+                    nombreturno.setText(jugadores.get(0).getNombre());
+                }
+            });
         }
-    
+        
+        /*
         public void iniciarCronometro(){
             for(s = 90; s != -1; s--){
                 if(!pasar){ //Verifica que el jugador no haya pasado turno
@@ -1031,11 +1066,10 @@ public class TableroController implements Initializable, Runnable {
                 }
             }
         }
-    
+        */
+        
         @Override
-        public void run() {
-            int numPlayer; //Va a tener el numero de indice del jugador que le toque jugar
-            
+        public void run() {            
             /*  Agregar al final
             Thread hiloCronometro = new Thread(){
                 @Override
@@ -1046,17 +1080,14 @@ public class TableroController implements Initializable, Runnable {
             hiloCronometro.setName("Hilo Cronometro");
             hiloCronometro.start( );
             */
-            
-            while(ganador == -1){
-                
-                if(numdado != 0){
-                    for(numPlayer = 0; numPlayer < jugadores.size(); numPlayer++)
-                        if(jugadores.get(numPlayer).isTurno()) break; 
-                 
-                    nombreturno.setText(jugadores.get(numPlayer).getNombre());
+            while(ganador == -1 ){
+                if(tiro){
+                    System.out.println("OLAAAA");
                     //Movimiento de jugador
                     //Comprobar si cae en casilla de bestia o jugador
                     //Comprobar si cae en casilla especial (tienda, lava, vagoneta, espada, esmeralda, agua)
+                    
+                     
                 }
                 
                 
