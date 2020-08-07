@@ -516,7 +516,7 @@ public class SalaEsperaController implements Initializable{
     
     @FXML
     private void botlistoclick(MouseEvent event) {
-        /*
+        
       if(nombre2.getText().equals("")){
         Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setHeaderText(null);
@@ -617,7 +617,7 @@ public class SalaEsperaController implements Initializable{
             alert.setContentText("No puede jugar sin haber escogido un personaje");
             alert.showAndWait();
         }
-        */
+        /*
         Parent tablero;
                                             try {
                                                 Cliente.setJugadores(conexionJugadores.getJugadores());
@@ -634,7 +634,7 @@ public class SalaEsperaController implements Initializable{
                                                 System.out.println("AQUI EL ERROR Ah");
                                             }
         
-    }
+  */  }
     
     private boolean todosListos(ArrayList<Player> lista){
         if(lista.size() < 2) return false;

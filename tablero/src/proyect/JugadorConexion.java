@@ -47,6 +47,7 @@ public class JugadorConexion extends Conexion implements Runnable{
             alert.setTitle("Error de Conexión");
             alert.setContentText("No se ha podido conectar con el servidor");
             alert.showAndWait();
+            System.exit(1);
         }
     }
     

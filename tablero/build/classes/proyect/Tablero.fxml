@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="870.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
+<AnchorPane id="AnchorPane" prefHeight="870.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
    <children>
       <ImageView fitHeight="870.0" fitWidth="1591.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -1068,107 +1068,107 @@
             <Image url="@imagenes/casillaespada.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada21" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="espada3" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaespada.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada211" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="espada4" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaespada.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada2111" fitHeight="40.0" fitWidth="40.0" layoutX="805.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="espada5" fitHeight="40.0" fitWidth="40.0" layoutX="805.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaespada.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada21111" fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="espada6" fitHeight="40.0" fitWidth="40.0" layoutX="1005.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaespada.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada21112" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="espada7" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaespada.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="960.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="espadaDiam" fitHeight="50.0" fitWidth="50.0" layoutX="960.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaespadadiamante.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="945.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cascoDiam" fitHeight="50.0" fitWidth="50.0" layoutX="945.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillacascodiamante.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="509.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pantalonDiam" fitHeight="50.0" fitWidth="50.0" layoutX="509.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillapantalondiamante.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="480.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botasDiam" fitHeight="50.0" fitWidth="50.0" layoutX="480.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillazapatosdiamante.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="175.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="petoDiam" fitHeight="50.0" fitWidth="50.0" layoutX="175.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaarmaduradiamante.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada11" fitHeight="30.0" fitWidth="30.0" layoutX="90.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cuboagua1" fitHeight="30.0" fitWidth="30.0" layoutX="90.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillacuboagua.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada111" fitHeight="30.0" fitWidth="30.0" layoutX="330.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cuboagua2" fitHeight="30.0" fitWidth="30.0" layoutX="330.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillacuboagua.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada1111" fitHeight="30.0" fitWidth="30.0" layoutX="450.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cuboagua3" fitHeight="30.0" fitWidth="30.0" layoutX="450.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillacuboagua.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada11111" fitHeight="30.0" fitWidth="30.0" layoutX="890.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cuboagua4" fitHeight="30.0" fitWidth="30.0" layoutX="890.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillacuboagua.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada111111" fitHeight="30.0" fitWidth="30.0" layoutX="890.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cuboagua5" fitHeight="30.0" fitWidth="30.0" layoutX="890.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillacuboagua.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada1111111" fitHeight="30.0" fitWidth="30.0" layoutX="649.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cuboagua6" fitHeight="30.0" fitWidth="30.0" layoutX="649.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillacuboagua.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada11121" fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="vagon1" fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillavagoneta.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada111211" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="vagon2" fitHeight="40.0" fitWidth="40.0" layoutX="325.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillavagoneta.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada111212" fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="vagon3" fitHeight="40.0" fitWidth="40.0" layoutX="686.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillavagoneta.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada111213" fitHeight="40.0" fitWidth="40.0" layoutX="645.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="vagon4" fitHeight="40.0" fitWidth="40.0" layoutX="645.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillavagoneta.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada1112131" fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="vagon5" fitHeight="40.0" fitWidth="40.0" layoutX="965.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillavagoneta.png" />
          </image>
@@ -1183,72 +1183,72 @@
             <Font name="Cambria Bold" size="19.0" />
          </font>
       </Label>
-      <ImageView fx:id="espada22" fitHeight="40.0" fitWidth="40.0" layoutX="89.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="esmeralda1" fitHeight="40.0" fitWidth="40.0" layoutX="89.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaesmeralda.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada221" fitHeight="40.0" fitWidth="40.0" layoutX="409.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="esmeralda2" fitHeight="40.0" fitWidth="40.0" layoutX="409.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaesmeralda.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada2211" fitHeight="40.0" fitWidth="40.0" layoutX="929.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="esmeralda3" fitHeight="40.0" fitWidth="40.0" layoutX="929.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaesmeralda.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada22111" fitHeight="40.0" fitWidth="40.0" layoutX="890.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="esmeralda4" fitHeight="40.0" fitWidth="40.0" layoutX="890.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaesmeralda.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada221111" fitHeight="40.0" fitWidth="40.0" layoutX="1049.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="esmeralda5" fitHeight="40.0" fitWidth="40.0" layoutX="1049.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaesmeralda.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada2211111" fitHeight="40.0" fitWidth="40.0" layoutX="449.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="esmeralda6" fitHeight="40.0" fitWidth="40.0" layoutX="449.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaesmeralda.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada22111111" fitHeight="40.0" fitWidth="40.0" layoutX="329.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="esmeralda7" fitHeight="40.0" fitWidth="40.0" layoutX="329.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaesmeralda.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="espada221112" fitHeight="40.0" fitWidth="40.0" layoutX="449.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="esmeralda8" fitHeight="40.0" fitWidth="40.0" layoutX="449.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/casillaesmeralda.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="11.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ghast" fitHeight="40.0" fitWidth="40.0" layoutX="11.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/ghast.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="651.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="creeper" fitHeight="40.0" fitWidth="40.0" layoutX="651.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/creeper.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1088.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="zombie" fitHeight="40.0" fitWidth="40.0" layoutX="1088.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/zombie.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1085.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="spider" fitHeight="40.0" fitWidth="40.0" layoutX="1085.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/spider.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bruja" fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/bruja.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="365.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="skeleton" fitHeight="40.0" fitWidth="40.0" layoutX="365.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/skeleton.png" />
          </image>

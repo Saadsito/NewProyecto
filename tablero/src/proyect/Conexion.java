@@ -10,7 +10,7 @@ public class Conexion implements Serializable{
     
     protected ArrayList<Player> jugadores;
     private int puerto;
-    private final String ipServer = "192.168.0.181";
+    private static final String ipServer = "192.168.0.181";
 
     public Conexion(int puerto){
         this.puerto = puerto;
@@ -29,7 +29,7 @@ public class Conexion implements Serializable{
             return puerto;
     }
 
-    public String getIpServer() {
+    public static String getIpServer() {
         return ipServer;
     }    
 
