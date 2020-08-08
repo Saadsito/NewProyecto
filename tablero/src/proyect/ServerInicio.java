@@ -130,12 +130,22 @@ public class ServerInicio extends Conexion implements Runnable{
             socket.close();
            
             for(Player x: jugadores){
-                System.out.println("Enviando paquete a " + x.getNombre());
-                Socket mysocket = new Socket(x.getIp(), 9977);
-                ObjectOutputStream flujoOut = new ObjectOutputStream(mysocket.getOutputStream());
-                flujoOut.writeObject(paquete);
-                flujoOut.close();
-                mysocket.close();
+                Thread enviar = new Thread(){
+                    @Override
+                    public void run(){
+                        try {
+                            System.out.println("Enviando paquete a " + x.getNombre());
+                            Socket mysocket = new Socket(x.getIp(), 9977);
+                            ObjectOutputStream flujoOut = new ObjectOutputStream(mysocket.getOutputStream());
+                            flujoOut.writeObject(paquete);
+                            flujoOut.close();
+                            mysocket.close();
+                        } catch (IOException ex) {
+                            System.out.println("Error en hilo enviar");
+                        }
+                    }
+                };
+                enviar.start();
             }
            
            

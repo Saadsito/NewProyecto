@@ -679,7 +679,7 @@ public class TableroController implements Initializable, Runnable {
                 
                 Socket socket = new Socket(Conexion.getIpServer(), 7700);
                 System.out.println("Enviando Informacion oks?");
-
+                System.out.println("numdado click dado: " + numdado);
                 //Envia informacion actualizada al servidor
                 Packet paquete = new Packet(-1, 0, numdado, null);
                 ObjectOutputStream flujo = new ObjectOutputStream(socket.getOutputStream());
@@ -1081,9 +1081,11 @@ public class TableroController implements Initializable, Runnable {
                 flujo.close();
                 socket.close(); 
                 
-                if(paquete.getDadoaux() == 0){
+                if(paquete.getDadoaux() == 0 && Objects.equals(null, paquete.getEstadoEspeciales())){
                     jugadores.get(juego.numPlayer).setTurno(false);
                     juego.tiro = false;
+                    juego.numPlayer = paquete.getNumPlayer();
+                    System.out.println("Paquete.numplayer: " + paquete.getNumPlayer());
                     Platform.runLater(new Runnable(){
                         @Override
                         public void run() {
@@ -1094,11 +1096,12 @@ public class TableroController implements Initializable, Runnable {
                             dado5.setVisible(false);
                             dado6.setVisible(false);
                             dado.setVisible(true);
-                            nombreturno.setText(jugadores.get(paquete.getNumPlayer()).getNombre());
+                            
+                            nombreturno.setText(jugadores.get(juego.numPlayer).getNombre());
                         }
                     });
                     
-                }else if(paquete.getNumPlayer() == -1){
+                }else if(paquete.getNumPlayer() == -1 && Objects.equals(null, paquete.getEstadoEspeciales())){
                     Thread hiloSprite = new Thread(){
                         @Override
                         public void run(){
@@ -1183,7 +1186,7 @@ public class TableroController implements Initializable, Runnable {
             hiloCronometro.setName("Hilo Cronometro");
             hiloCronometro.start( );
             */
-            while(ganador == -1 ){
+            /*while(ganador == -1 ){
                 if(numdado != 0){
                     
                     
@@ -1203,7 +1206,7 @@ public class TableroController implements Initializable, Runnable {
                 }
                 
                 
-            }
+            }*/
 
         }
     
