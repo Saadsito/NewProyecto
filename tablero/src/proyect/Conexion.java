@@ -10,7 +10,7 @@ public class Conexion implements Serializable{
     
     protected ArrayList<Player> jugadores;
     private int puerto;
-    private static final String ipServer = "192.168.0.181";
+    private static final String ipServer = "127.0.0.1";
 
     public Conexion(int puerto){
         this.puerto = puerto;

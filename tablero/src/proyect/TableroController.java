@@ -430,6 +430,22 @@ public class TableroController implements Initializable, Runnable {
     private ImageView bruja;
     @FXML
     private ImageView skeleton;
+    @FXML
+    private ImageView marco1;
+    @FXML
+    private ImageView marco2;
+    @FXML
+    private ImageView marco3;
+    @FXML
+    private ImageView marco4;
+    @FXML
+    private ImageView marco5;
+    @FXML
+    private ImageView marco6;
+    @FXML
+    private ImageView marco7;
+    @FXML
+    private ImageView marco8;
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -930,6 +946,14 @@ public class TableroController implements Initializable, Runnable {
             equisinv8.setVisible(false);  
             lapiznegro.setVisible(false);
             lapizamarillo.setVisible(false);
+            marco1.setVisible(false);
+            marco2.setVisible(false);
+            marco3.setVisible(false);
+            marco4.setVisible(false);
+            marco5.setVisible(false);
+            marco6.setVisible(false);
+            marco7.setVisible(false);
+            marco8.setVisible(false);
             fondoInv.setFitHeight(20);
         }
         else if(flechainv.getRotate()==270){
@@ -967,10 +991,6 @@ public class TableroController implements Initializable, Runnable {
         
     }
 
-    @FXML
-    private void objtiendaclick(MouseEvent event) {
-        
-    }
 
     @FXML
     private void clickflechatiendaI(MouseEvent event) {
@@ -1128,6 +1148,58 @@ public class TableroController implements Initializable, Runnable {
             System.out.println(ex);
         }
         
+    }
+
+    @FXML
+    private void objtiendaclick1(MouseEvent event) {
+    }
+
+    @FXML
+    private void objtiendaclick2(MouseEvent event) {
+    }
+
+    @FXML
+    private void objtiendaclick3(MouseEvent event) {
+    }
+
+    @FXML
+    private void clickmarco1(MouseEvent event) {
+        marco1.setVisible(false);
+    }
+
+    @FXML
+    private void clickmarco2(MouseEvent event) {
+        marco2.setVisible(false);
+    }
+
+    @FXML
+    private void clickmarco3(MouseEvent event) {
+        marco3.setVisible(false);
+    }
+
+    @FXML
+    private void clickmarco4(MouseEvent event) {
+        marco4.setVisible(false);
+    }
+
+    @FXML
+    private void clickmarco5(MouseEvent event) {
+        marco5.setVisible(false);
+    }
+
+    @FXML
+    private void clickmarco6(MouseEvent event) {
+        marco6.setVisible(false);
+    }
+
+    @FXML
+    private void clickmarco7(MouseEvent event) {
+        marco7.setVisible(false);
+    }
+
+    @FXML
+    private void clickmarco8(MouseEvent event) {
+        marco8.setVisible(false);
     }
     
     //////////////////////Clase Juego//////////////////////////////

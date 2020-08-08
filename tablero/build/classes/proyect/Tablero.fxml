@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="870.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
+<AnchorPane id="AnchorPane" prefHeight="1100.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
    <children>
-      <ImageView fitHeight="870.0" fitWidth="1591.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="1100.0" fitWidth="1591.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@imagenes/fondotab.png" />
          </image>
@@ -863,12 +863,12 @@
             <Image url="@imagenes/casillapiedra.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="505.0" fitWidth="39.5" layoutX="1085.0" layoutY="365.0" opacity="0.6" pickOnBounds="true">
+      <ImageView fitHeight="735.0" fitWidth="39.5" layoutX="1085.0" layoutY="365.0" opacity="0.6" pickOnBounds="true">
          <image>
             <Image url="@imagenes/negro.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="345.0" fitWidth="40.0" layoutX="1045.0" layoutY="525.0" opacity="0.6" pickOnBounds="true">
+      <ImageView fitHeight="575.0" fitWidth="40.0" layoutX="1045.0" layoutY="525.0" opacity="0.6" pickOnBounds="true">
          <image>
             <Image url="@imagenes/negro.jpg" />
          </image>
@@ -878,7 +878,7 @@
             <Image url="@imagenes/casillamadera.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="870.0" fitWidth="467.0" layoutX="1124.0" opacity="0.6" pickOnBounds="true">
+      <ImageView fitHeight="1100.0" fitWidth="467.0" layoutX="1124.0" opacity="0.6" pickOnBounds="true">
          <image>
             <Image url="@imagenes/negro.jpg" />
          </image>
@@ -1339,14 +1339,38 @@
       <ImageView fx:id="espadainv" fitHeight="30.0" fitWidth="30.0" layoutX="1094.0" layoutY="572.0" pickOnBounds="true" />
       <ImageView fx:id="pantaloninv" fitHeight="30.0" fitWidth="30.0" layoutX="1054.0" layoutY="612.0" pickOnBounds="true" />
       <ImageView fx:id="botasinv" fitHeight="30.0" fitWidth="30.0" layoutX="1054.0" layoutY="652.0" pickOnBounds="true" />
-      <ImageView fx:id="inv1" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="533.0" pickOnBounds="true" />
-      <ImageView fx:id="inv2" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="572.0" pickOnBounds="true" />
-      <ImageView fx:id="inv3" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="612.0" pickOnBounds="true" />
-      <ImageView fx:id="inv4" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="652.0" pickOnBounds="true" />
-      <ImageView fx:id="inv5" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="533.0" pickOnBounds="true" />
-      <ImageView fx:id="inv6" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="572.0" pickOnBounds="true" />
-      <ImageView fx:id="inv7" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="612.0" pickOnBounds="true" />
-      <ImageView fx:id="inv8" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="652.0" pickOnBounds="true" />
+      <ImageView fx:id="inv1" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="533.0" pickOnBounds="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <ImageView fx:id="inv2" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="572.0" pickOnBounds="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <ImageView fx:id="inv3" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="612.0" pickOnBounds="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <ImageView fx:id="inv4" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="652.0" pickOnBounds="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <ImageView fx:id="inv5" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="533.0" pickOnBounds="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <ImageView fx:id="inv6" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="572.0" pickOnBounds="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <ImageView fx:id="inv7" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="612.0" pickOnBounds="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <ImageView fx:id="inv8" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="652.0" pickOnBounds="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
       <ImageView fx:id="dado" fitHeight="60.0" fitWidth="60.0" layoutX="1102.0" layoutY="79.0" onMouseClicked="#dadoclick" pickOnBounds="true">
          <image>
             <Image url="@imagenes/dadocomienza.png" />
@@ -1416,7 +1440,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="lapizamarillo" fitHeight="25.0" fitWidth="25.0" layoutX="1118.0" layoutY="538.0" onMouseClicked="#clicklapizamarillo" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="lapizamarillo" fitHeight="25.0" fitWidth="25.0" layoutX="1117.0" layoutY="536.0" onMouseClicked="#clicklapizamarillo" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@imagenes/lapizamarillo.png" />
          </image>
@@ -1677,15 +1701,15 @@
             <Image url="@imagenes/flechaderecha.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="tienda1" fitHeight="30.0" fitWidth="30.0" layoutX="1065.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true">
+      <ImageView fx:id="tienda1" fitHeight="30.0" fitWidth="30.0" layoutX="1065.0" layoutY="251.0" onMouseClicked="#objtiendaclick1" pickOnBounds="true">
          <effect>
             <ColorAdjust saturation="-1.0" />
          </effect></ImageView>
-      <ImageView fx:id="tienda2" fitHeight="30.0" fitWidth="30.0" layoutX="1105.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true">
+      <ImageView fx:id="tienda2" fitHeight="30.0" fitWidth="30.0" layoutX="1105.0" layoutY="251.0" onMouseClicked="#objtiendaclick2" pickOnBounds="true">
          <effect>
             <ColorAdjust saturation="-1.0" />
          </effect></ImageView>
-      <ImageView fx:id="tienda3" fitHeight="30.0" fitWidth="30.0" layoutX="1145.0" layoutY="251.0" onMouseClicked="#objtiendaclick" pickOnBounds="true">
+      <ImageView fx:id="tienda3" fitHeight="30.0" fitWidth="30.0" layoutX="1145.0" layoutY="251.0" onMouseClicked="#objtiendaclick3" pickOnBounds="true">
          <effect>
             <ColorAdjust saturation="-1.0" />
          </effect></ImageView>
@@ -1752,6 +1776,70 @@
       <ImageView fx:id="finalizarT2" fitHeight="60.0" fitWidth="126.0" layoutX="722.0" layoutY="10.0" onMouseClicked="#finalizaTurnoclick" onMouseEntered="#FTarriba" onMouseExited="#FTabajo" pickOnBounds="true" visible="false">
          <image>
             <Image url="@imagenes/button2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="marco1" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="533.0" onMouseClicked="#clickmarco1" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/marcoinv.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="marco2" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="572.0" onMouseClicked="#clickmarco2" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/marcoinv.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="marco3" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="612.0" onMouseClicked="#clickmarco3" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/marcoinv.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="marco4" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="652.0" onMouseClicked="#clickmarco4" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/marcoinv.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="marco5" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="533.0" onMouseClicked="#clickmarco5" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/marcoinv.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="marco6" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="572.0" onMouseClicked="#clickmarco6" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/marcoinv.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="marco7" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="612.0" onMouseClicked="#clickmarco7" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/marcoinv.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="marco8" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="652.0" onMouseClicked="#clickmarco8" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/marcoinv.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
