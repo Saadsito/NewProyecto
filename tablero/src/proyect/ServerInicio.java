@@ -6,8 +6,6 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ServerInicio extends Conexion implements Runnable{
     public ServerInicio(int puerto){      
@@ -32,6 +30,7 @@ public class ServerInicio extends Conexion implements Runnable{
                     new Conexion(7000).actualizarListaEnviar(x.getIp(),jugadores);
                     if(!x.isListo()) cerrar = false;
                 }
+                    
                 
                 if(cerrar){
                     try {

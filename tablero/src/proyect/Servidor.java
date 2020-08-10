@@ -14,7 +14,7 @@ public class Servidor{
         hilo.setName("Hilo servidor");
         hilo.start();   //Abre el servidor en el puerto 7777
         
-        inicio.actualizarJugador();   
+        //inicio.actualizarJugador();   
         
         System.out.println("Iniciando Tablero");
         try {
