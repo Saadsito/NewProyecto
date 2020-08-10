@@ -1379,8 +1379,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="bestia" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="79.0" pickOnBounds="true" />
-      <ImageView fx:id="direccion" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="145.0" pickOnBounds="true" />
+      <ImageView fx:id="cBruja" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="79.0" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@../../../../../Pictures/tablero2/cabbruja.png" />
+         </image></ImageView>
       <ImageView fx:id="ficha1" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="565.0" onMouseEntered="#ficha1arriba" onMouseExited="#ficha1abajo" pickOnBounds="true" visible="false" />
       <ImageView fx:id="ficha2" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="605.0" onMouseEntered="#ficha2arriba" onMouseExited="#ficha2abajo" pickOnBounds="true" visible="false" />
       <ImageView fx:id="ficha3" fitHeight="40.0" fitWidth="40.0" layoutX="725.0" layoutY="645.0" onMouseEntered="#ficha3arriba" onMouseExited="#ficha3abajo" pickOnBounds="true" visible="false" />
@@ -1840,6 +1842,47 @@
       <ImageView fx:id="marco8" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="652.0" onMouseClicked="#clickmarco8" pickOnBounds="true" visible="false">
          <image>
             <Image url="@imagenes/marcoinv.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="cCreeper" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="79.0" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@../../../../../Pictures/tablero2/cabcreeper.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cGhast" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="79.0" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@../../../../../Pictures/tablero2/cabghast.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cSkeleton" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="79.0" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@../../../../../Pictures/tablero2/cabskeleton.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cZombie" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="79.0" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@../../../../../Pictures/tablero2/cabzombie.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cSpider" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="79.0" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@../../../../../Pictures/tablero2/cabspider.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="posib6" fitHeight="40.0" fitWidth="40.0" layoutX="935.0" layoutY="659.0" onMouseClicked="#clickposib6" opacity="0.4" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/casillazul.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="posib7" fitHeight="40.0" fitWidth="40.0" layoutX="945.0" layoutY="669.0" onMouseClicked="#clickposib7" opacity="0.4" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/casillazul.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />

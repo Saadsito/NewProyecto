@@ -206,10 +206,6 @@ public class TableroController implements Initializable, Runnable {
     @FXML
     private ImageView dado = new ImageView(new Image("Proyect/imagenes/dadocomienza.png"));
     @FXML
-    private ImageView bestia;
-    @FXML
-    private ImageView direccion;
-    @FXML
     private ImageView ficha1;
     @FXML
     private ImageView ficha2;
@@ -477,6 +473,22 @@ public class TableroController implements Initializable, Runnable {
     
     private ColorAdjust color;
     private int numeroJugador;
+    @FXML
+    private ImageView cBruja;
+    @FXML
+    private ImageView cCreeper;
+    @FXML
+    private ImageView cGhast;
+    @FXML
+    private ImageView cSkeleton;
+    @FXML
+    private ImageView cZombie;
+    @FXML
+    private ImageView cSpider;
+    @FXML
+    private ImageView posib6;
+    @FXML
+    private ImageView posib7;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -615,7 +627,9 @@ public class TableroController implements Initializable, Runnable {
         posib3.setVisible(false);
         posib4.setVisible(false);
         posib5.setVisible(false);
-        llegada(obtenerNum(x,y, tab, casillas));
+        posib6.setVisible(false);
+        posib7.setVisible(false);
+        llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
     }
 
@@ -629,7 +643,9 @@ public class TableroController implements Initializable, Runnable {
         posib3.setVisible(false);
         posib4.setVisible(false);
         posib5.setVisible(false);
-        llegada(obtenerNum(x,y, tab, casillas));
+        posib6.setVisible(false);
+        posib7.setVisible(false);
+        llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
     }
 
@@ -643,7 +659,9 @@ public class TableroController implements Initializable, Runnable {
         posib3.setVisible(false);
         posib4.setVisible(false);
         posib5.setVisible(false);
-        llegada(obtenerNum(x,y, tab, casillas));
+        posib6.setVisible(false);
+        posib7.setVisible(false);
+        llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
     }
 
@@ -657,7 +675,9 @@ public class TableroController implements Initializable, Runnable {
         posib3.setVisible(false);
         posib4.setVisible(false);
         posib5.setVisible(false);
-        llegada(obtenerNum(x,y, tab, casillas));
+        posib6.setVisible(false);
+        posib7.setVisible(false);
+        llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
     }
 
@@ -671,7 +691,9 @@ public class TableroController implements Initializable, Runnable {
         posib3.setVisible(false);
         posib4.setVisible(false);
         posib5.setVisible(false);
-        llegada(obtenerNum(x,y, tab, casillas));
+        posib6.setVisible(false);
+        posib7.setVisible(false);
+        llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
     }
 
@@ -1351,6 +1373,63 @@ public class TableroController implements Initializable, Runnable {
                                         posib5.setLayoutX(casillas[vector.get(4)][1]);
                                         posib5.setLayoutY(casillas[vector.get(4)][2]);
                                         break;
+                                        
+                                    case 6:
+                                        posib1.setVisible(true);
+                                        posib1.setLayoutX(casillas[vector.get(0)][1]);
+                                        posib1.setLayoutY(casillas[vector.get(0)][2]);
+
+                                        posib2.setVisible(true);
+                                        posib2.setLayoutX(casillas[vector.get(1)][1]);
+                                        posib2.setLayoutY(casillas[vector.get(1)][2]);
+
+                                        posib3.setVisible(true);
+                                        posib3.setLayoutX(casillas[vector.get(2)][1]);
+                                        posib3.setLayoutY(casillas[vector.get(2)][2]);
+
+                                        posib4.setVisible(true);
+                                        posib4.setLayoutX(casillas[vector.get(3)][1]);
+                                        posib4.setLayoutY(casillas[vector.get(3)][2]);
+
+                                        posib5.setVisible(true);
+                                        posib5.setLayoutX(casillas[vector.get(4)][1]);
+                                        posib5.setLayoutY(casillas[vector.get(4)][2]);
+                                        
+                                        posib6.setVisible(true);
+                                        posib6.setLayoutX(casillas[vector.get(5)][1]);
+                                        posib6.setLayoutY(casillas[vector.get(5)][2]);
+                                        break;
+                                        
+                                    case 7:
+                                       posib1.setVisible(true);
+                                        posib1.setLayoutX(casillas[vector.get(0)][1]);
+                                        posib1.setLayoutY(casillas[vector.get(0)][2]);
+
+                                        posib2.setVisible(true);
+                                        posib2.setLayoutX(casillas[vector.get(1)][1]);
+                                        posib2.setLayoutY(casillas[vector.get(1)][2]);
+
+                                        posib3.setVisible(true);
+                                        posib3.setLayoutX(casillas[vector.get(2)][1]);
+                                        posib3.setLayoutY(casillas[vector.get(2)][2]);
+
+                                        posib4.setVisible(true);
+                                        posib4.setLayoutX(casillas[vector.get(3)][1]);
+                                        posib4.setLayoutY(casillas[vector.get(3)][2]);
+
+                                        posib5.setVisible(true);
+                                        posib5.setLayoutX(casillas[vector.get(4)][1]);
+                                        posib5.setLayoutY(casillas[vector.get(4)][2]);
+                                        
+                                        posib6.setVisible(true);
+                                        posib6.setLayoutX(casillas[vector.get(5)][1]);
+                                        posib6.setLayoutY(casillas[vector.get(5)][2]);
+                                        
+                                        posib7.setVisible(true);
+                                        posib7.setLayoutX(casillas[vector.get(6)][1]);
+                                        posib7.setLayoutY(casillas[vector.get(6)][2]);
+                                        break; 
+                                              
                                 }
 
                             }
@@ -1613,6 +1692,7 @@ public class TableroController implements Initializable, Runnable {
     }
     */
     private void llegada(int num){
+        System.out.println("LLEGUE Y MI NUMERO ES: "+num);
         switch (num){
             case 24:
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(1)) {
@@ -1920,6 +2000,42 @@ public class TableroController implements Initializable, Runnable {
                 ////// ACA PONER LA NUEVA VISTA DE VICTORIA
                 break;
         }
+    }
+
+    @FXML
+    private void sueltaclick(MouseEvent event) {
+    }
+
+    @FXML
+    private void clickposib6(MouseEvent event) {
+        int x = (int) posib6.getLayoutX();
+        int y = (int) posib6.getLayoutY();
+        enviarPaquete(new Packet( x, y, juego.numPlayer));
+        posib1.setVisible(false);
+        posib2.setVisible(false);
+        posib3.setVisible(false);
+        posib4.setVisible(false);
+        posib5.setVisible(false);
+        posib6.setVisible(false);
+        posib7.setVisible(false);
+        llegada(obtenerNum(x,y, casillas, tab));
+        enviarPaquete(new Packet(juego.estadoEspeciales));
+    }
+
+    @FXML
+    private void clickposib7(MouseEvent event) {
+        int x = (int) posib7.getLayoutX();
+        int y = (int) posib7.getLayoutY();
+        enviarPaquete(new Packet( x, y, juego.numPlayer));
+        posib1.setVisible(false);
+        posib2.setVisible(false);
+        posib3.setVisible(false);
+        posib4.setVisible(false);
+        posib5.setVisible(false);
+        posib6.setVisible(false);
+        posib7.setVisible(false);
+        llegada(obtenerNum(x,y, casillas, tab));
+        enviarPaquete(new Packet(juego.estadoEspeciales));
     }
     
     
