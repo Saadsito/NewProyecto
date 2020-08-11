@@ -516,7 +516,7 @@ public class SalaEsperaController implements Initializable{
     
     @FXML
     private void botlistoclick(MouseEvent event) {
-      /*  
+       
       if(nombre2.getText().equals("")){
         Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setHeaderText(null);
@@ -618,7 +618,7 @@ public class SalaEsperaController implements Initializable{
             alert.showAndWait();
         }
         
-        */Parent tablero;
+        /*Parent tablero;
                                             try {
                                                 Cliente.setJugadores(conexionJugadores.getJugadores());
                                                 tablero = FXMLLoader.load(getClass().getResource("Tablero.fxml"));
@@ -631,8 +631,8 @@ public class SalaEsperaController implements Initializable{
                                                 
                                                 return;
                                             } catch (IOException ex) {
-                                                System.out.println("AQUI EL ERROR Ah");
-                                            }
+                                                System.out.println(ex);
+                                            }*/
         
     }
     

@@ -152,6 +152,35 @@ public class ServerInicio extends Conexion implements Runnable{
        
    }
 
+   public void updateInventario() throws IOException, ClassNotFoundException{
+       ServerSocket server = new ServerSocket(9999);
+       while(true){
+           Socket socket = server.accept();
+           ObjectInputStream flujoIn = new ObjectInputStream(socket.getInputStream());
+           Inventario paquete = (Inventario) flujoIn.readObject();
+           flujoIn.close();
+           socket.close();
+           for(Player x: jugadores){
+                Thread enviar = new Thread(){
+                    @Override
+                    public void run(){
+                        try {
+                            System.out.println("Enviando inventario a " + x.getNombre());
+                            Socket mysocket = new Socket(x.getIp(), 5555);
+                            ObjectOutputStream flujoOut = new ObjectOutputStream(mysocket.getOutputStream());
+                            flujoOut.writeObject(paquete);
+                            flujoOut.close();
+                            mysocket.close();
+                        } catch (IOException ex) {
+                            System.out.println("Error en hilo enviar inventario");
+                        }
+                    }
+                };
+                enviar.start();
+            }
+       }
+   }
+   
 }
 
 

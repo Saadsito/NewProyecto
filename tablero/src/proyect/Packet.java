@@ -1,15 +1,10 @@
 package proyect;
 
 import java.io.Serializable;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.scene.image.ImageView;
-import javafx.util.Duration;
 
 public class Packet implements Serializable{
     
-    private int numPlayer, x, y; 
+    private int numPlayer, nbestia, x, y; 
     private int ganador;
     private boolean[] estadoEspeciales; //True en las que se muestran y false en las que no
     private int dadoaux;
@@ -47,10 +42,15 @@ public class Packet implements Serializable{
     public void setY(int y) {
         this.y = y;
     }
+
+    public int getNbestia() {
+        return nbestia;
+    }
     
     
 
-    public Packet(int numPlayer, int ganador, int dadoaux, boolean[] estadoEspeciales, boolean primerTiro) {
+    public Packet(int numPlayer, int ganador, int dadoaux, int nbestia, boolean[] estadoEspeciales, boolean primerTiro) {
+        this.nbestia = nbestia;
         this.numPlayer = numPlayer;
         this.ganador = ganador;
         this.dadoaux = dadoaux;
