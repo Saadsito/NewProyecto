@@ -1584,67 +1584,67 @@
             <Image url="@imagenes/casillamadera.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="suelta1" fitHeight="30.0" fitWidth="30.0" layoutX="1094.0" layoutY="385.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta1" fitHeight="30.0" fitWidth="30.0" layoutX="1094.0" layoutY="385.0" onMouseClicked="#suelta1click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta2" fitHeight="30.0" fitWidth="30.0" layoutX="1107.0" layoutY="420.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta2" fitHeight="30.0" fitWidth="30.0" layoutX="1107.0" layoutY="420.0" onMouseClicked="#suelta2click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta3" fitHeight="30.0" fitWidth="30.0" layoutX="1094.0" layoutY="450.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta3" fitHeight="30.0" fitWidth="30.0" layoutX="1094.0" layoutY="450.0" onMouseClicked="#suelta3click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta4" fitHeight="30.0" fitWidth="30.0" layoutX="1102.0" layoutY="490.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta4" fitHeight="30.0" fitWidth="30.0" layoutX="1102.0" layoutY="490.0" onMouseClicked="#suelta4click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta5" fitHeight="30.0" fitWidth="30.0" layoutX="1144.0" layoutY="374.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta5" fitHeight="30.0" fitWidth="30.0" layoutX="1144.0" layoutY="374.0" onMouseClicked="#suelta5click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta6" fitHeight="30.0" fitWidth="30.0" layoutX="1154.0" layoutY="409.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta6" fitHeight="30.0" fitWidth="30.0" layoutX="1154.0" layoutY="409.0" onMouseClicked="#suelta6click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta7" fitHeight="30.0" fitWidth="30.0" layoutX="1139.0" layoutY="444.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta7" fitHeight="30.0" fitWidth="30.0" layoutX="1139.0" layoutY="444.0" onMouseClicked="#suelta7click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta8" fitHeight="30.0" fitWidth="30.0" layoutX="1144.0" layoutY="485.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta8" fitHeight="30.0" fitWidth="30.0" layoutX="1144.0" layoutY="485.0" onMouseClicked="#suelta8click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta9" fitHeight="30.0" fitWidth="30.0" layoutX="1187.0" layoutY="374.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta9" fitHeight="30.0" fitWidth="30.0" layoutX="1187.0" layoutY="374.0" onMouseClicked="#suelta9click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta10" fitHeight="30.0" fitWidth="30.0" layoutX="1202.0" layoutY="410.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta10" fitHeight="30.0" fitWidth="30.0" layoutX="1202.0" layoutY="410.0" onMouseClicked="#suelta10click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta11" fitHeight="30.0" fitWidth="30.0" layoutX="1179.0" layoutY="444.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta11" fitHeight="30.0" fitWidth="30.0" layoutX="1179.0" layoutY="444.0" onMouseClicked="#suelta11click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta12" fitHeight="30.0" fitWidth="30.0" layoutX="1217.0" layoutY="450.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta12" fitHeight="30.0" fitWidth="30.0" layoutX="1217.0" layoutY="450.0" onMouseClicked="#suelta12click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="suelta13" fitHeight="30.0" fitWidth="30.0" layoutX="1194.0" layoutY="485.0" onMouseClicked="#sueltaclick" pickOnBounds="true" visible="false">
+      <ImageView fx:id="suelta13" fitHeight="30.0" fitWidth="30.0" layoutX="1194.0" layoutY="485.0" onMouseClicked="#suelta13click" pickOnBounds="true" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

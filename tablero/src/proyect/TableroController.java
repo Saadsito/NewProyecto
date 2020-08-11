@@ -2049,156 +2049,182 @@ public class TableroController implements Initializable, Runnable {
         System.out.println("LLEGUE Y MI NUMERO ES: " + num);
         switch (num){
             case 24:
+                if(juego.estadoEspeciales[0]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(1)) {
                     juego.estadoEspeciales[0] = false;
                 }
                 break;
 
             case 30:
+                if(juego.estadoEspeciales[1]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(2)) {
                     juego.estadoEspeciales[1] = false;
                 }
                 break;
 
             case 49:
+                if(juego.estadoEspeciales[2]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(3)) {
                     juego.estadoEspeciales[2] = false;
                 }
                 break;
 
             case 57:
+                if(juego.estadoEspeciales[3]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(4)) {
                     juego.estadoEspeciales[3] = false;
                 }
                 break;
 
             case 83:
+                if(juego.estadoEspeciales[4]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(5)) {
                     juego.estadoEspeciales[4] = false;
                 }
                 break;
 
             case 125:
+                if(juego.estadoEspeciales[5]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(6)) {
                     juego.estadoEspeciales[5] = false;
                 }
                 break;
 
             case 162:
+                if(juego.estadoEspeciales[6]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(7)) {
                     juego.estadoEspeciales[6] = false;
                 }
                 break;
 
             case 174:
+                if(juego.estadoEspeciales[7]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(8)) {
                     juego.estadoEspeciales[7] = false;
                 }
                 break;
 
             case 173:
+                if(juego.estadoEspeciales[8]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(9)) {
                     juego.estadoEspeciales[8] = false;
                 }
                 break;
 
             case 170:
+                if(juego.estadoEspeciales[9]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(10)){
                     juego.estadoEspeciales[9] = false;
                 }
                 break;
 
             case 172:
+                if(juego.estadoEspeciales[10]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(11)){
                     juego.estadoEspeciales[10] = false;
                 }
                 break;
 
             case 171:
+                if(juego.estadoEspeciales[11]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(12)){
                     juego.estadoEspeciales[11] = false;
                 }
                 break;
 
             case 32:
+                if(juego.estadoEspeciales[12]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(13)) {
                     juego.estadoEspeciales[12] = false;
                 }
                 break;
 
             case 51:
+                if(juego.estadoEspeciales[13]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(14)) {
                     juego.estadoEspeciales[13] = false;
                 }
                 break;
 
             case 141:
+                if(juego.estadoEspeciales[14]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(15)){
                     juego.estadoEspeciales[14] = false;
                 }
                 break;
 
             case 119:
+                if(juego.estadoEspeciales[15]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(16)) {
                     juego.estadoEspeciales[15] = false;
                 }
                 break;
 
             case 100:
+                if(juego.estadoEspeciales[16]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(17)) {
                     juego.estadoEspeciales[16] = false;
                 }
                 break;
 
             case 79:
+                if(juego.estadoEspeciales[17]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(18)) {
                     juego.estadoEspeciales[17] = false;
                 }
                 break;
 
             case 58:
+                if(juego.estadoEspeciales[18]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(19)){
                     juego.estadoEspeciales[18] = false;
                 }
                 break;
 
             case 133:
+                if(juego.estadoEspeciales[19]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(20)) {
                     juego.estadoEspeciales[19] = false;
                 }
                 break;
 
             case 128:
+                if(juego.estadoEspeciales[20]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(21)) {
                     juego.estadoEspeciales[20] = false;
                 }
                 break;
 
             case 108:
+                if(juego.estadoEspeciales[21]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(22)) {
                     juego.estadoEspeciales[21] = false;
                 }
                 break;
 
             case 90:
+                if(juego.estadoEspeciales[22]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(23)) {
                     juego.estadoEspeciales[22] = false;
                 }
                 break;
 
             case 63:
+                if(juego.estadoEspeciales[23]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(24)){
                     juego.estadoEspeciales[23] = false;
                 }
                 break;
 
             case 54:
+                if(juego.estadoEspeciales[24]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(25)) {
                     juego.estadoEspeciales[24] = false;
                 }
                 break;
 
             case 154:
+                if(juego.estadoEspeciales[25]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(26)) {
                     juego.estadoEspeciales[25] = false;
                 }
@@ -2372,9 +2398,6 @@ public class TableroController implements Initializable, Runnable {
         }
     }
 
-    @FXML
-    private void sueltaclick(MouseEvent event) {
-    }
 
     @FXML
     private void clickposib6(MouseEvent event) {
@@ -2432,6 +2455,58 @@ public class TableroController implements Initializable, Runnable {
 
     @FXML
     private void ficha6abajo(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta1click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta2click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta3click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta4click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta5click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta6click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta7click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta8click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta9click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta10click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta11click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta12click(MouseEvent event) {
+    }
+
+    @FXML
+    private void suelta13click(MouseEvent event) {
     }
     
 
