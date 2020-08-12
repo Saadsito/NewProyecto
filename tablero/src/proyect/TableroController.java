@@ -438,7 +438,7 @@ public class TableroController implements Initializable, Runnable {
     @FXML
     private ImageView marco8;
     
-    ImageView ficha;
+    ImageView ficha, fichaB;
         
     private int casillas[][] = { {0,0,0} , {2,5,5} , {1,45,5} , {1,85,5} , {1,125,5} , {1,165,5} , {1,205,5} , {1,205,45} , {1,205,85} , {1,205,125} , {1,205,165} , {1,45,45} , {2,45,85} , {1,45,125} , {1,45,165} , {1,85,165} , {1,125,165} , {2,165,165} , {1,125,45} , {1,125,205} , {1,125,245} , {3,125,285} , {1,125,325} , {1,125,365} , {4,125,405} , {1,125,445} , {1,45,485} , {1,165,485} , {1,125,485} , {1,205,485} , {4,245,445} , {1,85,485} , {5,85,525} , {1,85,565} , {1,85,605} , {1,125,645} , {2,165,645} , {1,125,565} , {1,205,645} , {1,245,645} , {1,245,565} , {1,245,525} , {1,245,485} , {1,245,405} , {1,285,405} , {7,325,405} , {1,325,365} , {1,245,605} , {1,285,565} , {4,325,565} , {1,365,565} , {5,325,325} , {1,325,285} , {1,325,245} , {6,325,205} , {1,325,165} , {1,325,125} , {4,325,85} , {6,85,645} , {1,365,85} , {1,405,85} , {1,445,85} , {1,445,45} , {6,445,5} , {1,445,125} , {1,445,165} , {2,485,165} , {1,485,5} , {1,525,5} , {1,565,5} , {1,605,5} , {1,645,5} , {1,605,45} , {1,605,85} , {1,565,85} , {1,605,125} , {1,605,165} , {1,565,165} , {1,525,165} , {5,645,85} , {7,685,85} , {1,725,85} , {1,765,85} , {4,805,85} , {1,845,85} , {1,885,85} , {1,885,45} , {2,885,5} , {1,1045,85} , {1,1045,45} , {6,1045,5} , {1,1005,5} , {1,965,5} , {1,925,5} , {1,965,45} , {1,1045,125} , {1,1045,165} , {1,1085,165} , {1,1005,165} , {1,885,125} , {5,885,165} , {1,925,165} , {1,965,165} , {1,965,205} , {7,965,245} , {1,965,285} , {1,965,325} , {1,925,325} , {6,885,325} , {1,1005,325} , {1,1045,325} , {1,1085,325} , {1,1045,365} , {1,1045,405} , {2,1045,445} , {1,1045,485} , {1,1005,405} , {1,885,365} , {1,885,405} , {5,885,445} , {1,885,485} , {1,925,485} , {1,965,485} , {1,1005,485} , {1,1005,525} , {4,1005,565} , {1,1005,605} , {1,965,605} , {6,925,605} , {1,885,605} , {1,845,605} , {1,405,565} , {1,405,525} , {6,405,485} , {1,405,605} , {1,405,645} , {1,365,645} , {1,445,485} , {1,485,485} , {1,525,485} , {1,565,485} , {5,445,645} , {1,485,645} , {1,525,645} , {1,565,525} , {2,565,645} , {1,565,565} , {1,565,605} , {1,485,605} , {1,605,605} , {1,685,605} , {7,645,605} , {2,365,325} , {1,405,325} , {6,445,325} , {1,485,325} , {1,525,325} , {1,565,325} , {1,605,325} , {1,645,325} , {1,765,325} , {7,685,325} , {4,725,325} , {1,765,365} , {2,765,405} , {1,765,445} , {1,765,485} , {1,765,525} , {8,485,285} , {9,125,85} , {14,525,85} , {10,165,565} , {11,485,565} , {12,965,405} , {13,965,85} , {0,0,0} , {0,0,0} , {0,0,0} , {0,765,605} };
     private int tab[][] = { {  1,  2,  3,  4,  5,  6, -1, -1, -1, -1, -1, 63, 67, 68, 69, 70, 71, -1, -1, -1, -1, -1, 87, 93, 92, 91, 90, -1} , 
@@ -459,7 +459,7 @@ public class TableroController implements Initializable, Runnable {
                         { -1, -1, 34, -1, -1, -1, 47, -1, -1, -1,134, -1,148, -1,147,149,151,150,  176,  178,  177,130,129,128,127,126, -1, -1} , 
                         { -1, -1, 58, 35, 36, 38, 39, -1, -1,136,135,141,142,143,145, -1, -1, -1,  -1,  -1,  -1, -1, -1, -1, -1, -1, -1, -1} };
     
-    private ColorAdjust color;
+    private ColorAdjust color, blancoynegro;
     private int maxTurno = 0, numeroJugador;
     @FXML
     private ImageView cBruja = new ImageView();
@@ -496,7 +496,7 @@ public class TableroController implements Initializable, Runnable {
         }
         
         
-        ColorAdjust blancoynegro = new ColorAdjust();
+        blancoynegro = new ColorAdjust();
         blancoynegro.setSaturation(-1.0);
         
         color = new ColorAdjust();
@@ -614,6 +614,11 @@ public class TableroController implements Initializable, Runnable {
 
     @FXML
     private void clickposib1(MouseEvent event) {
+        if (ficha.getLayoutX() == 485 && ficha.getLayoutY() == 285){
+            tienda1.setEffect(blancoynegro);
+            tienda2.setEffect(blancoynegro);
+            tienda3.setEffect(blancoynegro);
+        }
         int x = (int) posib1.getLayoutX();
         int y = (int) posib1.getLayoutY();
         enviarPaquete(new Packet( x, y, juego.numPlayer));
@@ -627,10 +632,17 @@ public class TableroController implements Initializable, Runnable {
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
+        
+        if(maxTurno < 2) enviarPaquete(new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro));
     }
 
     @FXML
     private void clickposib3(MouseEvent event) {
+        if (ficha.getLayoutX() == 485 && ficha.getLayoutY() == 285){
+            tienda1.setEffect(blancoynegro);
+            tienda2.setEffect(blancoynegro);
+            tienda3.setEffect(blancoynegro);
+        }
         int x = (int) posib3.getLayoutX();
         int y = (int) posib3.getLayoutY();
         enviarPaquete(new Packet( x, y, juego.numPlayer));
@@ -644,10 +656,16 @@ public class TableroController implements Initializable, Runnable {
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
+        if(maxTurno < 2) enviarPaquete(new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro));
     }
 
     @FXML
     private void clickposib2(MouseEvent event) {
+        if (ficha.getLayoutX() == 485 && ficha.getLayoutY() == 285){
+            tienda1.setEffect(blancoynegro);
+            tienda2.setEffect(blancoynegro);
+            tienda3.setEffect(blancoynegro);
+        }
         int x = (int) posib2.getLayoutX();
         int y = (int) posib2.getLayoutY();
         enviarPaquete(new Packet( x, y, juego.numPlayer));
@@ -661,10 +679,16 @@ public class TableroController implements Initializable, Runnable {
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
+        if(maxTurno < 2) enviarPaquete(new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro));
     }
 
     @FXML
     private void clickposib4(MouseEvent event) {
+        if (ficha.getLayoutX() == 485 && ficha.getLayoutY() == 285){
+            tienda1.setEffect(blancoynegro);
+            tienda2.setEffect(blancoynegro);
+            tienda3.setEffect(blancoynegro);
+        }
         int x = (int) posib4.getLayoutX();
         int y = (int) posib4.getLayoutY();
         enviarPaquete(new Packet( x, y, juego.numPlayer));
@@ -678,10 +702,16 @@ public class TableroController implements Initializable, Runnable {
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
+        if(maxTurno < 2) enviarPaquete(new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro));
     }
 
     @FXML
     private void clickposib5(MouseEvent event) {
+        if (ficha.getLayoutX() == 485 && ficha.getLayoutY() == 285){
+            tienda1.setEffect(blancoynegro);
+            tienda2.setEffect(blancoynegro);
+            tienda3.setEffect(blancoynegro);
+        }
         int x = (int) posib5.getLayoutX();
         int y = (int) posib5.getLayoutY();
         enviarPaquete(new Packet( x, y, juego.numPlayer));
@@ -695,6 +725,7 @@ public class TableroController implements Initializable, Runnable {
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
+        if(maxTurno < 2) enviarPaquete(new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro));
     }
 
     @FXML
@@ -798,7 +829,7 @@ public class TableroController implements Initializable, Runnable {
                 Socket socket = new Socket(Conexion.getIpServer(), 7700);
                 System.out.println("Enviando Informacion oks?");
                 //Envia informacion actualizada al servidor
-                Packet paquete = new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro);
+                Packet paquete = new Packet(juego.numPlayer, 0, numdado, 0, null, juego.primerTiro);
                 ObjectOutputStream flujo = new ObjectOutputStream(socket.getOutputStream());
                 flujo.writeObject(paquete);
                 flujo.close();
@@ -951,7 +982,7 @@ public class TableroController implements Initializable, Runnable {
     
     private Timeline animacionBestia(int num){
         Timeline t = new Timeline();
-        t.setCycleCount(5);
+        t.setCycleCount(3);
         t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(0),
                 (ActionEvent event) -> {
@@ -1535,24 +1566,46 @@ public class TableroController implements Initializable, Runnable {
                 socket.close(); 
                 
                 switch(paquete.getNumPlayer()){
-                        case 0: 
-                            ficha = ficha1;
-                            break;
-                        case 1: 
-                            ficha = ficha2;
-                            break;
-                        case 2: 
-                            ficha = ficha3;
-                            break;
-                        case 3: 
-                            ficha = ficha4;
-                            break;
-                        case 4: 
-                            ficha = ficha5;
-                            break;
-                        default: 
-                            ficha = ficha6;
+                    case 0: 
+                        ficha = ficha1;
+                        break;
+                    case 1: 
+                        ficha = ficha2;
+                        break;
+                    case 2: 
+                        ficha = ficha3;
+                        break;
+                    case 3: 
+                        ficha = ficha4;
+                        break;
+                    case 4: 
+                        ficha = ficha5;
+                        break;
+                    default: 
+                        ficha = ficha6;
                 }
+                
+                switch(paquete.getNbestia()){
+                    case 1: 
+                        fichaB = zombie;
+                        break;
+                    case 2: 
+                        fichaB = skeleton;
+                        break;
+                    case 3: 
+                        fichaB = bruja;
+                        break;
+                    case 4: 
+                        fichaB = ghast;
+                        break;
+                    case 5: 
+                        fichaB = spider;
+                        break;
+                    default: 
+                        fichaB = creeper;
+                }
+                
+                
                 
                 if(paquete.isPrimerTiro()){
                                 
@@ -1588,15 +1641,13 @@ public class TableroController implements Initializable, Runnable {
                         }
                     });
                     
-                }else if(paquete.getDadoaux() != 0){                                  //si tira el dado
+                }else if(paquete.getDadoaux() != 0 && paquete.getNbestia() == 0){                                  //si tira el dado
                     //Sprite del dado
                     Thread hiloSprite = new Thread(){
                         @Override
                         public void run(){
                             Timeline t = animacionDado(paquete.getDadoaux());
                             t.play();
-                            Timeline bestia = animacionBestia(paquete.getNbestia());
-                            bestia.play();
                         }
                     };
                     hiloSprite.setName("Hilo sprite dado");
@@ -1609,22 +1660,21 @@ public class TableroController implements Initializable, Runnable {
                     });
                     
                     
-                    
-                    //Movimiento del jugador
+                    //Movimiento del jugador y bestia
                     if(Cliente.getNombre().equals(nombreturno.getText())){
                         
                         Thread.sleep(7000);
                         
                         ArrayList<Integer> vector = new ArrayList<>();
                         
+                        
+                        
+                        //Movimiento jugador
                         if(ficha.getLayoutX() == 765 && ficha.getLayoutY() == 605) paquete.setDadoaux(paquete.getDadoaux() + 1);
                         
-                        System.out.println("Numero del dado: " + paquete.getDadoaux());
                         posibilidades(obtenerI(obtenerNum((int)ficha.getLayoutX(),(int)ficha.getLayoutY(),casillas,tab)),obtenerJ(obtenerNum((int)ficha.getLayoutX(),(int)ficha.getLayoutY(),casillas,tab)),paquete.getDadoaux(),tab,vector);
 
-                        for(int x: vector){
-                            System.out.println(x);
-                        }
+                      
                         
                         Platform.runLater(new Runnable(){
                             @Override
@@ -1765,6 +1815,27 @@ public class TableroController implements Initializable, Runnable {
                         
                         
                     }
+                    
+                }else if(paquete.getNbestia() != 0){
+                    
+                    Thread hilobestia = new Thread(){
+                        @Override
+                        public void run(){
+                            Timeline bestia = animacionBestia(paquete.getNbestia());
+                            bestia.play();
+                        }
+                    };
+                    
+                    hilobestia.start();
+                    
+                    Thread.sleep(3000);
+                    ArrayList<Integer> vector = new ArrayList<>();
+                    posibilidades(obtenerI(obtenerNum((int)fichaB.getLayoutX(),(int)fichaB.getLayoutY(),casillas,tab)),obtenerJ(obtenerNum((int)fichaB.getLayoutX(),(int)fichaB.getLayoutY(),casillas,tab)),paquete.getDadoaux(),tab,vector);
+                    int rand = (int) Math.floor(Math.random() * vector.size());
+                    
+                    fichaB.setLayoutX(casillas[vector.get(rand)][1]);
+                    fichaB.setLayoutY(casillas[vector.get(rand)][2]);
+                    
                     
                 }else if(!Objects.equals(paquete.getEstadoEspeciales(), null)){
                     juego.estadoEspeciales = paquete.getEstadoEspeciales();
@@ -2310,80 +2381,70 @@ public class TableroController implements Initializable, Runnable {
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    ficha.setLayoutX(765);
-                    ficha.setLayoutY(605);
+                    muere();
                 }break;
 
             case 12:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    ficha.setLayoutX(765);
-                    ficha.setLayoutY(605);
+                    muere();
                 }break;
 
             case 17:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    ficha.setLayoutX(765);
-                    ficha.setLayoutY(605);
+                    muere();
                 }break;
 
             case 36:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    ficha.setLayoutX(765);
-                    ficha.setLayoutY(605);
+                    muere();
                 }break;
 
             case 66:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    ficha.setLayoutX(765);
-                    ficha.setLayoutY(605);
+                    muere();
                 }break;
 
             case 87:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    ficha.setLayoutX(765);
-                    ficha.setLayoutY(605);
+                    muere();
                 }break;
 
             case 114:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    ficha.setLayoutX(765);
-                    ficha.setLayoutY(605);
+                    muere();
                 }break;
 
             case 145:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    ficha.setLayoutX(765);
-                    ficha.setLayoutY(605);
+                    muere();
                 }break;
 
             case 152:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    ficha.setLayoutX(765);
-                    ficha.setLayoutY(605);
+                    muere();
                 }break;
 
             case 164:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    ficha.setLayoutX(765);
-                    ficha.setLayoutY(605);
+                    muere();
                 }break;
 
             case 168:
@@ -2398,9 +2459,28 @@ public class TableroController implements Initializable, Runnable {
         }
     }
 
+    private void muere(){
+        ficha.setVisible(false);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+            System.out.println(ex);
+        }
+        ficha.setLayoutX(765);
+        ficha.setLayoutY(605);
+        ficha.setVisible(true);
+        juego.primerTiro = true;
+        jugadores.get(juego.numPlayer).getInventario().borrar(juego.estadoEspeciales);
+        enviarPaquete(new Packet(765,605, juego.numPlayer));
+    }
 
     @FXML
     private void clickposib6(MouseEvent event) {
+        if (ficha.getLayoutX() == 485 && ficha.getLayoutY() == 285){
+            tienda1.setEffect(blancoynegro);
+            tienda2.setEffect(blancoynegro);
+            tienda3.setEffect(blancoynegro);
+        }
         int x = (int) posib6.getLayoutX();
         int y = (int) posib6.getLayoutY();
         enviarPaquete(new Packet( x, y, juego.numPlayer));
@@ -2414,10 +2494,16 @@ public class TableroController implements Initializable, Runnable {
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
+        if(maxTurno < 2) enviarPaquete(new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro));
     }
 
     @FXML
     private void clickposib7(MouseEvent event) {
+        if (ficha.getLayoutX() == 485 && ficha.getLayoutY() == 285){
+            tienda1.setEffect(blancoynegro);
+            tienda2.setEffect(blancoynegro);
+            tienda3.setEffect(blancoynegro);
+        }
         int x = (int) posib7.getLayoutX();
         int y = (int) posib7.getLayoutY();
         enviarPaquete(new Packet( x, y, juego.numPlayer));
@@ -2431,6 +2517,7 @@ public class TableroController implements Initializable, Runnable {
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
+        if(maxTurno < 2) enviarPaquete(new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro));
     }
 
     @FXML

@@ -516,7 +516,7 @@ public class SalaEsperaController implements Initializable{
     
     @FXML
     private void botlistoclick(MouseEvent event) {
-       
+      
       if(nombre2.getText().equals("")){
         Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setHeaderText(null);

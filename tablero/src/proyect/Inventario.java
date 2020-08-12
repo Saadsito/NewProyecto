@@ -127,4 +127,12 @@ public boolean verificarEspada(){
             }
     }
     
+    public void borrar(boolean[] estadoEspeciales){
+        for (int i = 0; i < 13; i++){
+            if(inventario[i] > 0) 
+                estadoEspeciales[inventario[i]-1] = true;
+            inventario[i] = 0;
+        }
+    }
+    
 }

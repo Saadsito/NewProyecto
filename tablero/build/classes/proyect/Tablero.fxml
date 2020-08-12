@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1100.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
+<AnchorPane id="AnchorPane" prefHeight="1100.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
    <children>
       <ImageView fitHeight="1100.0" fitWidth="1591.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -1223,27 +1223,27 @@
             <Image url="@imagenes/casillaesmeralda.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="ghast" fitHeight="40.0" fitWidth="40.0" layoutX="11.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ghast" fitHeight="40.0" fitWidth="40.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/ghast.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="creeper" fitHeight="40.0" fitWidth="40.0" layoutX="651.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="creeper" fitHeight="40.0" fitWidth="40.0" layoutX="650.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/creeper.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="zombie" fitHeight="40.0" fitWidth="40.0" layoutX="1088.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="zombie" fitHeight="40.0" fitWidth="40.0" layoutX="1085.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/zombie.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="spider" fitHeight="40.0" fitWidth="40.0" layoutX="1085.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="spider" fitHeight="40.0" fitWidth="40.0" layoutX="1085.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/spider.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="bruja" fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bruja" fitHeight="40.0" fitWidth="40.0" layoutX="45.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/bruja.png" />
          </image>
