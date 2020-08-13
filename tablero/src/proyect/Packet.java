@@ -22,6 +22,7 @@ public class Packet implements Serializable{
     public Packet(int x, int y, int numPlayer) {
         this.x = x;
         this.y = y;
+        nbestia = 0;
         dadoaux = 0;
         this.numPlayer = numPlayer;
         estadoEspeciales = null;

@@ -632,7 +632,6 @@ public class TableroController implements Initializable, Runnable {
         }
         int x = (int) posib1.getLayoutX();
         int y = (int) posib1.getLayoutY();
-        enviarPaquete(new Packet( x, y, juego.numPlayer));
         posib1.setVisible(false);
         posib2.setVisible(false);
         posib3.setVisible(false);
@@ -640,6 +639,8 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        enviarPaquete(new Packet( x, y, juego.numPlayer));
+        
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
@@ -656,7 +657,6 @@ public class TableroController implements Initializable, Runnable {
         }
         int x = (int) posib3.getLayoutX();
         int y = (int) posib3.getLayoutY();
-        enviarPaquete(new Packet( x, y, juego.numPlayer));
         posib1.setVisible(false);
         posib2.setVisible(false);
         posib3.setVisible(false);
@@ -664,6 +664,8 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        enviarPaquete(new Packet( x, y, juego.numPlayer));
+        
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
@@ -679,7 +681,6 @@ public class TableroController implements Initializable, Runnable {
         }
         int x = (int) posib2.getLayoutX();
         int y = (int) posib2.getLayoutY();
-        enviarPaquete(new Packet( x, y, juego.numPlayer));
         posib1.setVisible(false);
         posib2.setVisible(false);
         posib3.setVisible(false);
@@ -687,6 +688,8 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        enviarPaquete(new Packet( x, y, juego.numPlayer));
+        
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
@@ -702,7 +705,6 @@ public class TableroController implements Initializable, Runnable {
         }
         int x = (int) posib4.getLayoutX();
         int y = (int) posib4.getLayoutY();
-        enviarPaquete(new Packet( x, y, juego.numPlayer));
         posib1.setVisible(false);
         posib2.setVisible(false);
         posib3.setVisible(false);
@@ -710,6 +712,8 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        enviarPaquete(new Packet( x, y, juego.numPlayer));
+        
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
@@ -1612,8 +1616,9 @@ public class TableroController implements Initializable, Runnable {
                     case 5: 
                         fichaB = spider;
                         break;
-                    default: 
+                    case 6: 
                         fichaB = creeper;
+                        break;
                 }
                 
                 
@@ -1828,7 +1833,11 @@ public class TableroController implements Initializable, Runnable {
                     }
                     
                 }else if(paquete.getNbestia() != 0){
-                    
+                    System.out.println("Entro bestia");
+                    System.out.println("Numplayer: " + paquete.getNumPlayer());
+                    System.out.println("NUMDADO: " + paquete.getDadoaux() + "     NBESTIA: " + paquete.getNbestia());
+                    System.out.println("Posicion X bestia: " + fichaB.getLayoutX());
+                    System.out.println("Posicion Y bestia: " + fichaB.getLayoutY());
                     Thread hilobestia = new Thread(){
                         @Override
                         public void run(){
@@ -1842,10 +1851,9 @@ public class TableroController implements Initializable, Runnable {
                     Thread.sleep(3000);
                     ArrayList<Integer> vector = new ArrayList<>();
                     posibilidades(obtenerI(obtenerNum((int)fichaB.getLayoutX(),(int)fichaB.getLayoutY(),casillas,tab)),obtenerJ(obtenerNum((int)fichaB.getLayoutX(),(int)fichaB.getLayoutY(),casillas,tab)),paquete.getDadoaux(),tab,vector);
-                    int rand = (int) Math.floor(Math.random() * vector.size());
-                    
-                    fichaB.setLayoutX(casillas[vector.get(rand)][1]);
-                    fichaB.setLayoutY(casillas[vector.get(rand)][2]);
+                    System.out.println(vector.size());
+                    fichaB.setLayoutX(casillas[vector.get(0)][1]);
+                    fichaB.setLayoutY(casillas[vector.get(0)][2]);
                     
                     
                 }else if(!Objects.equals(paquete.getEstadoEspeciales(), null)){
@@ -1991,8 +1999,7 @@ public class TableroController implements Initializable, Runnable {
                       jugadores.get(juego.numPlayer).getInventario().addInv(-3);
                       tradeo[i]=0;
                     }
-                }
-            
+                }break;
             case 2:
                 for(int i=0;i<8;i++){
                     if(tradeo[i]>0){
@@ -2088,7 +2095,7 @@ public class TableroController implements Initializable, Runnable {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setHeaderText(null);
                 alert.setTitle("Se ha producido un error");
-                alert.setContentText("El juego debe empezar con mínimo 2 jugadores.");
+                alert.setContentText("No se puede tradear con objetos distintos");
                 alert.showAndWait();
                 return false;
             }
@@ -2628,7 +2635,6 @@ public class TableroController implements Initializable, Runnable {
         }
         int x = (int) posib6.getLayoutX();
         int y = (int) posib6.getLayoutY();
-        enviarPaquete(new Packet( x, y, juego.numPlayer));
         posib1.setVisible(false);
         posib2.setVisible(false);
         posib3.setVisible(false);
@@ -2636,6 +2642,8 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        enviarPaquete(new Packet( x, y, juego.numPlayer));
+        
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
@@ -2651,7 +2659,6 @@ public class TableroController implements Initializable, Runnable {
         }
         int x = (int) posib7.getLayoutX();
         int y = (int) posib7.getLayoutY();
-        enviarPaquete(new Packet( x, y, juego.numPlayer));
         posib1.setVisible(false);
         posib2.setVisible(false);
         posib3.setVisible(false);
@@ -2659,6 +2666,8 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        enviarPaquete(new Packet( x, y, juego.numPlayer));
+        
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));

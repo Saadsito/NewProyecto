@@ -1228,7 +1228,7 @@
             <Image url="@imagenes/ghast.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="creeper" fitHeight="40.0" fitWidth="40.0" layoutX="650.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="creeper" fitHeight="40.0" fitWidth="40.0" layoutX="645.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/creeper.png" />
          </image>
