@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="552.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.GanadorController">
+   <children>
+      <ImageView fitHeight="430.0" fitWidth="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/fondosalaespera.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="273.0" fitWidth="234.0" layoutX="277.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/fuegosartificialesgif.gif" />
+         </image>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="273.0" fitWidth="234.0" layoutX="160.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/fuegosartificialesgif.gif" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="273.0" fitWidth="234.0" layoutX="167.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/fuegosartificialesgif.gif" />
+         </image>
+         <effect>
+            <ColorAdjust contrast="-1.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="273.0" fitWidth="234.0" layoutX="284.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/fuegosartificialesgif.gif" />
+         </image>
+         <effect>
+            <ColorAdjust saturation="0.88" />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="fichaganador" fitHeight="150.0" fitWidth="200.0" layoutX="215.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="71.0" fitWidth="405.0" layoutX="74.0" layoutY="280.0" pickOnBounds="true">
+         <image>
+            <Image url="@imagenes/fondovidrio.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelganador" alignment="CENTER" layoutX="74.0" layoutY="280.0" prefHeight="71.0" prefWidth="405.0" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Cambria Bold" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="botvolver" fitHeight="68.0" fitWidth="303.0" layoutX="125.0" layoutY="367.0" onMouseEntered="#volverArriba" onMouseExited="#volverAbajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/botvolver.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <ImageView fx:id="botvolver2" fitHeight="68.0" fitWidth="303.0" layoutX="125.0" layoutY="367.0" onMouseClicked="#volver2click" onMouseEntered="#volver2Arriba" onMouseExited="#volver2Abajo" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/botvolver2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

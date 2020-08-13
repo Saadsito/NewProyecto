@@ -1,6 +1,7 @@
 ||:proyect.TableroController
 java.io.IOException
 proyect.TableroController
+javafx.scene.control.Alert
 java.util.ArrayList
 java.lang.ClassNotFoundException
 java.lang.String
@@ -47,6 +48,7 @@ java.lang.InterruptedException
 java.io.PrintStream
 javafx.scene.effect.ColorAdjust
 proyect.Conexion
+javafx.scene.control.Alert$AlertType
 java.io.ObjectInputStream
 javafx.animation.KeyFrame
 javafx.application.Platform
@@ -90,6 +92,21 @@ proyect.TableroController
 javafx.scene.image.ImageView
 proyect.TableroController$10
 java.lang.Runnable
+||:proyect.GanadorController
+javafx.scene.Node
+java.applet.AudioClip
+javafx.fxml.FXMLLoader
+javafx.fxml.Initializable
+java.applet.Applet
+javafx.scene.input.MouseEvent
+javafx.stage.Stage
+java.lang.Class
+proyect.GanadorController
+javafx.scene.image.ImageView
+javafx.scene.Scene
+java.lang.Object
+java.io.IOException
+javafx.scene.Parent
 ||:proyect.TableroController$6
 java.lang.Object
 proyect.TableroController

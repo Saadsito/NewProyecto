@@ -17,7 +17,11 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
@@ -25,6 +29,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import static javafx.scene.paint.Color.color;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -2594,7 +2599,7 @@ public class TableroController implements Initializable, Runnable {
                 break;
 
             case 169:
-                ////// ACA PONER LA NUEVA VISTA DE VICTORIA
+                //CARGAR VISTA
                 break;
         }
     }
