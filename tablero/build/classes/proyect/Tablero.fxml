@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1100.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
+<AnchorPane id="AnchorPane" prefHeight="1100.0" prefWidth="1591.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.TableroController">
    <children>
       <ImageView fitHeight="1100.0" fitWidth="1591.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -1238,12 +1238,12 @@
             <Image url="@imagenes/zombie.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="spider" fitHeight="40.0" fitWidth="40.0" layoutX="1085.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="spider" fitHeight="30.0" fitWidth="40.0" layoutX="1085.0" layoutY="325.0" pickOnBounds="true">
          <image>
             <Image url="@imagenes/spider.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="bruja" fitHeight="40.0" fitWidth="40.0" layoutX="45.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bruja" fitHeight="40.0" fitWidth="35.0" layoutX="45.0" layoutY="485.0" pickOnBounds="true">
          <image>
             <Image url="@imagenes/bruja.png" />
          </image>
@@ -1339,35 +1339,35 @@
       <ImageView fx:id="espadainv" fitHeight="30.0" fitWidth="30.0" layoutX="1094.0" layoutY="572.0" pickOnBounds="true" />
       <ImageView fx:id="pantaloninv" fitHeight="30.0" fitWidth="30.0" layoutX="1054.0" layoutY="612.0" pickOnBounds="true" />
       <ImageView fx:id="botasinv" fitHeight="30.0" fitWidth="30.0" layoutX="1054.0" layoutY="652.0" pickOnBounds="true" />
-      <ImageView fx:id="inv1" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="533.0" pickOnBounds="true">
+      <ImageView fx:id="inv1" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="533.0" onMouseClicked="#clickinv1" pickOnBounds="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ImageView>
-      <ImageView fx:id="inv2" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="572.0" pickOnBounds="true">
+      <ImageView fx:id="inv2" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="572.0" onMouseClicked="#clickinv2" pickOnBounds="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ImageView>
-      <ImageView fx:id="inv3" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="612.0" pickOnBounds="true">
+      <ImageView fx:id="inv3" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="612.0" onMouseClicked="#clickinv3" pickOnBounds="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ImageView>
-      <ImageView fx:id="inv4" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="652.0" pickOnBounds="true">
+      <ImageView fx:id="inv4" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="652.0" onMouseClicked="#clickinv4" pickOnBounds="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ImageView>
-      <ImageView fx:id="inv5" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="533.0" pickOnBounds="true">
+      <ImageView fx:id="inv5" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="533.0" onMouseClicked="#clickinv5" pickOnBounds="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ImageView>
-      <ImageView fx:id="inv6" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="572.0" pickOnBounds="true">
+      <ImageView fx:id="inv6" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="572.0" onMouseClicked="#clickinv6" pickOnBounds="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ImageView>
-      <ImageView fx:id="inv7" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="612.0" pickOnBounds="true">
+      <ImageView fx:id="inv7" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="612.0" onMouseClicked="#clickinv7" pickOnBounds="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ImageView>
-      <ImageView fx:id="inv8" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="652.0" pickOnBounds="true">
+      <ImageView fx:id="inv8" fitHeight="30.0" fitWidth="30.0" layoutX="1214.0" layoutY="652.0" onMouseClicked="#clickinv8" pickOnBounds="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ImageView>

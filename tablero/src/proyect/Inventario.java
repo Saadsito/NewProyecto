@@ -74,6 +74,10 @@ public class Inventario implements Serializable{
         }
         return false;
     }
+    
+    public void eliminarObj(int num){
+        inventario[num]=0;
+    }
 
  /* esmeralda = -1  /   cuboagua = -2   /   espada = -3   /   cascoD = -4   /   armaduraD = -5   /   espadaD = -6   /   pantalonD = -7   /   botasD = -8 */
 
@@ -82,6 +86,27 @@ public class Inventario implements Serializable{
     if(num>0) estadoEspeciales[num-1]=true;
 }
 
+    public boolean verificaCascoD(){
+      return (inventario[0]==9) || (inventario[0] == -4);
+    }
+    
+    public boolean verificaPetoD(){
+      return (inventario[1]==12) || (inventario[1] == -5); 
+    }
+    
+    public boolean verificaEspadaD(){
+      return (inventario[2]==8) || (inventario[2] ==-6); 
+    }
+    
+    public boolean verificaPantalonD(){
+      return (inventario[3]==10) || (inventario[3] ==-7); 
+    }
+    
+    public boolean verificaBotasD(){
+      return (inventario[4]==11) || (inventario[4] ==-8); 
+    }
+    
+    
 
 public boolean verificarEspada(){
       for (int i=5;i<13;i++)

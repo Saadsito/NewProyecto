@@ -18,6 +18,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
@@ -25,6 +26,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import static javafx.scene.paint.Color.color;
 import javafx.util.Duration;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class TableroController implements Initializable, Runnable {
 
@@ -439,6 +443,8 @@ public class TableroController implements Initializable, Runnable {
     private ImageView marco8;
     
     ImageView ficha, fichaB;
+    
+    int tradeo[] = {0,0,0,0,0,0,0,0};
         
     private int casillas[][] = { {0,0,0} , {2,5,5} , {1,45,5} , {1,85,5} , {1,125,5} , {1,165,5} , {1,205,5} , {1,205,45} , {1,205,85} , {1,205,125} , {1,205,165} , {1,45,45} , {2,45,85} , {1,45,125} , {1,45,165} , {1,85,165} , {1,125,165} , {2,165,165} , {1,125,45} , {1,125,205} , {1,125,245} , {3,125,285} , {1,125,325} , {1,125,365} , {4,125,405} , {1,125,445} , {1,45,485} , {1,165,485} , {1,125,485} , {1,205,485} , {4,245,445} , {1,85,485} , {5,85,525} , {1,85,565} , {1,85,605} , {1,125,645} , {2,165,645} , {1,125,565} , {1,205,645} , {1,245,645} , {1,245,565} , {1,245,525} , {1,245,485} , {1,245,405} , {1,285,405} , {7,325,405} , {1,325,365} , {1,245,605} , {1,285,565} , {4,325,565} , {1,365,565} , {5,325,325} , {1,325,285} , {1,325,245} , {6,325,205} , {1,325,165} , {1,325,125} , {4,325,85} , {6,85,645} , {1,365,85} , {1,405,85} , {1,445,85} , {1,445,45} , {6,445,5} , {1,445,125} , {1,445,165} , {2,485,165} , {1,485,5} , {1,525,5} , {1,565,5} , {1,605,5} , {1,645,5} , {1,605,45} , {1,605,85} , {1,565,85} , {1,605,125} , {1,605,165} , {1,565,165} , {1,525,165} , {5,645,85} , {7,685,85} , {1,725,85} , {1,765,85} , {4,805,85} , {1,845,85} , {1,885,85} , {1,885,45} , {2,885,5} , {1,1045,85} , {1,1045,45} , {6,1045,5} , {1,1005,5} , {1,965,5} , {1,925,5} , {1,965,45} , {1,1045,125} , {1,1045,165} , {1,1085,165} , {1,1005,165} , {1,885,125} , {5,885,165} , {1,925,165} , {1,965,165} , {1,965,205} , {7,965,245} , {1,965,285} , {1,965,325} , {1,925,325} , {6,885,325} , {1,1005,325} , {1,1045,325} , {1,1085,325} , {1,1045,365} , {1,1045,405} , {2,1045,445} , {1,1045,485} , {1,1005,405} , {1,885,365} , {1,885,405} , {5,885,445} , {1,885,485} , {1,925,485} , {1,965,485} , {1,1005,485} , {1,1005,525} , {4,1005,565} , {1,1005,605} , {1,965,605} , {6,925,605} , {1,885,605} , {1,845,605} , {1,405,565} , {1,405,525} , {6,405,485} , {1,405,605} , {1,405,645} , {1,365,645} , {1,445,485} , {1,485,485} , {1,525,485} , {1,565,485} , {5,445,645} , {1,485,645} , {1,525,645} , {1,565,525} , {2,565,645} , {1,565,565} , {1,565,605} , {1,485,605} , {1,605,605} , {1,685,605} , {7,645,605} , {2,365,325} , {1,405,325} , {6,445,325} , {1,485,325} , {1,525,325} , {1,565,325} , {1,605,325} , {1,645,325} , {1,765,325} , {7,685,325} , {4,725,325} , {1,765,365} , {2,765,405} , {1,765,445} , {1,765,485} , {1,765,525} , {8,485,285} , {9,125,85} , {14,525,85} , {10,165,565} , {11,485,565} , {12,965,405} , {13,965,85} , {0,0,0} , {0,0,0} , {0,0,0} , {0,765,605} };
     private int tab[][] = { {  1,  2,  3,  4,  5,  6, -1, -1, -1, -1, -1, 63, 67, 68, 69, 70, 71, -1, -1, -1, -1, -1, 87, 93, 92, 91, 90, -1} , 
@@ -1948,6 +1954,19 @@ public class TableroController implements Initializable, Runnable {
 
     @FXML
     private void objtiendaclick1(MouseEvent event) {
+        if(tienda1.getEffect()==color){
+           if(verificarTradeo()==true){
+               if(tienda1.getImage()==espada) tradear(1);
+               if(tienda1.getImage()==esmeralda) tradear(2);
+               if(tienda1.getImage()==cuboagua) tradear(3);
+               if(tienda1.getImage()==cascoD) tradear(4);
+               if(tienda1.getImage()==armaduraD) tradear(5);
+               if(tienda1.getImage()==espadaD) tradear(6);
+               if(tienda1.getImage()==pantalonD) tradear(7);
+               if(tienda1.getImage()==botasD) tradear(8);
+           } 
+                      
+        }
     }
 
     @FXML
@@ -1956,6 +1975,119 @@ public class TableroController implements Initializable, Runnable {
 
     @FXML
     private void objtiendaclick3(MouseEvent event) {
+    }
+    
+    public void tradear(int num){
+        switch(num){
+            case 1:
+                for(int i=0;i<8;i++){
+                    if(tradeo[i]>0){
+                      jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                      jugadores.get(juego.numPlayer).getInventario().addInv(-3);
+                      tradeo[i]=0;
+                    }
+                }
+            
+            case 2:
+                for(int i=0;i<8;i++){
+                    if(tradeo[i]>0){
+                      jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                      jugadores.get(juego.numPlayer).getInventario().addInv(-1);
+                      tradeo[i]=0;
+                    }
+                }break;
+                
+            case 3:
+                for(int i=0;i<8;i++){
+                    if(tradeo[i]>0){
+                      tradeo[i]=0;  
+                      jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                      jugadores.get(juego.numPlayer).getInventario().addInv(-2);
+                    }
+                }break;
+                
+            case 4:
+                if(numMarcos()==4){
+                    if(jugadores.get(juego.numPlayer).getInventario().verificaCascoD()==false){
+                        for(int i=0;i<8;i++){
+                            if(tradeo[i]>0){
+                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                            }
+                        jugadores.get(juego.numPlayer).getInventario().addInv(-4);
+                        }
+                    }
+                }break;
+                
+            case 5:
+                if(numMarcos()==4){
+                    if(jugadores.get(juego.numPlayer).getInventario().verificaPetoD()==false){
+                        for(int i=0;i<8;i++){
+                            if(tradeo[i]>0){
+                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                            }
+                        jugadores.get(juego.numPlayer).getInventario().addInv(-5);
+                        }
+                    }
+                }break;
+                
+            case 6:
+                if(numMarcos()==4){
+                    if(jugadores.get(juego.numPlayer).getInventario().verificaEspadaD()==false){
+                        for(int i=0;i<8;i++){
+                            if(tradeo[i]>0){
+                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                            }
+                        jugadores.get(juego.numPlayer).getInventario().addInv(-6);
+                        }
+                    }
+                }break;
+                
+            case 7:
+                if(numMarcos()==4){
+                    if(jugadores.get(juego.numPlayer).getInventario().verificaPantalonD()==false){
+                        for(int i=0;i<8;i++){
+                            if(tradeo[i]>0){
+                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                            }
+                        jugadores.get(juego.numPlayer).getInventario().addInv(-7);
+                        }
+                    }
+                }break;
+                
+            case 8:
+                if(numMarcos()==4){
+                    if(jugadores.get(juego.numPlayer).getInventario().verificaBotasD()==false){
+                        for(int i=0;i<8;i++){
+                            if(tradeo[i]>0){
+                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                            }
+                        jugadores.get(juego.numPlayer).getInventario().addInv(-8);
+                        }
+                    }
+                }break;
+        }
+    }
+    
+    public int numMarcos(){
+        int aux=0;
+        for(int i=0;i<8;i++){
+            if(tradeo[i]>0) aux++;
+        }return aux;
+    }
+    
+    public boolean verificarTradeo(){
+        int aux=0;
+        for(int i=0;i<8;i++){
+            if((tradeo[i]>0) && (aux==0)) aux=tradeo[i];
+            else if((tradeo[i]>0) && (aux!=tradeo[i])){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setHeaderText(null);
+                alert.setTitle("Se ha producido un error");
+                alert.setContentText("El juego debe empezar con mínimo 2 jugadores.");
+                alert.showAndWait();
+                return false;
+            }
+        }return true;
     }
 
     private void actualizarInventario(Inventario inventario){
@@ -1971,41 +2103,49 @@ public class TableroController implements Initializable, Runnable {
     @FXML
     private void clickmarco1(MouseEvent event) {
         marco1.setVisible(false);
+        tradeo[0]=0;
     }
 
     @FXML
     private void clickmarco2(MouseEvent event) {
         marco2.setVisible(false);
+        tradeo[1]=0;
     }
 
     @FXML
     private void clickmarco3(MouseEvent event) {
         marco3.setVisible(false);
+        tradeo[2]=0;
     }
 
     @FXML
     private void clickmarco4(MouseEvent event) {
         marco4.setVisible(false);
+        tradeo[3]=0;
     }
 
     @FXML
     private void clickmarco5(MouseEvent event) {
         marco5.setVisible(false);
+        tradeo[4]=0;
     }
 
     @FXML
     private void clickmarco6(MouseEvent event) {
         marco6.setVisible(false);
+        tradeo[5]=0;
     }
 
     @FXML
     private void clickmarco7(MouseEvent event) {
         marco7.setVisible(false);
+        tradeo[6]=0;
     }
 
     @FXML
     private void clickmarco8(MouseEvent event) {
         marco8.setVisible(false);
+        tradeo[7]=0;
     }
     
     private int obtenerNum(int x, int y,int casillas[][], int tab[][]){
@@ -2068,23 +2208,23 @@ public class TableroController implements Initializable, Runnable {
         
         fichainv.setImage(new Image(jugadores.get(player).getSkin()));
         for(int i = 0; i < 13; i++){
-            if(inventario[i] >0 && inventario[i] < 8){
+            if((inventario[i] >0 && inventario[i] < 8) || inventario[i]==-3){
                 meterEnInventario(espada); 
             }
-            else if(inventario[i] > 12 && inventario[i] < 19){
+            else if((inventario[i] > 12 && inventario[i] < 19) || inventario[i]==-2){
                 meterEnInventario(cuboagua);  
             }
-            else if(inventario[i] > 18 && inventario[i] < 27){
+            else if((inventario[i] > 18 && inventario[i] < 27) || inventario[i]==-1){
                 meterEnInventario(esmeralda); 
             }
-            if(inventario[i]==8) 
+            if(inventario[i]==8 || inventario[i]==-6) 
                 Platform.runLater(new Runnable(){
                     @Override
                     public void run() {
                         espadainv.setImage(espadaD);
                     }
                 });
-            else if(inventario[i]==9) 
+            else if(inventario[i]==9 || inventario[i]==-4) 
                 Platform.runLater(new Runnable(){
                     @Override
                     public void run() {
@@ -2092,21 +2232,21 @@ public class TableroController implements Initializable, Runnable {
                     }
                 });
                 
-            else if(inventario[i]==10) 
+            else if(inventario[i]==10 || inventario[i]==-7) 
                 Platform.runLater(new Runnable(){
                     @Override
                     public void run() {
                         pantaloninv.setImage(pantalonD);
                     }
                 });
-            else if(inventario[i]==11) 
+            else if(inventario[i]==11 || inventario[i]==-8) 
                 Platform.runLater(new Runnable(){
                     @Override
                     public void run() {
                         botasinv.setImage(botasD);
                     }
                 });
-            else if(inventario[i]==12)
+            else if(inventario[i]==12 || inventario[i]==-5)
                 Platform.runLater(new Runnable(){
                     @Override
                     public void run() {
@@ -2594,6 +2734,86 @@ public class TableroController implements Initializable, Runnable {
 
     @FXML
     private void suelta13click(MouseEvent event) {
+    }
+
+    @FXML
+    private void clickinv1(MouseEvent event) {
+        if((tienda1.getEffect()==color) && (inv1.getImage()!=null) && numMarcos()<4){
+            marco1.setVisible(true);
+            if(inv1.getImage()==espada) tradeo[0]=1;
+            else if(inv1.getImage()==esmeralda) tradeo[0]=2;
+            else if(inv1.getImage()==cuboagua) tradeo[0]=3;
+        }
+    }
+
+    @FXML
+    private void clickinv2(MouseEvent event) {
+        if((tienda1.getEffect()==color) && (inv2.getImage()!=null) && numMarcos()<4){
+            marco2.setVisible(true);
+            if(inv2.getImage()==espada) tradeo[1]=1;
+            else if(inv2.getImage()==esmeralda) tradeo[1]=2;
+            else if(inv2.getImage()==cuboagua) tradeo[1]=3;
+        }
+    }
+
+    @FXML
+    private void clickinv3(MouseEvent event) {
+        if((tienda1.getEffect()==color) && (inv3.getImage()!=null) && numMarcos()<4){
+            marco3.setVisible(true);
+            if(inv3.getImage()==espada) tradeo[2]=1;
+            else if(inv3.getImage()==esmeralda) tradeo[2]=2;
+            else if(inv3.getImage()==cuboagua) tradeo[2]=3;
+        }
+    }
+
+    @FXML
+    private void clickinv4(MouseEvent event) {
+        if((tienda1.getEffect()==color) && (inv4.getImage()!=null) && numMarcos()<4){
+            marco4.setVisible(true);
+            if(inv4.getImage()==espada) tradeo[3]=1;
+            else if(inv4.getImage()==esmeralda) tradeo[3]=2;
+            else if(inv4.getImage()==cuboagua) tradeo[3]=3;
+        }
+    }
+
+    @FXML
+    private void clickinv5(MouseEvent event) {
+        if((tienda1.getEffect()==color) && (inv5.getImage()!=null) && numMarcos()<4){
+            marco5.setVisible(true);
+            if(inv5.getImage()==espada) tradeo[4]=1;
+            else if(inv5.getImage()==esmeralda) tradeo[4]=2;
+            else if(inv5.getImage()==cuboagua) tradeo[4]=3;
+        }
+    }
+
+    @FXML
+    private void clickinv6(MouseEvent event) {
+        if((tienda1.getEffect()==color) && (inv6.getImage()!=null) && numMarcos()<4){
+            marco6.setVisible(true);
+            if(inv6.getImage()==espada) tradeo[5]=1;
+            else if(inv6.getImage()==esmeralda) tradeo[5]=2;
+            else if(inv6.getImage()==cuboagua) tradeo[5]=3;
+        }
+    }
+
+    @FXML
+    private void clickinv7(MouseEvent event) {
+        if((tienda1.getEffect()==color) && (inv7.getImage()!=null) && numMarcos()<4){
+            marco7.setVisible(true);
+            if(inv7.getImage()==espada) tradeo[6]=1;
+            else if(inv7.getImage()==esmeralda) tradeo[6]=2;
+            else if(inv7.getImage()==cuboagua) tradeo[6]=3;
+        }
+    }
+
+    @FXML
+    private void clickinv8(MouseEvent event) {
+        if((tienda1.getEffect()==color) && (inv8.getImage()!=null) && numMarcos()<4){
+            marco8.setVisible(true);
+            if(inv8.getImage()==espada) tradeo[7]=1;
+            else if(inv8.getImage()==esmeralda) tradeo[7]=2;
+            else if(inv8.getImage()==cuboagua) tradeo[7]=3;
+        }
     }
     
 
