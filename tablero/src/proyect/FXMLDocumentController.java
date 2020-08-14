@@ -41,6 +41,12 @@ public class FXMLDocumentController implements Initializable {
     private ImageView salir2;
     
     AudioClip SonidoBot;
+    @FXML
+    private ImageView colaboradores1;
+    @FXML
+    private ImageView colaboradores2;
+    @FXML
+    private ImageView interrogacion;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -126,5 +132,58 @@ public class FXMLDocumentController implements Initializable {
         
         Platform.exit();
         System.exit(0);
+    }
+
+    @FXML
+    private void colab1abajo(MouseEvent event) {
+        colaboradores1.setVisible(true);
+        colaboradores2.setVisible(false);
+    }
+
+    @FXML
+    private void colab1arriba(MouseEvent event) {
+        colaboradores1.setVisible(false);
+        colaboradores2.setVisible(true);
+    }
+
+    @FXML
+    private void colab2abajo(MouseEvent event) {
+        colaboradores1.setVisible(true);
+        colaboradores2.setVisible(false);
+    }
+
+    @FXML
+    private void colab2arriba(MouseEvent event) {
+        colaboradores1.setVisible(false);
+        colaboradores2.setVisible(true);
+    }
+
+    @FXML
+    private void colabclick(MouseEvent event) throws IOException {
+        SonidoBot = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/sonidoboton.wav"));
+        SonidoBot.play();
+       
+        Parent Colaboradores = FXMLLoader.load(getClass().getResource("Colaboradores.fxml"));
+        Scene PantColaboradores = new Scene(Colaboradores);
+            
+        Stage ventana = (Stage)((Node)event.getSource()).getScene().getWindow();
+            
+        ventana.setScene(PantColaboradores);
+        ventana.show();
+        
+    }
+
+    @FXML
+    private void clickinterrogacion(MouseEvent event) throws IOException {
+        SonidoBot = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/sonidoboton.wav"));
+        SonidoBot.play();
+        
+        Parent Ambiente = FXMLLoader.load(getClass().getResource("Ambiente.fxml"));
+        Scene PantAmbiente = new Scene(Ambiente);
+            
+        Stage ventana = (Stage)((Node)event.getSource()).getScene().getWindow();
+            
+        ventana.setScene(PantAmbiente);
+        ventana.show();
     }
 }

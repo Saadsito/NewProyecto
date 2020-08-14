@@ -28,12 +28,41 @@ public class GanadorController implements Initializable {
     @FXML
     private ImageView botvolver2;
 
-    AudioClip SonidoBot;
+    AudioClip SonidoBot, victoria;
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         fichaganador.setImage(new Image(TableroController.getFichaGanadora()));
         labelganador.setText("Felicidades "+ TableroController.getNombreGanador());
+        
+        switch(TableroController.getFichaGanadora()){
+            case "Proyect/imagenes/lolito.png":
+                victoria = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lolitoVictoria.wav"));
+                victoria.play();
+                break;
+            case "Proyect/imagenes/vegetta777.png":
+                victoria = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/vegettaVictoria.wav"));
+                victoria.play();
+                break;
+            case "Proyect/imagenes/rubius.png":
+                victoria = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/rubiusVictoria.wav"));
+                victoria.play();
+                break;
+            case "Proyect/imagenes/auronplay.png":
+                victoria = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/auronVictoria.wav"));
+                victoria.play();
+                break;
+            case "Proyect/imagenes/willyrex.png":
+                victoria = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/willyrexVictoria.wav"));
+                victoria.play();
+                break;
+            case "Proyect/imagenes/luzu.png":
+                victoria = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/luzuVictoria.wav"));
+                victoria.play();
+                break;
+        }
+        
     }    
 
     @FXML

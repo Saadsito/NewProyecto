@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.ColaboradoresController">
+   <children>
+      <ImageView fitHeight="430.0" fitWidth="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/fondosalaespera.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="360.0" fitWidth="270.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true">
+         <image>
+            <Image url="@imagenes/fondovidrio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="171.0" fitWidth="195.0" layoutX="321.0" layoutY="41.0" pickOnBounds="true">
+         <image>
+            <Image url="@imagenes/fondovidrio.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="8.0" prefHeight="26.0" prefWidth="270.0" text="Colaboradores">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="jorge" alignment="CENTER" layoutX="14.0" layoutY="41.0" onMouseEntered="#jorgearriba" onMouseExited="#jorgeabajo" opacity="0.6" prefHeight="40.0" prefWidth="270.0" text="Jorge Matar">
+         <font>
+            <Font name="Cambria Bold" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <ImageView fx:id="colaborador" fitHeight="142.0" fitWidth="171.0" layoutX="333.0" layoutY="56.0" pickOnBounds="true" />
+      <Label fx:id="claudia" alignment="CENTER" layoutX="14.0" layoutY="81.0" onMouseEntered="#claudiaarriba" onMouseExited="#claudiaabajo" opacity="0.6" prefHeight="40.0" prefWidth="270.0" text="Claudia Habach">
+         <font>
+            <Font name="Cambria Bold" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label fx:id="tina" alignment="CENTER" layoutX="14.0" layoutY="121.0" onMouseEntered="#tinaarriba" onMouseExited="#tinaabajo" opacity="0.6" prefHeight="40.0" prefWidth="270.0" text="Andrea Gonzalez">
+         <font>
+            <Font name="Cambria Bold" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label fx:id="hector" alignment="CENTER" layoutX="14.0" layoutY="161.0" onMouseEntered="#hectorarriba" onMouseExited="#hectorabajo" opacity="0.6" prefHeight="40.0" prefWidth="270.0" text="Hector Ferrer">
+         <font>
+            <Font name="Cambria Bold" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label fx:id="maite" alignment="CENTER" layoutX="14.0" layoutY="201.0" onMouseEntered="#maitearriba" onMouseExited="#maiteabajo" opacity="0.6" prefHeight="40.0" prefWidth="270.0" text="Maite Aguilera">
+         <font>
+            <Font name="Cambria Bold" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label fx:id="jesus" alignment="CENTER" layoutX="14.0" layoutY="241.0" onMouseEntered="#jesusarriba" onMouseExited="#jesusabajo" opacity="0.6" prefHeight="40.0" prefWidth="270.0" text="Jesús Expósito">
+         <font>
+            <Font name="Cambria Bold" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label fx:id="carlos" alignment="CENTER" layoutX="14.0" layoutY="281.0" onMouseEntered="#carlosarriba" onMouseExited="#carlosabajo" opacity="0.6" prefHeight="40.0" prefWidth="270.0" text="Carlos Ternera">
+         <font>
+            <Font name="Cambria Bold" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label fx:id="crissel" alignment="CENTER" layoutX="14.0" layoutY="321.0" onMouseEntered="#crisselarriba" onMouseExited="#crisselabajo" opacity="0.6" prefHeight="40.0" prefWidth="270.0" text="Crissel Reyes">
+         <font>
+            <Font name="Cambria Bold" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label fx:id="freddy" alignment="CENTER" layoutX="14.0" layoutY="361.0" onMouseEntered="#freddyarriba" onMouseExited="#freddyabajo" opacity="0.6" prefHeight="40.0" prefWidth="270.0" text="Freddy Reyes">
+         <font>
+            <Font name="Cambria Bold" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <ImageView fx:id="volver1" fitHeight="40.0" fitWidth="250.0" layoutX="293.0" layoutY="329.0" onMouseEntered="#volver1arriba" onMouseExited="#volver1abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/botvolver.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="volver2" fitHeight="40.0" fitWidth="250.0" layoutX="293.0" layoutY="329.0" onMouseClicked="#volverclick" onMouseEntered="#volver2arriba" onMouseExited="#volver2abajo" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/botvolver2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="292.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/colab.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

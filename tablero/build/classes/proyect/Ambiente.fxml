@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="546.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.AmbienteController">
+   <children>
+      <ImageView fitHeight="430.0" fitWidth="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/fondosalaespera.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="322.0" fitWidth="282.0" layoutX="22.0" layoutY="67.0" pickOnBounds="true">
+         <image>
+            <Image url="@imagenes/fondovidrio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="282.0" fitWidth="222.0" layoutX="304.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/arbol.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="131.0" layoutX="361.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/panda.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="53.0" layoutY="14.0" text="Formas de ayudar al ambiente">
+         <font>
+            <Font name="Cambria Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="22.0" layoutY="67.0" prefHeight="40.0" prefWidth="282.0" text="Cuidar el agua y apagar la luz">
+         <font>
+            <Font name="Cambria Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="22.0" layoutY="107.0" prefHeight="40.0" prefWidth="282.0" text="Plantar arboles">
+         <font>
+            <Font name="Cambria Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="22.0" layoutY="307.0" prefHeight="40.0" prefWidth="282.0" text="Cuidar a los animales">
+         <font>
+            <Font name="Cambria Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="22.0" layoutY="347.0" prefHeight="40.0" prefWidth="282.0" text="Promueve la ayuda al ambiente">
+         <font>
+            <Font name="Cambria Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="22.0" layoutY="267.0" prefHeight="40.0" prefWidth="282.0" text="Empezar a compostar">
+         <font>
+            <Font name="Cambria Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="22.0" layoutY="147.0" prefHeight="40.0" prefWidth="282.0" text="No tirar basura">
+         <font>
+            <Font name="Cambria Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="22.0" layoutY="187.0" prefHeight="40.0" prefWidth="282.0" text="Reciclar">
+         <font>
+            <Font name="Cambria Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="22.0" layoutY="227.0" prefHeight="40.0" prefWidth="282.0" text="Controlar el uso de electricidad">
+         <font>
+            <Font name="Cambria Bold" size="19.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="volverIni1" fitHeight="40.0" fitWidth="239.0" layoutX="309.0" layoutY="347.0" onMouseEntered="#volverini1arriba" onMouseExited="#volverini1abajo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/botvolver.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="volverIni2" fitHeight="40.0" fitWidth="239.0" layoutX="309.0" layoutY="347.0" onMouseClicked="#volverini2click" onMouseEntered="#volverini2arriba" onMouseExited="#volverini2abajo" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@imagenes/botvolver2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

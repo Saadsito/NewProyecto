@@ -1,5 +1,6 @@
 package proyect;
 
+import java.applet.AudioClip;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -453,6 +454,7 @@ public class TableroController implements Initializable, Runnable {
     }
     
     ImageView ficha, fichaB;
+    AudioClip Sonido;
     
     int tradeo[] = {0,0,0,0,0,0,0,0};
         
@@ -1137,6 +1139,8 @@ public class TableroController implements Initializable, Runnable {
                             cGhast.setVisible(false);
                             cSpider.setVisible(false);
                             cCreeper.setVisible(false);
+                            Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/zombie.wav"));
+                            Sonido.play();
                             break;
                             
                         case 2:
@@ -1146,6 +1150,8 @@ public class TableroController implements Initializable, Runnable {
                             cGhast.setVisible(false);
                             cSpider.setVisible(false);
                             cCreeper.setVisible(false);
+                            Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/skeleton.wav"));
+                            Sonido.play();
                             break;
                             
                         case 3:
@@ -1155,6 +1161,8 @@ public class TableroController implements Initializable, Runnable {
                             cGhast.setVisible(false);
                             cSpider.setVisible(false);
                             cCreeper.setVisible(false);
+                            Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/bruja.wav"));
+                            Sonido.play();
                             break;
                           
                         case 4:
@@ -1164,6 +1172,8 @@ public class TableroController implements Initializable, Runnable {
                             cGhast.setVisible(true);
                             cSpider.setVisible(false);
                             cCreeper.setVisible(false);
+                            Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/ghast.wav"));
+                            Sonido.play();
                             break;
                           
                         case 5:
@@ -1173,6 +1183,8 @@ public class TableroController implements Initializable, Runnable {
                             cGhast.setVisible(false);
                             cSpider.setVisible(true);
                             cCreeper.setVisible(false);
+                            Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/spider.wav"));
+                            Sonido.play();
                             break;
                           
                         case 6:
@@ -1182,6 +1194,8 @@ public class TableroController implements Initializable, Runnable {
                             cGhast.setVisible(false);
                             cSpider.setVisible(false);
                             cCreeper.setVisible(true);
+                            Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/creeper.wav"));
+                            Sonido.play();
                             break;
                             
                     }
@@ -2425,6 +2439,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[0]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(1)) {
                     juego.estadoEspeciales[0] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/espada.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2433,6 +2449,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[1]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(2)) {
                     juego.estadoEspeciales[1] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/espada.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2441,6 +2459,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[2]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(3)) {
                     juego.estadoEspeciales[2] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/espada.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2449,6 +2469,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[3]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(4)) {
                     juego.estadoEspeciales[3] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/espada.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2457,6 +2479,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[4]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(5)) {
                     juego.estadoEspeciales[4] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/espada.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2465,6 +2489,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[5]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(6)) {
                     juego.estadoEspeciales[5] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/espada.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2473,6 +2499,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[6]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(7)) {
                     juego.estadoEspeciales[6] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/espada.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2481,6 +2509,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[7]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(8)) {
                     juego.estadoEspeciales[7] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/diamante.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2489,6 +2519,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[8]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(9)) {
                     juego.estadoEspeciales[8] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/diamante.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2497,6 +2529,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[9]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(10)){
                     juego.estadoEspeciales[9] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/diamante.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2505,6 +2539,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[10]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(11)){
                     juego.estadoEspeciales[10] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/diamante.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2513,6 +2549,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[11]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(12)){
                     juego.estadoEspeciales[11] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/diamante.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2521,6 +2559,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[12]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(13)) {
                     juego.estadoEspeciales[12] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/agua.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2529,6 +2569,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[13]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(14)) {
                     juego.estadoEspeciales[13] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/agua.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2537,6 +2579,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[14]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(15)){
                     juego.estadoEspeciales[14] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/agua.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2545,6 +2589,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[15]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(16)) {
                     juego.estadoEspeciales[15] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/agua.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2553,6 +2599,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[16]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(17)) {
                     juego.estadoEspeciales[16] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/agua.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2561,6 +2609,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[17]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(18)) {
                     juego.estadoEspeciales[17] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/agua.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2569,6 +2619,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[18]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(19)){
                     juego.estadoEspeciales[18] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/esmeralda.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2577,6 +2629,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[19]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(20)) {
                     juego.estadoEspeciales[19] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/esmeralda.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2585,6 +2639,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[20]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(21)) {
                     juego.estadoEspeciales[20] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/esmeralda.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2593,6 +2649,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[21]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(22)) {
                     juego.estadoEspeciales[21] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/esmeralda.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2601,6 +2659,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[22]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(23)) {
                     juego.estadoEspeciales[22] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/esmeralda.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2609,6 +2669,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[23]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(24)){
                     juego.estadoEspeciales[23] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/esmeralda.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2617,6 +2679,8 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[24]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(25)) {
                     juego.estadoEspeciales[24] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/esmeralda.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
@@ -2625,12 +2689,16 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[25]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(26)) {
                     juego.estadoEspeciales[25] = false;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/esmeralda.wav"));
+                    Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
             case 161:
                 maxTurno++;
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/tren.wav"));
+                Sonido.play();
                 if(maxTurno < 2){
                     posib1.setLayoutX(685);  //80
                     posib1.setLayoutY(85);
@@ -2652,6 +2720,8 @@ public class TableroController implements Initializable, Runnable {
 
             case 45:
                 maxTurno++;
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/tren.wav"));
+                Sonido.play();
                 if(maxTurno < 2){
                     posib1.setLayoutX(685);  //161
                     posib1.setLayoutY(325);
@@ -2666,6 +2736,8 @@ public class TableroController implements Initializable, Runnable {
 
             case 80:
                 maxTurno++;
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/tren.wav"));
+                Sonido.play();
                 if(maxTurno < 2){
                     posib1.setLayoutX(685);  //161
                     posib1.setLayoutY(325);
@@ -2679,6 +2751,8 @@ public class TableroController implements Initializable, Runnable {
 
             case 151:
                 maxTurno++;
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/tren.wav"));
+                Sonido.play();
                 if(maxTurno < 2){
                     posib1.setLayoutX(685);  //161
                     posib1.setLayoutY(325);
@@ -2693,6 +2767,8 @@ public class TableroController implements Initializable, Runnable {
 
             case 104:
                 maxTurno++;
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/tren.wav"));
+                Sonido.play();
                 if(maxTurno < 2){
                     posib1.setLayoutX(685);  //161
                     posib1.setLayoutY(325);
@@ -2706,6 +2782,8 @@ public class TableroController implements Initializable, Runnable {
                 break;
 
             case 1:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lava.wav"));
+                Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
@@ -2714,6 +2792,8 @@ public class TableroController implements Initializable, Runnable {
                 }break;
 
             case 12:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lava.wav"));
+                Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
@@ -2722,6 +2802,8 @@ public class TableroController implements Initializable, Runnable {
                 }break;
 
             case 17:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lava.wav"));
+                Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
@@ -2730,6 +2812,8 @@ public class TableroController implements Initializable, Runnable {
                 }break;
 
             case 36:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lava.wav"));
+                Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
@@ -2738,6 +2822,8 @@ public class TableroController implements Initializable, Runnable {
                 }break;
 
             case 66:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lava.wav"));
+                Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
@@ -2746,6 +2832,8 @@ public class TableroController implements Initializable, Runnable {
                 }break;
 
             case 87:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lava.wav"));
+                Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
@@ -2754,6 +2842,8 @@ public class TableroController implements Initializable, Runnable {
                 }break;
 
             case 114:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lava.wav"));
+                Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
@@ -2762,6 +2852,8 @@ public class TableroController implements Initializable, Runnable {
                 }break;
 
             case 145:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lava.wav"));
+                Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
@@ -2770,6 +2862,8 @@ public class TableroController implements Initializable, Runnable {
                 }break;
 
             case 152:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lava.wav"));
+                Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
@@ -2778,6 +2872,8 @@ public class TableroController implements Initializable, Runnable {
                 }break;
 
             case 164:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/lava.wav"));
+                Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
@@ -2786,12 +2882,16 @@ public class TableroController implements Initializable, Runnable {
                 }break;
 
             case 168:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/aldeano.wav"));
+                Sonido.play();
                 tienda1.setEffect(color);
                 tienda2.setEffect(color);
                 tienda3.setEffect(color);
                 break;
 
             case 169:
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/dragon.wav"));
+                Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificaBotasD() && jugadores.get(juego.numPlayer).getInventario().verificaCascoD() && jugadores.get(juego.numPlayer).getInventario().verificaPetoD() && jugadores.get(juego.numPlayer).getInventario().verificaPantalonD() && jugadores.get(juego.numPlayer).getInventario().verificaEspadaD()){
                     enviarPaquete(new Packet(juego.numPlayer, juego.ganador, 0, 0, null, false));
                 }
