@@ -5,6 +5,8 @@ proyect.TableroController
 javafx.scene.control.Alert
 java.util.ArrayList
 java.lang.ClassNotFoundException
+java.util.logging.Level
+proyect.TableroController$13
 java.lang.String
 proyect.TableroController$9
 proyect.TableroController$12
@@ -16,6 +18,7 @@ proyect.TableroController$6
 proyect.TableroController$5
 proyect.TableroController$4
 javafx.scene.Node
+java.util.logging.Logger
 proyect.TableroController$3
 java.lang.Exception
 proyect.TableroController$2
@@ -79,6 +82,12 @@ javafx.scene.Scene
 java.lang.Object
 java.io.IOException
 javafx.scene.Parent
+||:proyect.TableroController$13
+java.lang.Object
+proyect.TableroController
+proyect.TableroController$13
+javafx.scene.image.ImageView
+java.lang.Runnable
 ||:proyect.TableroController$9
 java.lang.Object
 proyect.TableroController

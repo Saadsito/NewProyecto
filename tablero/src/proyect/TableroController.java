@@ -11,6 +11,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -497,6 +499,10 @@ public class TableroController implements Initializable, Runnable {
     private ImageView posib7;
     @FXML
     private ImageView botFinal;
+    @FXML
+    private ImageView finjuego1;
+    @FXML
+    private ImageView finjuego2;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -619,13 +625,7 @@ public class TableroController implements Initializable, Runnable {
         update.setName("Hilo Update");
         update.start();
         
-        jugadores.get(0).getInventario().addInv(-4);
-        jugadores.get(0).getInventario().addInv(-5);
-        jugadores.get(0).getInventario().addInv(-6);
-        jugadores.get(0).getInventario().addInv(-7);
-        jugadores.get(0).getInventario().addInv(-8);
         
-        llegada(169);
     }   
     
     private void enviarPaquete(Packet paquete){
@@ -1150,7 +1150,7 @@ public class TableroController implements Initializable, Runnable {
                             cGhast.setVisible(false);
                             cSpider.setVisible(false);
                             cCreeper.setVisible(false);
-                            Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/skeleton.wav"));
+                            Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/skeleto.wav"));
                             Sonido.play();
                             break;
                             
@@ -1653,18 +1653,29 @@ public class TableroController implements Initializable, Runnable {
             
             if(juego.numPlayer + 1 > jugadores.size() - 1) juego.numPlayer = 0;
             else juego.numPlayer++;
-
-            try {
-                Socket socket = new Socket(Conexion.getIpServer(), 7700);
-                Packet paquete = new Packet(juego.numPlayer, 0, 0, 0, null, juego.primerTiro);
+            if(juego.ganador == 1) {
+                enviarPaquete(new Packet(juego.numPlayer, juego.ganador, 0, 0, null, false));
                 
-                ObjectOutputStream flujo = new ObjectOutputStream(socket.getOutputStream());
-                flujo.writeObject(paquete);
-                flujo.close();
-                socket.close();
-            } catch (IOException ex) {
-                System.out.println("Problema al finalizar turno");
+                
+                
+                finalizarT1.setVisible(false);
+                finalizarT2.setVisible(false);
             }
+            else{
+                try {
+                    Socket socket = new Socket(Conexion.getIpServer(), 7700);
+                    Packet paquete = new Packet(juego.numPlayer, 0, 0, 0, null, juego.primerTiro);
+
+                    ObjectOutputStream flujo = new ObjectOutputStream(socket.getOutputStream());
+                    flujo.writeObject(paquete);
+                    flujo.close();
+                    socket.close();
+                } catch (IOException ex) {
+                    System.out.println("Problema al finalizar turno");
+                }
+            }
+                    
+                    
             
         }
     }
@@ -1733,7 +1744,7 @@ public class TableroController implements Initializable, Runnable {
                     ficha.setLayoutY(605);
                 }
                 
-                if(paquete.getDadoaux() == 0 && Objects.equals(null, paquete.getEstadoEspeciales()) && paquete.getX() == 0){   //si presiona finalizar turno
+                if(paquete.getDadoaux() == 0 && Objects.equals(null, paquete.getEstadoEspeciales()) && paquete.getX() == 0 && paquete.getGanador() == 0){   //si presiona finalizar turno
                     maxTurno = 0;
                     jugadores.get(juego.numPlayer).setTurno(false);
                     juego.tiro = false;
@@ -1928,6 +1939,7 @@ public class TableroController implements Initializable, Runnable {
                                         break; 
                                               
                                 }
+                               
 
                             }
 
@@ -1936,7 +1948,7 @@ public class TableroController implements Initializable, Runnable {
                         
                     }
                  //MOVIMIENTO DE BESTIA   
-                }else if(paquete.getNbestia() != 0 && paquete.getX() == 0){
+                }else if(paquete.getNbestia() != 0 && paquete.getX() == 0 && paquete.getGanador() == 0){
                     Thread hilobestia = new Thread(){
                         @Override
                         public void run(){
@@ -2059,10 +2071,17 @@ public class TableroController implements Initializable, Runnable {
                 fichaB.setLayoutY(paquete.getY());
                 
             }else if(paquete.getGanador() == 1){
+                System.out.println("ENTRO EN PAQUETE*D*/**-*DS/D7S6D4D890A1SD7A9D2WD+Q1D7QWD9A17DA9S/4DAS8653DAS");
                 fichaGanadora = jugadores.get(juego.numPlayer).getSkin();
                 nombreGanador = jugadores.get(juego.numPlayer).getNombre();
-                
-                botFinal.setVisible(true);
+                Platform.runLater(new Runnable(){
+                    @Override
+                    public void run() {
+                        finalizarT1.setVisible(false);
+                        finalizarT2.setVisible(false);
+                        finjuego1.setVisible(true);
+                    }
+                });
             }
                 
         }   
@@ -2509,7 +2528,6 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[7]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(8)) {
                     juego.estadoEspeciales[7] = false;
-                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/diamante.wav"));
                     Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
@@ -2519,7 +2537,6 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[8]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(9)) {
                     juego.estadoEspeciales[8] = false;
-                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/diamante.wav"));
                     Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
@@ -2529,7 +2546,6 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[9]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(10)){
                     juego.estadoEspeciales[9] = false;
-                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/diamante.wav"));
                     Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
@@ -2539,7 +2555,6 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[10]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(11)){
                     juego.estadoEspeciales[10] = false;
-                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/diamante.wav"));
                     Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
@@ -2549,7 +2564,6 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[11]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(12)){
                     juego.estadoEspeciales[11] = false;
-                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/diamante.wav"));
                     Sonido.play();
                     actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
@@ -2890,11 +2904,13 @@ public class TableroController implements Initializable, Runnable {
                 break;
 
             case 169:
+                System.out.println("Entro Dragon");
                 Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/proyect/sounds/dragon.wav"));
                 Sonido.play();
                 if(jugadores.get(juego.numPlayer).getInventario().verificaBotasD() && jugadores.get(juego.numPlayer).getInventario().verificaCascoD() && jugadores.get(juego.numPlayer).getInventario().verificaPetoD() && jugadores.get(juego.numPlayer).getInventario().verificaPantalonD() && jugadores.get(juego.numPlayer).getInventario().verificaEspadaD()){
-                    enviarPaquete(new Packet(juego.numPlayer, juego.ganador, 0, 0, null, false));
-                }
+                    juego.ganador = 1;
+                }else
+                    muere(ficha);
                     
                 break;
         }
@@ -3322,6 +3338,46 @@ public class TableroController implements Initializable, Runnable {
             ventana.setScene(PantGanador);
             ventana.show();
         
+    }
+
+    @FXML
+    private void finjuego1abajo(MouseEvent event) {
+        finjuego1.setVisible(true);
+        finjuego2.setVisible(false);
+    }
+
+    @FXML
+    private void finjuego1arriba(MouseEvent event) {
+        finjuego1.setVisible(false);
+        finjuego2.setVisible(true);
+    }
+
+    @FXML
+    private void finjuego2abajo(MouseEvent event) {
+        finjuego1.setVisible(true);
+        finjuego2.setVisible(false);
+    }
+
+    @FXML
+    private void finjuego2arriba(MouseEvent event) {
+        finjuego1.setVisible(false);
+        finjuego2.setVisible(true);
+    }
+
+    @FXML
+    private void finjuegoclick(MouseEvent event) {
+        try {
+            
+            Parent Ganador = FXMLLoader.load(getClass().getResource("SalaEspera.fxml"));
+            Scene PantGanador = new Scene(Ganador);
+            
+            Stage ventana = (Stage)((Node)event.getSource()).getScene().getWindow();
+            
+            ventana.setScene(PantGanador);
+            ventana.show();
+        } catch (IOException ex) {
+            Logger.getLogger(TableroController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     

@@ -1896,5 +1896,21 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <ImageView fx:id="finjuego1" fitHeight="60.0" fitWidth="126.0" layoutX="722.0" layoutY="9.0" onMouseEntered="#finjuego1arriba" onMouseExited="#finjuego1abajo" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/finjuego1.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="finjuego2" fitHeight="60.0" fitWidth="126.0" layoutX="722.0" layoutY="10.0" onMouseClicked="#finjuegoclick" onMouseEntered="#finjuego2arriba" onMouseExited="#finjuego2abajo" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@imagenes/finjuego2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>

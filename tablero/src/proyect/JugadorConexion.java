@@ -6,14 +6,8 @@ import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 
-/**
- *
- * @author migue
- */
 public class JugadorConexion extends Conexion implements Runnable{
     
     private ArrayList<Player> jugadores;
