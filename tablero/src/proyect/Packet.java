@@ -18,7 +18,6 @@ public class Packet implements Serializable{
     //[7-11] diamanteobjetos
     //[12-17] cuboagua
     //[18-25] esmeraldas
-    
     public Packet(int x, int y, int numPlayer) {
         this.x = x;
         this.y = y;

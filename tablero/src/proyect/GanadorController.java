@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -31,7 +32,8 @@ public class GanadorController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //cargar ficha de ganador y su nombre
+        fichaganador.setImage(new Image(TableroController.getFichaGanadora()));
+        labelganador.setText("Felicidades "+ TableroController.getNombreGanador());
     }    
 
     @FXML

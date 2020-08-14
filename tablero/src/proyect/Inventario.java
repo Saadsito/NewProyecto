@@ -75,8 +75,10 @@ public class Inventario implements Serializable{
         return false;
     }
     
-    public void eliminarObj(int num){
+    public void eliminarObj(boolean[] estadoEspeciales,int num){
+        devolverObj(estadoEspeciales, inventario[num]);
         inventario[num]=0;
+        
     }
 
  /* esmeralda = -1  /   cuboagua = -2   /   espada = -3   /   cascoD = -4   /   armaduraD = -5   /   espadaD = -6   /   pantalonD = -7   /   botasD = -8 */

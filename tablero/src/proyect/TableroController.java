@@ -10,8 +10,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -28,12 +26,9 @@ import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import static javafx.scene.paint.Color.color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 public class TableroController implements Initializable, Runnable {
 
@@ -447,6 +442,16 @@ public class TableroController implements Initializable, Runnable {
     @FXML
     private ImageView marco8;
     
+    private static String fichaGanadora, nombreGanador;
+
+    public static String getFichaGanadora() {
+        return fichaGanadora;
+    }
+
+    public static String getNombreGanador() {
+        return nombreGanador;
+    }
+    
     ImageView ficha, fichaB;
     
     int tradeo[] = {0,0,0,0,0,0,0,0};
@@ -488,9 +493,13 @@ public class TableroController implements Initializable, Runnable {
     private ImageView posib6;
     @FXML
     private ImageView posib7;
+    @FXML
+    private ImageView botFinal;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        
         cSpider.setImage(new Image("Proyect/imagenes/cabspider.png"));
         cBruja.setImage(new Image("Proyect/imagenes/cabbruja.png"));
         cCreeper.setImage(new Image("Proyect/imagenes/cabcreeper.png"));
@@ -499,7 +508,7 @@ public class TableroController implements Initializable, Runnable {
         cGhast.setImage(new Image("Proyect/imagenes/cabghast.png"));
         
          
-        for(int i = 0; i < (jugadores.size() - 1); i++){
+        for(int i = 0; i < jugadores.size(); i++){
             if(Cliente.getNombre().equals(jugadores.get(i).getNombre())){
                 numeroJugador = i;
                 break;
@@ -608,6 +617,13 @@ public class TableroController implements Initializable, Runnable {
         update.setName("Hilo Update");
         update.start();
         
+        jugadores.get(0).getInventario().addInv(-4);
+        jugadores.get(0).getInventario().addInv(-5);
+        jugadores.get(0).getInventario().addInv(-6);
+        jugadores.get(0).getInventario().addInv(-7);
+        jugadores.get(0).getInventario().addInv(-8);
+        
+        llegada(169);
     }   
     
     private void enviarPaquete(Packet paquete){
@@ -638,7 +654,8 @@ public class TableroController implements Initializable, Runnable {
         posib4.setVisible(false);
         posib5.setVisible(false);
         posib6.setVisible(false);
-        posib7.setVisible(false);
+        posib7.setVisible(false);   
+        posib1.setLayoutX(0);
         enviarPaquete(new Packet( x, y, juego.numPlayer));
         
         llegada(obtenerNum(x,y, casillas, tab));
@@ -664,6 +681,7 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        posib1.setLayoutX(0);
         enviarPaquete(new Packet( x, y, juego.numPlayer));
         
         llegada(obtenerNum(x,y, casillas, tab));
@@ -688,11 +706,13 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        posib1.setLayoutX(0);
         enviarPaquete(new Packet( x, y, juego.numPlayer));
         
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
+
         if(maxTurno < 2) enviarPaquete(new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro));
     }
 
@@ -712,6 +732,7 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        posib1.setLayoutX(0);
         enviarPaquete(new Packet( x, y, juego.numPlayer));
         
         llegada(obtenerNum(x,y, casillas, tab));
@@ -737,15 +758,15 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        posib1.setLayoutX(0);
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
-        if(maxTurno < 2) enviarPaquete(new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro));
+        if(maxTurno < 2) enviarPaquete(new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro));        
     }
 
     @FXML
     private void clicklapiznegro(MouseEvent event) {
-        if(Objects.equals(fichainv.getImage(), new Image(jugadores.get(numeroJugador).getSkin()))){
             lapiznegro.setVisible(false);
             lapizamarillo.setVisible(true);
             equiscasco.setVisible(true);
@@ -761,7 +782,7 @@ public class TableroController implements Initializable, Runnable {
             equisinv6.setVisible(true);
             equisinv7.setVisible(true);
             equisinv8.setVisible(true);
-        }
+        
     }
 
     @FXML
@@ -785,54 +806,93 @@ public class TableroController implements Initializable, Runnable {
 
     @FXML
     private void equiscascoclick(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 0);
+        cascoinv.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equispetoclick(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 1);
+        petoinv.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equisespadaclick(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 2);
+        espadainv.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equispantalonclick(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 3);
+        pantaloninv.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equisbotasclick(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 4);
+        botasinv.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equisinv1click(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 5);
+        inv1.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equisinv2click(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 6);
+        inv2.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equisinv3click(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 7);
+        inv3.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equisinv4click(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 8);
+        inv4.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equisinv5click(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 9);
+        inv5.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equisinv6click(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 10);
+        inv6.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equisinv7click(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 11);
+        inv7.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
     private void equisinv8click(MouseEvent event) {
+        jugadores.get(numeroJugador).getInventario().eliminarObj(juego.estadoEspeciales, 12);
+        inv8.setImage(null);
+        actualizarInventario(jugadores.get(numeroJugador).getInventario());
     }
 
     @FXML
@@ -1187,6 +1247,11 @@ public class TableroController implements Initializable, Runnable {
         equisinv6.setVisible(false);
         equisinv7.setVisible(false);
         equisinv8.setVisible(false);
+        equiscasco.setVisible(false);
+        equisbotas.setVisible(false);
+        equispeto.setVisible(false);
+        equispantalon.setVisible(false);
+        equisespada.setVisible(false);
         marco1.setVisible(false);
         marco2.setVisible(false);
         marco3.setVisible(false);
@@ -1222,7 +1287,12 @@ public class TableroController implements Initializable, Runnable {
         equisinv5.setVisible(false);
         equisinv6.setVisible(false);
         equisinv7.setVisible(false);
-        equisinv8.setVisible(false);
+        equisinv8.setVisible(false);    
+        equiscasco.setVisible(false);
+        equisbotas.setVisible(false);
+        equispeto.setVisible(false);
+        equispantalon.setVisible(false);
+        equisespada.setVisible(false);
         marco1.setVisible(false);
         marco2.setVisible(false);
         marco3.setVisible(false);
@@ -1259,6 +1329,11 @@ public class TableroController implements Initializable, Runnable {
         equisinv6.setVisible(false);
         equisinv7.setVisible(false);
         equisinv8.setVisible(false);
+        equiscasco.setVisible(false);
+        equisbotas.setVisible(false);
+        equispeto.setVisible(false);
+        equispantalon.setVisible(false);
+        equisespada.setVisible(false);
         marco1.setVisible(false);
         marco2.setVisible(false);
         marco3.setVisible(false);
@@ -1295,6 +1370,11 @@ public class TableroController implements Initializable, Runnable {
         equisinv6.setVisible(false);
         equisinv7.setVisible(false);
         equisinv8.setVisible(false);
+        equiscasco.setVisible(false);
+        equisbotas.setVisible(false);
+        equispeto.setVisible(false);
+        equispantalon.setVisible(false);
+        equisespada.setVisible(false);
         marco1.setVisible(false);
         marco2.setVisible(false);
         marco3.setVisible(false);
@@ -1331,6 +1411,11 @@ public class TableroController implements Initializable, Runnable {
         equisinv6.setVisible(false);
         equisinv7.setVisible(false);
         equisinv8.setVisible(false);
+        equiscasco.setVisible(false);
+        equisbotas.setVisible(false);
+        equispeto.setVisible(false);
+        equispantalon.setVisible(false);
+        equisespada.setVisible(false);
         marco1.setVisible(false);
         marco2.setVisible(false);
         marco3.setVisible(false);
@@ -1367,6 +1452,11 @@ public class TableroController implements Initializable, Runnable {
         equisinv6.setVisible(false);
         equisinv7.setVisible(false);
         equisinv8.setVisible(false);
+        equiscasco.setVisible(false);
+        equisbotas.setVisible(false);
+        equispeto.setVisible(false);
+        equispantalon.setVisible(false);
+        equisespada.setVisible(false);
         marco1.setVisible(false);
         marco2.setVisible(false);
         marco3.setVisible(false);
@@ -1545,7 +1635,7 @@ public class TableroController implements Initializable, Runnable {
 
     @FXML
     private void finalizaTurnoclick(MouseEvent  event) {
-        if(juego.tiro){
+        if(juego.tiro && posib1.getLayoutX()== 0){
             
             if(juego.numPlayer + 1 > jugadores.size() - 1) juego.numPlayer = 0;
             else juego.numPlayer++;
@@ -1657,7 +1747,7 @@ public class TableroController implements Initializable, Runnable {
                         }
                     });
                     
-                }else if(paquete.getDadoaux() != 0 && paquete.getNbestia() == 0){                                  //si tira el dado
+                }else if(paquete.getDadoaux() != 0 && paquete.getNbestia() == 0 && paquete.getGanador() == 0){                                  //si tira el dado
                     //Sprite del dado
                     Thread hiloSprite = new Thread(){
                         @Override
@@ -1677,7 +1767,7 @@ public class TableroController implements Initializable, Runnable {
                     
                     
                     //Movimiento del jugador y bestia
-                    if(Cliente.getNombre().equals(nombreturno.getText())){
+                    if(Cliente.getNombre().equals(nombreturno.getText()) && paquete.getGanador() == 0){
                         
                         Thread.sleep(7000);
                         
@@ -1831,13 +1921,8 @@ public class TableroController implements Initializable, Runnable {
                         
                         
                     }
-                    
-                }else if(paquete.getNbestia() != 0){
-                    System.out.println("Entro bestia");
-                    System.out.println("Numplayer: " + paquete.getNumPlayer());
-                    System.out.println("NUMDADO: " + paquete.getDadoaux() + "     NBESTIA: " + paquete.getNbestia());
-                    System.out.println("Posicion X bestia: " + fichaB.getLayoutX());
-                    System.out.println("Posicion Y bestia: " + fichaB.getLayoutY());
+                 //MOVIMIENTO DE BESTIA   
+                }else if(paquete.getNbestia() != 0 && paquete.getX() == 0){
                     Thread hilobestia = new Thread(){
                         @Override
                         public void run(){
@@ -1854,7 +1939,6 @@ public class TableroController implements Initializable, Runnable {
                     System.out.println(vector.size());
                     fichaB.setLayoutX(casillas[vector.get(0)][1]);
                     fichaB.setLayoutY(casillas[vector.get(0)][2]);
-                    
                     
                 }else if(!Objects.equals(paquete.getEstadoEspeciales(), null)){
                     juego.estadoEspeciales = paquete.getEstadoEspeciales();
@@ -1944,7 +2028,7 @@ public class TableroController implements Initializable, Runnable {
                         
                     });
                 
-                }else{  //Actualiza el movimiento del jugador
+                }else if(paquete.getNbestia() == 0 && paquete.getGanador() == 0){  //Actualiza el movimiento del jugador
                     System.out.println("Entro a pintar jugador");
                     Platform.runLater(new Runnable(){
                         @Override
@@ -1956,6 +2040,15 @@ public class TableroController implements Initializable, Runnable {
                     });
                 
                 
+            }else if(paquete.getX() != 0 && paquete.getNbestia() != 0 && paquete.getGanador() == 0){
+                fichaB.setLayoutX(paquete.getX());
+                fichaB.setLayoutY(paquete.getY());
+                
+            }else if(paquete.getGanador() == 1){
+                fichaGanadora = jugadores.get(juego.numPlayer).getSkin();
+                nombreGanador = jugadores.get(juego.numPlayer).getNombre();
+                
+                botFinal.setVisible(true);
             }
                 
         }   
@@ -1968,15 +2061,17 @@ public class TableroController implements Initializable, Runnable {
     @FXML
     private void objtiendaclick1(MouseEvent event) {
         if(tienda1.getEffect()==color){
+            System.out.println("entre");
            if(verificarTradeo()==true){
+               System.out.println("verifique");
                if(tienda1.getImage()==espada) tradear(1);
-               if(tienda1.getImage()==esmeralda) tradear(2);
-               if(tienda1.getImage()==cuboagua) tradear(3);
-               if(tienda1.getImage()==cascoD) tradear(4);
-               if(tienda1.getImage()==armaduraD) tradear(5);
-               if(tienda1.getImage()==espadaD) tradear(6);
-               if(tienda1.getImage()==pantalonD) tradear(7);
-               if(tienda1.getImage()==botasD) tradear(8);
+               else if(tienda1.getImage()==esmeralda) tradear(2);
+               else if(tienda1.getImage()==cuboagua) tradear(3);
+               else if(tienda1.getImage()==cascoD) tradear(4);
+               else if(tienda1.getImage()==armaduraD) tradear(5);
+               else if(tienda1.getImage()==espadaD) tradear(6);
+               else if(tienda1.getImage()==pantalonD) tradear(7);
+               else if(tienda1.getImage()==botasD) tradear(8);
            } 
                       
         }
@@ -1984,10 +2079,40 @@ public class TableroController implements Initializable, Runnable {
 
     @FXML
     private void objtiendaclick2(MouseEvent event) {
+       if(tienda2.getEffect()==color){
+            System.out.println("entre");
+           if(verificarTradeo()==true){
+               System.out.println("verifique");
+               if(tienda2.getImage()==espada) tradear(1);
+               else if(tienda2.getImage()==esmeralda) tradear(2);
+               else if(tienda2.getImage()==cuboagua) tradear(3);
+               else if(tienda2.getImage()==cascoD) tradear(4);
+               else if(tienda2.getImage()==armaduraD) tradear(5);
+               else if(tienda2.getImage()==espadaD) tradear(6);
+               else if(tienda2.getImage()==pantalonD) tradear(7);
+               else if(tienda2.getImage()==botasD) tradear(8);
+           } 
+                      
+        }  
     }
 
     @FXML
     private void objtiendaclick3(MouseEvent event) {
+        if(tienda3.getEffect()==color){
+            System.out.println("entre");
+           if(verificarTradeo()==true){
+               System.out.println("verifique");
+               if(tienda3.getImage()==espada) tradear(1);
+               else if(tienda3.getImage()==esmeralda) tradear(2);
+               else if(tienda3.getImage()==cuboagua) tradear(3);
+               else if(tienda3.getImage()==cascoD) tradear(4);
+               else if(tienda3.getImage()==armaduraD) tradear(5);
+               else if(tienda3.getImage()==espadaD) tradear(6);
+               else if(tienda3.getImage()==pantalonD) tradear(7);
+               else if(tienda3.getImage()==botasD) tradear(8);
+           } 
+                      
+        }  
     }
     
     public void tradear(int num){
@@ -1995,88 +2120,114 @@ public class TableroController implements Initializable, Runnable {
             case 1:
                 for(int i=0;i<8;i++){
                     if(tradeo[i]>0){
-                      jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                      jugadores.get(juego.numPlayer).getInventario().eliminarObj(juego.estadoEspeciales,i+5);
+                      enviarPaquete(new Packet(juego.estadoEspeciales));
                       jugadores.get(juego.numPlayer).getInventario().addInv(-3);
                       tradeo[i]=0;
+                      
                     }
-                }break;
+                }updateInventario(juego.numPlayer);
+                actualizarInventario(jugadores.get(juego.numPlayer).getInventario());
+                break;
             case 2:
                 for(int i=0;i<8;i++){
                     if(tradeo[i]>0){
-                      jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                      jugadores.get(juego.numPlayer).getInventario().eliminarObj(juego.estadoEspeciales,i+5); 
+                      enviarPaquete(new Packet(juego.estadoEspeciales));
                       jugadores.get(juego.numPlayer).getInventario().addInv(-1);
                       tradeo[i]=0;
+                     
                     }
-                }break;
+                }updateInventario(juego.numPlayer);
+                actualizarInventario(jugadores.get(juego.numPlayer).getInventario());
+                break;
                 
             case 3:
                 for(int i=0;i<8;i++){
                     if(tradeo[i]>0){
                       tradeo[i]=0;  
-                      jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                      jugadores.get(juego.numPlayer).getInventario().eliminarObj(juego.estadoEspeciales,i+5); 
+                      enviarPaquete(new Packet(juego.estadoEspeciales));
                       jugadores.get(juego.numPlayer).getInventario().addInv(-2);
                     }
-                }break;
+                } updateInventario(juego.numPlayer);
+                actualizarInventario(jugadores.get(juego.numPlayer).getInventario());
+                break;
                 
             case 4:
                 if(numMarcos()==4){
                     if(jugadores.get(juego.numPlayer).getInventario().verificaCascoD()==false){
                         for(int i=0;i<8;i++){
                             if(tradeo[i]>0){
-                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(juego.estadoEspeciales,i+5);
+                                enviarPaquete(new Packet(juego.estadoEspeciales));
                             }
                         jugadores.get(juego.numPlayer).getInventario().addInv(-4);
                         }
-                    }
-                }break;
+                    }updateInventario(juego.numPlayer);
+                }
+                actualizarInventario(jugadores.get(juego.numPlayer).getInventario());
+                break;
                 
             case 5:
                 if(numMarcos()==4){
                     if(jugadores.get(juego.numPlayer).getInventario().verificaPetoD()==false){
                         for(int i=0;i<8;i++){
                             if(tradeo[i]>0){
-                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(juego.estadoEspeciales,i+5); 
+                                enviarPaquete(new Packet(juego.estadoEspeciales));
                             }
                         jugadores.get(juego.numPlayer).getInventario().addInv(-5);
                         }
-                    }
-                }break;
+                    }updateInventario(juego.numPlayer);
+                }
+                actualizarInventario(jugadores.get(juego.numPlayer).getInventario());
+                break;
                 
             case 6:
                 if(numMarcos()==4){
                     if(jugadores.get(juego.numPlayer).getInventario().verificaEspadaD()==false){
                         for(int i=0;i<8;i++){
                             if(tradeo[i]>0){
-                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(juego.estadoEspeciales,i+5);
+                                enviarPaquete(new Packet(juego.estadoEspeciales));
                             }
                         jugadores.get(juego.numPlayer).getInventario().addInv(-6);
                         }
-                    }
-                }break;
+                    }updateInventario(juego.numPlayer);
+                }
+                actualizarInventario(jugadores.get(juego.numPlayer).getInventario());
+                break;
                 
             case 7:
                 if(numMarcos()==4){
                     if(jugadores.get(juego.numPlayer).getInventario().verificaPantalonD()==false){
                         for(int i=0;i<8;i++){
                             if(tradeo[i]>0){
-                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(juego.estadoEspeciales,i+5);
+                                enviarPaquete(new Packet(juego.estadoEspeciales));
                             }
                         jugadores.get(juego.numPlayer).getInventario().addInv(-7);
                         }
-                    }
-                }break;
+                    }updateInventario(juego.numPlayer);
+                }
+                actualizarInventario(jugadores.get(juego.numPlayer).getInventario());
+                break;
                 
             case 8:
                 if(numMarcos()==4){
                     if(jugadores.get(juego.numPlayer).getInventario().verificaBotasD()==false){
                         for(int i=0;i<8;i++){
                             if(tradeo[i]>0){
-                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(i+5); 
+                                jugadores.get(juego.numPlayer).getInventario().eliminarObj(juego.estadoEspeciales,i+5); 
+                                enviarPaquete(new Packet(juego.estadoEspeciales));
                             }
                         jugadores.get(juego.numPlayer).getInventario().addInv(-8);
                         }
-                    }
-                }break;
+                    }updateInventario(juego.numPlayer);
+                }
+                actualizarInventario(jugadores.get(juego.numPlayer).getInventario());
+                break;
         }
     }
     
@@ -2269,12 +2420,12 @@ public class TableroController implements Initializable, Runnable {
     }
     
     private void llegada(int num){
-        System.out.println("LLEGUE Y MI NUMERO ES: " + num);
         switch (num){
             case 24:
                 if(juego.estadoEspeciales[0]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(1)) {
                     juego.estadoEspeciales[0] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2282,6 +2433,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[1]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(2)) {
                     juego.estadoEspeciales[1] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2289,6 +2441,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[2]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(3)) {
                     juego.estadoEspeciales[2] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2296,6 +2449,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[3]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(4)) {
                     juego.estadoEspeciales[3] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2303,6 +2457,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[4]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(5)) {
                     juego.estadoEspeciales[4] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2310,6 +2465,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[5]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(6)) {
                     juego.estadoEspeciales[5] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2317,6 +2473,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[6]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(7)) {
                     juego.estadoEspeciales[6] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2324,6 +2481,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[7]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(8)) {
                     juego.estadoEspeciales[7] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2331,6 +2489,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[8]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(9)) {
                     juego.estadoEspeciales[8] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2338,6 +2497,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[9]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(10)){
                     juego.estadoEspeciales[9] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2345,6 +2505,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[10]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(11)){
                     juego.estadoEspeciales[10] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2352,6 +2513,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[11]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(12)){
                     juego.estadoEspeciales[11] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2359,6 +2521,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[12]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(13)) {
                     juego.estadoEspeciales[12] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2366,6 +2529,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[13]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(14)) {
                     juego.estadoEspeciales[13] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2373,6 +2537,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[14]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(15)){
                     juego.estadoEspeciales[14] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2380,6 +2545,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[15]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(16)) {
                     juego.estadoEspeciales[15] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2387,6 +2553,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[16]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(17)) {
                     juego.estadoEspeciales[16] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2394,6 +2561,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[17]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(18)) {
                     juego.estadoEspeciales[17] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2401,6 +2569,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[18]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(19)){
                     juego.estadoEspeciales[18] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2408,6 +2577,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[19]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(20)) {
                     juego.estadoEspeciales[19] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2415,6 +2585,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[20]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(21)) {
                     juego.estadoEspeciales[20] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2422,6 +2593,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[21]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(22)) {
                     juego.estadoEspeciales[21] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2429,6 +2601,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[22]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(23)) {
                     juego.estadoEspeciales[22] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2436,6 +2609,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[23]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(24)){
                     juego.estadoEspeciales[23] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2443,6 +2617,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[24]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(25)) {
                     juego.estadoEspeciales[24] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2450,6 +2625,7 @@ public class TableroController implements Initializable, Runnable {
                 if(juego.estadoEspeciales[25]==false) break;
                 if(jugadores.get(juego.numPlayer).getInventario().addInv(26)) {
                     juego.estadoEspeciales[25] = false;
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }
                 break;
 
@@ -2533,70 +2709,80 @@ public class TableroController implements Initializable, Runnable {
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    muere();
+                    muere(ficha);
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }break;
 
             case 12:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    muere();
+                    muere(ficha);
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }break;
 
             case 17:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    muere();
+                    muere(ficha);
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }break;
 
             case 36:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    muere();
+                    muere(ficha);
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }break;
 
             case 66:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    muere();
+                    muere(ficha);
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }break;
 
             case 87:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    muere();
+                    muere(ficha);
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }break;
 
             case 114:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    muere();
+                    muere(ficha);
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }break;
 
             case 145:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    muere();
+                    muere(ficha);
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }break;
 
             case 152:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    muere();
+                    muere(ficha);
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }break;
 
             case 164:
                 if(jugadores.get(juego.numPlayer).getInventario().verificarAgua()){
                     jugadores.get(juego.numPlayer).getInventario().eliminarAgua(juego.estadoEspeciales);
                 }else{
-                    muere();
+                    muere(ficha);
+                    actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
                 }break;
 
             case 168:
@@ -2606,22 +2792,20 @@ public class TableroController implements Initializable, Runnable {
                 break;
 
             case 169:
-                //CARGAR VISTA
+                if(jugadores.get(juego.numPlayer).getInventario().verificaBotasD() && jugadores.get(juego.numPlayer).getInventario().verificaCascoD() && jugadores.get(juego.numPlayer).getInventario().verificaPetoD() && jugadores.get(juego.numPlayer).getInventario().verificaPantalonD() && jugadores.get(juego.numPlayer).getInventario().verificaEspadaD()){
+                    enviarPaquete(new Packet(juego.numPlayer, juego.ganador, 0, 0, null, false));
+                }
+                    
                 break;
         }
+        
     }
 
-    private void muere(){
+    private void muere(ImageView ficha){
         ficha.setVisible(false);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException ex) {
-            System.out.println(ex);
-        }
         ficha.setLayoutX(765);
         ficha.setLayoutY(605);
         ficha.setVisible(true);
-        juego.primerTiro = true;
         jugadores.get(juego.numPlayer).getInventario().borrar(juego.estadoEspeciales);
         enviarPaquete(new Packet(765,605, juego.numPlayer));
     }
@@ -2642,12 +2826,14 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        posib1.setLayoutX(0);
         enviarPaquete(new Packet( x, y, juego.numPlayer));
         
         llegada(obtenerNum(x,y, casillas, tab));
         enviarPaquete(new Packet(juego.estadoEspeciales));
         actualizarInventario(new Inventario(jugadores.get(juego.numPlayer).getInventario().getArrayInventario(), juego.numPlayer));
         if(maxTurno < 2) enviarPaquete(new Packet(juego.numPlayer, 0, numdado, nbestia, null, juego.primerTiro));
+        
     }
 
     @FXML
@@ -2666,6 +2852,7 @@ public class TableroController implements Initializable, Runnable {
         posib5.setVisible(false);
         posib6.setVisible(false);
         posib7.setVisible(false);
+        posib1.setLayoutX(0);
         enviarPaquete(new Packet( x, y, juego.numPlayer));
         
         llegada(obtenerNum(x,y, casillas, tab));
@@ -2676,26 +2863,220 @@ public class TableroController implements Initializable, Runnable {
 
     @FXML
     private void ficha1abajo(MouseEvent event) {
+        inv1.setImage(null);
+        inv2.setImage(null);
+        inv3.setImage(null);
+        inv4.setImage(null);
+        inv5.setImage(null);
+        inv6.setImage(null);
+        inv7.setImage(null);
+        inv8.setImage(null);
+        cascoinv.setImage(null);
+        petoinv.setImage(null);
+        pantaloninv.setImage(null);
+        botasinv.setImage(null);
+        espadainv.setImage(null);
+        lapiznegro.setVisible(true);
+        lapizamarillo.setVisible(false);
+        equisinv1.setVisible(false);
+        equisinv2.setVisible(false);
+        equisinv3.setVisible(false);
+        equisinv4.setVisible(false);
+        equisinv5.setVisible(false);
+        equisinv6.setVisible(false);
+        equisinv7.setVisible(false);
+        equisinv8.setVisible(false);
+        
+        marco1.setVisible(false);
+        marco2.setVisible(false);
+        marco3.setVisible(false);
+        marco4.setVisible(false);
+        marco5.setVisible(false);
+        marco6.setVisible(false);
+        marco7.setVisible(false);
+        marco8.setVisible(false);
+        updateInventario(numeroJugador);
     }
 
     @FXML
     private void ficha2abajo(MouseEvent event) {
+        inv1.setImage(null);
+        inv2.setImage(null);
+        inv3.setImage(null);
+        inv4.setImage(null);
+        inv5.setImage(null);
+        inv6.setImage(null);
+        inv7.setImage(null);
+        inv8.setImage(null);
+        cascoinv.setImage(null);
+        petoinv.setImage(null);
+        pantaloninv.setImage(null);
+        botasinv.setImage(null);
+        espadainv.setImage(null);
+        lapiznegro.setVisible(true);
+        lapizamarillo.setVisible(false);
+        equisinv1.setVisible(false);
+        equisinv2.setVisible(false);
+        equisinv3.setVisible(false);
+        equisinv4.setVisible(false);
+        equisinv5.setVisible(false);
+        equisinv6.setVisible(false);
+        equisinv7.setVisible(false);
+        equisinv8.setVisible(false);
+        marco1.setVisible(false);
+        marco2.setVisible(false);
+        marco3.setVisible(false);
+        marco4.setVisible(false);
+        marco5.setVisible(false);
+        marco6.setVisible(false);
+        marco7.setVisible(false);
+        marco8.setVisible(false);
+        updateInventario(numeroJugador);
     }
 
     @FXML
     private void ficha3abajo(MouseEvent event) {
+        inv1.setImage(null);
+        inv2.setImage(null);
+        inv3.setImage(null);
+        inv4.setImage(null);
+        inv5.setImage(null);
+        inv6.setImage(null);
+        inv7.setImage(null);
+        inv8.setImage(null);
+        cascoinv.setImage(null);
+        petoinv.setImage(null);
+        pantaloninv.setImage(null);
+        botasinv.setImage(null);
+        espadainv.setImage(null);
+        lapiznegro.setVisible(true);
+        lapizamarillo.setVisible(false);
+        equisinv1.setVisible(false);
+        equisinv2.setVisible(false);
+        equisinv3.setVisible(false);
+        equisinv4.setVisible(false);
+        equisinv5.setVisible(false);
+        equisinv6.setVisible(false);
+        equisinv7.setVisible(false);
+        equisinv8.setVisible(false);
+        marco1.setVisible(false);
+        marco2.setVisible(false);
+        marco3.setVisible(false);
+        marco4.setVisible(false);
+        marco5.setVisible(false);
+        marco6.setVisible(false);
+        marco7.setVisible(false);
+        marco8.setVisible(false);
+        updateInventario(numeroJugador);
     }
 
     @FXML
     private void ficha4abajo(MouseEvent event) {
+        inv1.setImage(null);
+        inv2.setImage(null);
+        inv3.setImage(null);
+        inv4.setImage(null);
+        inv5.setImage(null);
+        inv6.setImage(null);
+        inv7.setImage(null);
+        inv8.setImage(null);
+        cascoinv.setImage(null);
+        petoinv.setImage(null);
+        pantaloninv.setImage(null);
+        botasinv.setImage(null);
+        espadainv.setImage(null);
+        lapiznegro.setVisible(true);
+        lapizamarillo.setVisible(false);
+        equisinv1.setVisible(false);
+        equisinv2.setVisible(false);
+        equisinv3.setVisible(false);
+        equisinv4.setVisible(false);
+        equisinv5.setVisible(false);
+        equisinv6.setVisible(false);
+        equisinv7.setVisible(false);
+        equisinv8.setVisible(false);
+        marco1.setVisible(false);
+        marco2.setVisible(false);
+        marco3.setVisible(false);
+        marco4.setVisible(false);
+        marco5.setVisible(false);
+        marco6.setVisible(false);
+        marco7.setVisible(false);
+        marco8.setVisible(false);
+        updateInventario(numeroJugador);
     }
 
     @FXML
     private void ficha5abajo(MouseEvent event) {
+        
+        inv1.setImage(null);
+        inv2.setImage(null);
+        inv3.setImage(null);
+        inv4.setImage(null);
+        inv5.setImage(null);
+        inv6.setImage(null);
+        inv7.setImage(null);
+        inv8.setImage(null);
+        cascoinv.setImage(null);
+        petoinv.setImage(null);
+        pantaloninv.setImage(null);
+        botasinv.setImage(null);
+        espadainv.setImage(null);
+        lapiznegro.setVisible(true);
+        lapizamarillo.setVisible(false);
+        equisinv1.setVisible(false);
+        equisinv2.setVisible(false);
+        equisinv3.setVisible(false);
+        equisinv4.setVisible(false);
+        equisinv5.setVisible(false);
+        equisinv6.setVisible(false);
+        equisinv7.setVisible(false);
+        equisinv8.setVisible(false);
+        marco1.setVisible(false);
+        marco2.setVisible(false);
+        marco3.setVisible(false);
+        marco4.setVisible(false);
+        marco5.setVisible(false);
+        marco6.setVisible(false);
+        marco7.setVisible(false);
+        marco8.setVisible(false);
+        updateInventario(numeroJugador);
     }
 
     @FXML
     private void ficha6abajo(MouseEvent event) {
+        inv1.setImage(null);
+        inv2.setImage(null);
+        inv3.setImage(null);
+        inv4.setImage(null);
+        inv5.setImage(null);
+        inv6.setImage(null);
+        inv7.setImage(null);
+        inv8.setImage(null);
+        cascoinv.setImage(null);
+        petoinv.setImage(null);
+        pantaloninv.setImage(null);
+        botasinv.setImage(null);
+        espadainv.setImage(null);
+        lapiznegro.setVisible(true);
+        lapizamarillo.setVisible(false);
+        equisinv1.setVisible(false);
+        equisinv2.setVisible(false);
+        equisinv3.setVisible(false);
+        equisinv4.setVisible(false);
+        equisinv5.setVisible(false);
+        equisinv6.setVisible(false);
+        equisinv7.setVisible(false);
+        equisinv8.setVisible(false);
+        marco1.setVisible(false);
+        marco2.setVisible(false);
+        marco3.setVisible(false);
+        marco4.setVisible(false);
+        marco5.setVisible(false);
+        marco6.setVisible(false);
+        marco7.setVisible(false);
+        marco8.setVisible(false);
+        updateInventario(numeroJugador);
     }
 
     @FXML
@@ -2829,8 +3210,25 @@ public class TableroController implements Initializable, Runnable {
             else if(inv8.getImage()==cuboagua) tradeo[7]=3;
         }
     }
-    
 
+    @FXML
+    private void clickFinal(MouseEvent event) throws IOException {
+        
+            Parent Ganador = FXMLLoader.load(getClass().getResource("Ganador.fxml"));
+            Scene PantGanador = new Scene(Ganador);
+            
+            Stage ventana = (Stage)((Node)event.getSource()).getScene().getWindow();
+            
+            ventana.setScene(PantGanador);
+            ventana.show();
+        
+    }
+    
+    
+    
+ 
+
+    
 
     
     //////////////////////Clase Juego//////////////////////////////
